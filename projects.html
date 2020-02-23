@@ -3,9 +3,34 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: lightblue;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1 id="title">Alex Snezhko</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a id="thispage" href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <p>
         My passion for software development and love of learning
         concepts has led me to experimenting with various technologies and creating software
