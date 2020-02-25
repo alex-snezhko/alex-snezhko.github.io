@@ -1,0 +1,37 @@
+.section {
+    padding: 50px;
+}
+
+.section h2 {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.section div {
+    display: inline-block;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#skills div {
+    background-color: white;
+    width: 500px;
+    height: 140px;
+    top: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+.lang {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+.lang img {
+    height: 100%;
+}

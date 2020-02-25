@@ -4,24 +4,8 @@
 <head>
     <title>Alex Snezhko's Personal Website</title>
     <link href="style.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
-    <style>
-        .section {
-            padding: 50px;
-        }
-
-        .section h2 {
-            font-size: 35px;
-            margin-top: 0;
-        }
-
-        .section div {
-            display: inline-block;
-            margin: 5px;
-            border-radius: 10px;
-            padding: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -31,68 +15,12 @@
             <ul>
                 <li><a id="thispage" href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- <p>
-        My name's Alex Snezhko, and I'm a junior majoring in Computer Science at
-        <a href="https://ncsu.edu">North Carolina State University</a>. I have had a deep passion
-        for all things programming ever since I took my first programming class in high
-        school over 4 years ago.
-    </p>
-    <p>
-        Throughout my curriculum thusfare at State, I have learned a lot about programming/computer science
-        fundamentals, including the following:
-    </p>
-    <ul>
-        <li>Software Development
-            <ul>
-                <li>Test-driven development</li>
-                <li>Design patterns, such as Model-View-Controller</li>
-                <li>Software development life cycle</li>
-                <li>Software design methodologies, including agile frameworks such as Scrum</li>
-            </ul>
-        </li>
-        <li>Data Structures/Algorithms
-            <ul>
-                <li>Linear, branching, and hashing data structures</li>
-                <li>Algorithm complexity analysis</li>
-            </ul>
-        </li>
-        <li>Low-level programming
-            <ul>
-                <li>Memory management</li>
-                <li>C and x86 assembler programming</li>
-                <li>Computer organization</li>
-            </ul>
-        </li>
-        <li>Operating Systems
-            <ul>
-                <li>Linux system API and implementation</li>
-                <li>Task scheduling/multitasking</li>
-            </ul>
-        </li>
-    </ul>
-    <p>
-        Learning new programming concepts or working on personal software projects has been
-        a hobby of mine for some time now. I have uploaded most of my completed projects to
-        my <a href="https://github.com/alexsnezhko3">Github</a> page, and have brief descriptions
-        of all of those projects <a href="projects.html">here</a>.
-    </p>-->
-
-    <style>
-        .section.skills div {
-            background-color: white;
-            width: 500px;
-        }
-
-        .section.skills div * {
-            display: block;
-        }
-    </style>
-    <div class="section skills" style="background-color: lightblue;">
+    <div class="section" id="skills" style="background-color: lightblue;">
         <h2>Skills</h2>
 
         <div>
@@ -104,7 +32,6 @@
                 <li>Software design methodologies; Scrum, waterfall</li>
             </ul>
         </div>
-
         <div>
             <h3>Data Structures/Algorithms</h3>
             <ul>
@@ -113,7 +40,6 @@
                 <li>Asymptotic complexity analysis</li>
             </ul>
         </div>
-
         <div>
             <h3>Low-level</h3>
             <ul>
@@ -122,7 +48,6 @@
                 <li>Computer organization</li>
             </ul>
         </div>
-
         <div>
             <h3>Operating Systems</h3>
             <ul>
@@ -132,46 +57,38 @@
         </div>
     </div>
 
-    <style>
-        .section.language div {
-            width: 100px;
-            height: 100px;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-    <div class="section language" style="background-color: lightcyan;">
+    <div class="section" id="languages" style="background-color: lightcyan;">
         <h2>Programming Languages</h2>
 
-        <div style="background-color: rgb(185, 165, 190);">
-            <img src="resources/csharplogo.png" alt="C#" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(185, 165, 190);">
+            <img src="resources/logos/csharp.png" alt="C#" style="display: inline-block;">
         </div>
 
-        <div style="background-color: rgb(230, 212, 173);">
-            <img src="resources/javalogo.png" alt="Java" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(230, 212, 173);">
+            <img src="resources/logos/java.png" alt="Java" style="display: inline-block;">
         </div>
 
-        <div style="background-color: rgb(166, 194, 247);">
-            <img src="resources/clogo.png" alt="C" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(166, 194, 247);">
+            <img src="resources/logos/c.png" alt="C" style="display: inline-block;">
         </div>
 
-        <div style="background-color: rgb(162, 215, 233);">
-            <img src="resources/cpplogo.png" alt="C++" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(162, 215, 233);">
+            <img src="resources/logos/cpp.png" alt="C++" style="display: inline-block;">
         </div>
         
-        <div style="background-color: rgb(215, 219, 150);">
-            <img src="resources/pythonlogo.png" alt="Python" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(215, 219, 150);">
+            <img src="resources/logos/python.png" alt="Python" style="display: inline-block;">
         </div>
         
-        <div style="background-color: rgb(247, 223, 30);">
-            <img src="resources/javascriptlogo.png" alt="JavaScript" height="120px" style="display: inline-block;">
+        <div class="lang" style="background-color: rgb(247, 223, 30);">
+            <img src="resources/logos/javascript.png" alt="JavaScript" style="display: inline-block;">
         </div>
     </div>
 
-    <div class="section" style="background-color: lightcoral;">
+    <div class="section" id="education" style="background-color: lightcoral;">
         <h2>Education</h2>
 
-        <img src="resources/ncsulogo.png" alt="North Carolina State University" height="300px">
+        <img src="resources/logos/ncsu.png" alt="North Carolina State University" height="300px">
 
         <span>
             Bachelor of Science: North Carolina State University
