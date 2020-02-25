@@ -11,27 +11,29 @@
     display: inline-block;
     margin: 5px;
     border-radius: 10px;
-    padding: 20px;
 }
 
 #skills div {
     background-color: white;
     width: 500px;
     height: 140px;
-    top: 0;
+    vertical-align: top;
+    padding: 20px;
 }
 
 h3 {
     margin: 0;
 }
 
-.lang {
+.logo-container {
     width: 100px;
     height: 100px;
     padding: 10px;
     text-align: center;
+    padding: auto;
 }
 
-.lang img {
-    height: 100%;
+.logo-container img {
+    max-height: 100%;
+    max-width: 100%;
 }
