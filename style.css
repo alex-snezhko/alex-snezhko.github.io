@@ -3,12 +3,56 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* -- Header section -- */
+
+header {
+    text-align: center;
+}
+
 #title {
     font-weight: 700;
     font-size: 70px;
-    text-align: center;
     margin: 40px;
+    display: inline-block;
 }
+
+#contact {
+    margin: auto;
+    float: right;
+    font-size: 20px;
+    background-color: lightblue;
+}
+
+.contact-link {
+    display: block;
+    margin: 10px;
+}
+
+.contact-link * {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.contact-link p {
+    color: black;
+}
+
+.contact-link img {
+    height: 30px;
+}
+
+/*#contact p {
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+}*/
+
+/* -- Navigation bar -- */
 
 nav {
     text-align: center;
@@ -26,14 +70,11 @@ nav ul {
 
 nav li {
     display: inline-block;
-    
 }
 
 nav li a {
     color: white;
     display: block;
-    
-    text-decoration: none;
     padding: 10px 20px;
     text-align: center;
     font-size: 20px;
@@ -41,6 +82,14 @@ nav li a {
 
 nav li a:hover {
     background-color: rgb(95, 95, 95);
+}
+
+/* used for sticky navigation bar effect */
+.at-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 #thispage {
