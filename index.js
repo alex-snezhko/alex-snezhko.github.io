@@ -12,6 +12,7 @@ window.onscroll = nav;
 var contactBox = document.getElementById("contact");
 var title = document.getElementById("title");
 function shiftContactInfo() {
+    contactBox.className = "at-right";
     if (contactBox.offsetTop > title.offsetTop) {
         contactBox.className = "at-center";
     } else {

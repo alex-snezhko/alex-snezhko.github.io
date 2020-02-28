@@ -9,14 +9,20 @@ a {
 
 /* -- Header section -- */
 
-header {
-    text-align: center;
+#header {
+    /*text-align: center;*/
 }
 
 #title {
     font-weight: 700;
     font-size: 70px;
-    display: inline;
+    /*display: inline;*/
+}
+
+
+#header > div {
+    float: left;
+    clear: both;
 }
 
 #contact {
@@ -47,13 +53,14 @@ header {
 
 /* used for sticky navigation bar effect */
 .at-center {
-    float: none;
+    /*float: none;*/
     text-align: center;
-    border: 2px solid black;
+    
+    background-color: red;
 }
 
 .at-right {
-    float: right;
+    /*float: right;*/
     text-align: right;
 }
 
