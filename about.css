@@ -1,0 +1,15 @@
+#intro {
+    background-color: lightgray;
+}
+
+#intro a {
+    color: red;
+}
+
+.section p {
+    font-size: 20px;
+}
+
+#education {
+    background-color: lightcoral;
+}

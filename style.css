@@ -5,68 +5,46 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /* -- Header section -- */
-
-#header {
-    /*text-align: center;*/
+#titlebar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #title {
     font-weight: 700;
     font-size: 70px;
-    /*display: inline;*/
-}
-
-
-#header > div {
-    float: left;
-    clear: both;
+    margin: 0;
 }
 
 #contact {
-    margin: auto;
-    /*float: right;*/
     font-size: 20px;
+    justify-self: flex-end;
     width: 150px;
 }
 
 .contact-link {
     display: block;
     margin: 10px;
-}
-
-.contact-link * {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-}
-
-.contact-link p {
     color: black;
 }
 
 .contact-link img {
     height: 30px;
-}
-
-/* used for sticky navigation bar effect */
-.at-center {
-    /*float: none;*/
-    text-align: center;
-    
-    background-color: red;
-}
-
-.at-right {
-    /*float: right;*/
-    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* -- Navigation bar -- */
 
-nav {
+#navbar {
+    color: white;
     text-align: center;
     font-size: 0; /* inline-block hack */
     border-top: 2px solid black;
@@ -74,14 +52,13 @@ nav {
     background-color: rgb(54, 54, 54);
 }
 
-nav a {
-    color: white;
+#navbar > a {
     display: inline-block;
     padding: 10px 20px;
     font-size: 20px;
 }
 
-nav a:hover {
+#navbar a:hover {
     background-color: rgb(95, 95, 95);
 }
 
@@ -94,5 +71,24 @@ nav a:hover {
 }
 
 #thispage {
-    color: rgb(194, 194, 194);
+    color: rgb(189, 189, 189);
+}
+
+/*
+    For major divided sections of the webpage
+*/
+
+.section {
+    padding: 50px;
+    text-align: left;
+}
+
+.section > h2 {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.section h3 {
+    margin: 0;
+    font-size: 30px;
 }

@@ -2,35 +2,37 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .grid-container {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: auto auto auto;
-            padding: 10px;
-        }
-
-        .grid-item {
-            background-color: lightblue;
-            border: 1px solid black;
-            padding: 20px;
-        }
-    </style>
+    <title>Alex Snezhko</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="skills.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1 id="title">Alex Snezhko</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a id="thispage" href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <div id="header">
+        <div id="titlebar">
+            <div id="space" style="width: 150px;"></div>
+            <h1 id="title">Alex Snezhko</h1>
+            <div id="contact" class="at-right">
+                <a class="contact-link" href="https://github.com/alexsnezhko3">
+                    GitHub
+                    <img src="resources/logos/github.png" alt="Github">
+                </a>
+                <a class="contact-link" href="https://www.linkedin.com/in/alex-snezhko-17277b189/">
+                    LinkedIn
+                    <img src="resources/logos/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        
+        <div id="navbar">
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a id="thispage" href="projects.html">Projects</a>
+        </div>
+    </div>
+    <script src="header.js"></script>
+    
     <p>
         My passion for software development and love of learning
         concepts has led me to experimenting with various technologies and creating software
