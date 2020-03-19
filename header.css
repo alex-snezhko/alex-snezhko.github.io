@@ -1,0 +1,68 @@
+/*
+ * CSS relevant to header section
+ */
+
+#titlebar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#title {
+    font-weight: 700;
+    font-size: 70px;
+    margin: 0;
+}
+
+#contact {
+    font-size: 20px;
+    justify-self: flex-end;
+    width: 150px;
+}
+
+.contact-link {
+    display: block;
+    margin: 10px;
+    color: black;
+}
+
+.contact-link img {
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* -- Navigation bar -- */
+
+#navbar {
+    color: white;
+    text-align: center;
+    font-size: 0; /* inline-block hack */
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: rgb(54, 54, 54);
+}
+
+#navbar > a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+#navbar a:hover {
+    background-color: rgb(95, 95, 95);
+}
+
+/* used for sticky navigation bar effect */
+.at-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#thispage {
+    color: rgb(189, 189, 189);
+}

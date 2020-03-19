@@ -4,7 +4,7 @@
 <head>
     <title>Alex Snezhko</title>
     <link href="style.css" rel="stylesheet">
-    <link href="about.css" rel="stylesheet">
+    <link href="header.css" rel="stylesheet">
     <link href="skills.css" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
@@ -56,11 +56,24 @@
         <h2>Education</h2>
 
         <p>
-            I'm currently a junior at <a href="https://ncsu.edu">North Carolina State University</a> with a
-            major in Computer Science and a minor in Mathematics. In my classes at State, I have learned much
-            about software development and other computer science fundamentals (detailed more on my 
-            <a href="skills.html">Skills</a> page).
+            I'm a junior at <a href="https://ncsu.edu">North Carolina State University</a> with a major
+            in Computer Science and a minor in Mathematics. In my classes at State, I have learned much
+            about software development and other computer science fundamentals.
         </p>
+
+        <p>
+            Some of the classes I have taken include:
+        </p>
+        <ul>
+            <li>CSC 216: Programming Concepts - Java</li>
+            <li>CSC 226: Discrete Mathematics</li>
+            <li>CSC 230: C/Software Tools</li>
+            <li>CSC 316: Data Structures and Algorithms</li>
+            <li>CSC 236: Computer Organization and Assembly Language</li>
+            <li>CSC 246: Concepts and Facilities of Operating Systems</li>
+            <li>CSC 333: Automata, Grammars, and Computability</li>
+            <li>MA 305: Linear Algebra</li>
+        </ul>
 
         <img src="resources/logos/ncsu.png" alt="North Carolina State University" height="300px">
     </div>
@@ -76,137 +89,93 @@
                         <stop offset="100%" stop-color="rgb(94, 228, 208)" />
                     </radialGradient>
                 </defs>
-                <path fill="none" stroke="url(#radgrad)" /><!-- style="stroke: rgb(94, 228, 208);" -->
-                <path fill="none" style="stroke: rgb(245, 127, 127);"/>
-                <path fill="none" style="stroke: rgb(248, 215, 66);"/>
-                <path fill="none" style="stroke: rgb(149,223,154);"/>
+                <path fill="none" /><!-- style="stroke: rgb(94, 228, 208);" -->
+                <path fill="none" />
+                <path fill="none" />
+                <path fill="none" />
             </svg>
 
+            <!-- Fundamentals -->
             <img src="resources/sdlc.png" alt="Software Development">
+            <ul style="display: none;">
+                <li>Test-driven development</li>
+                <hr>
+                <li>Design patterns, such as Model-View-Controller</li>
+                <hr>
+                <li>Software development life cycle</li>
+                <hr>
+                <li>Software design methodologies; Scrum, waterfall</li>
+            </ul>
             <img src="resources/dsa.png" alt="Data Structures/Algorithms">
+            <ul style="display: none;">
+                <li>Linear, branching, and hashing data structures; graphs</li>
+                <hr>
+                <li>Sorting, searching algorithms</li>
+                <hr>
+                <li>Asymptotic complexity analysis</li>
+            </ul>
             <img src="resources/lowlevel.png" alt="Low level">
+            <ul style="display: none;">
+                <li>Memory management</li>
+                <hr>
+                <li>C and 8086 assembler programming</li>
+                <hr>
+                <li>Computer organization</li>
+                <hr>
+                <li>Efficiency</li>
+            </ul>
             <img src="resources/os.png" alt="Operating Systems">
+            <ul style="display: none;">
+                <li>Linux system API and implementation</li>
+                <hr>
+                <li>Task scheduling/synchronization</li>
+                <hr>
+                <li>Memory management</li>
+                <hr>
+                <li>File Systems</li>
+            </ul>
             
-            <img src="resources/logos/dotnet.png" alt=".NET">
-            <img src="resources/logos/winforms.png" alt="Windows Forms">
-            <img src="resources/logos/junit.png" alt="JUnit">
-            <img src="resources/logos/flask.png" alt="Flask">
-            <img src="resources/logos/pygame.png" alt="Pygame">
-            <img src="resources/logos/unity.png" alt="Unity">
-            <img src="resources/logos/win32.png" alt="Windows API">
+            <!-- Frameworks/Libraries -->
+            <img src="resources/logos/dotnet.png" alt=".NET" data-prof="Proficient">
+            <img src="resources/logos/junit.png" alt="JUnit" data-prof="Intermediate">
+            <img src="resources/logos/flask.png" alt="Flask" data-prof="Familiar">
+            <img src="resources/logos/pygame.png" alt="Pygame" data-prof="Intermediate">
+            <img src="resources/logos/unity.png" alt="Unity" data-prof="Intermediate">
+            <img src="resources/logos/win32.png" alt="Windows API" data-prof="Familiar">
+            <img src="resources/logos/jquery.png" alt="JQuery" data-prof="Familiar">
 
-            <img src="resources/logos/git.png" alt="Git">
-            <img src="resources/logos/jenkins.png" alt="Jenkins">
-            <img src="resources/logos/visualstudio.png" alt="Visual Studio">
-            <img src="resources/logos/vscode.png" alt="VS Code">
-            <img src="resources/logos/pycharm.png" alt="PyCharm">
-            <img src="resources/logos/eclipse.png" alt="Eclipse">
-            <img src="resources/logos/windows.png" alt="Windows">
-            <img src="resources/logos/linux.png" alt="Linux">
+            <!-- Software/Tools -->
+            <img src="resources/logos/git.png" alt="Git" data-prof="Intermediate">
+            <img src="resources/logos/jenkins.png" alt="Jenkins" data-prof="Familiar">
+            <img src="resources/logos/pycharm.png" alt="PyCharm" data-prof="Intermediate">
+            <img src="resources/logos/eclipse.png" alt="Eclipse" data-prof="Familiar">
+            <img src="resources/logos/visualstudio.png" alt="Visual Studio" data-prof="Proficient">
+            <img src="resources/logos/vscode.png" alt="VS Code" data-prof="Intermediate">
+            <img src="resources/logos/windows.png" alt="Windows" data-prof="Proficient">
+            <img src="resources/logos/linux.png" alt="Linux CLI" data-prof="Familiar">
 
-            <img src="resources/logos/css.png" alt="CSS">
-            <img src="resources/logos/html.png" alt="HTML">
-            <img src="resources/logos/javascript.png" alt="JavaScript">
-            <img src="resources/logos/python.png" alt="Python">
-            <img src="resources/logos/asm.png" alt="8086 assembler">
-            <img src="resources/logos/c.png" alt="C">
-            <img src="resources/logos/cpp.png" alt="C++">
-            <img src="resources/logos/csharp.png" alt="C#">
-            <img src="resources/logos/java.png" alt="Java">
+            <!-- Languages -->
+            <img src="resources/logos/html.png" alt="HTML" data-prof="Familiar">
+            <img src="resources/logos/css.png" alt="CSS" data-prof="Familiar">
+            <img src="resources/logos/python.png" alt="Python" data-prof="Intermediate">
+            <img src="resources/logos/javascript.png" alt="JavaScript" data-prof="Intermediate">
+            <img src="resources/logos/asm.png" alt="8086 Assembler" data-prof="Familiar">
+            <img src="resources/logos/c.png" alt="C" data-prof="Proficient">
+            <img src="resources/logos/cpp.png" alt="C++" data-prof="Intermediate">
+            <img src="resources/logos/csharp.png" alt="C#" data-prof="Proficient">
+            <img src="resources/logos/java.png" alt="Java" data-prof="Proficient">
 
-            <div id="info">
+            <div id="skill-info">
                 <img id="info-image">
-                <h3 id="info-name"></h3>
-                
+                <h1 id="info-name"></h1>
+                <!-- only relevant for when displaying non-'fundamentals' item -->
+                <h3 id="info-proficiency"></h3>
+                <!-- only relevant for when displaying 'fundamentals' item -->
+                <ul id="info-list"></ul>
             </div>
         </div>
 
-        <script>
-            const FUND_N = 4;
-            const FRMWRKS_N = 7;
-            const TOOLS_N = 8;
-            const LANG_N = 9;
-
-            const TOTAL = FUND_N + FRMWRKS_N + TOOLS_N + LANG_N;
-            // angle of seperation between elements (in radians)
-            // + 2 because each section has a half image gap and there are 4 sections
-            const ANGSEP = 2 * Math.PI / (TOTAL + 2);
-            const RADIUS = 400;
-
-            // thickness of arcs that are drawn dividing element groups
-            const ARC_THICKNESS = 150;
-            // total width/height of circle
-            const SIZE = 2 * RADIUS + ARC_THICKNESS;
-
-            var circle = $("#skills-circle");
-            circle.width(SIZE);
-            circle.height(SIZE);
-
-            var elements = circle.children("img");
-            elements.addClass("skill-picture");
-
-            /*
-                Move elements into place
-            */
-
-            // angle that the first element in each set (fundamentals,
-            // languages, etc.) should be transformed by
-            var angleFirst = -(Math.PI / 2) - (FUND_N - 1) / 2 * ANGSEP;
-
-            elements.each(function(index, e) {
-                // additional offset to make seperate sections not touch
-                var add;
-                if (index < FUND_N) add = 0;
-                else if (index < FUND_N + FRMWRKS_N) add = 0.5;
-                else if (index < FUND_N + FRMWRKS_N + TOOLS_N) add = 1;
-                else add = 1.5;
-
-                var angle = angleFirst + (index + add) * ANGSEP;
-                $(this).css("transform", "translate(-50%, -50%)" +
-                                         "rotate(" + angle + "rad)" +
-                                         "translate(" + RADIUS + "px)" +
-                                         "rotate(" + -angle + "rad)");
-            });
-
-            /*
-                Draw arcs around element groups
-            */
-            
-            var svg = $("#skills-circle").children("svg");
-            svg.width(2 * RADIUS + ARC_THICKNESS);
-            svg.height(2 * RADIUS + ARC_THICKNESS);
-
-            // find angles on circle at which sections seperate
-            var divAngles = [];
-            divAngles[0] = Math.PI / 2 + (FUND_N / 2 + 0.25) * ANGSEP;
-            divAngles[1] = divAngles[0] - (FUND_N + 0.5) * ANGSEP;
-            divAngles[2] = divAngles[1] - (FRMWRKS_N + 0.5) * ANGSEP;
-            divAngles[3] = divAngles[2] - (TOOLS_N + 0.5) * ANGSEP;
-
-            // find x and y coordinates on svg for beginning of arc segments
-            var xs = [];
-            var ys = [];
-            for (var i = 0; i < 4; i++) {
-                xs[i] = SIZE / 2 + RADIUS * Math.cos(divAngles[i]);
-                ys[i] = SIZE / 2 - RADIUS * Math.sin(divAngles[i]);
-            }
-
-            svg.children("path").each(function(i, e) {
-                $(this).css("stroke-width", ARC_THICKNESS);
-                // set dimensions of arc
-                var nextBegin = (i + 1) % 4;
-                $(this).css("d", 'path("M' + xs[i] + " " + ys[i] +
-                                      " A" + RADIUS + " " + RADIUS +
-                                      " 0 0 1 " + xs[nextBegin] + " " + ys[nextBegin] + '")');
-            });
-
-            // reenable elements
-            elements.each(function(i, e) {
-                $(e).css("transition", "0.5s");
-            })
-            circle.css("visibility", "visible");
-        </script>
-        
+        <script src="skills.js"></script>
     </div>
 
     <div class="section" id="projects" style="background-color: aquamarine;">

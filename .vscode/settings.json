@@ -2,5 +2,6 @@
     "files.associations": {
         "stdlib.h": "c",
         "types.h": "c"
-    }
+    },
+    "python.pythonPath": "C:\\Users\\alexs\\Anaconda3\\python.exe"
 }
