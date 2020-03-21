@@ -1,39 +1,44 @@
-var header = document.getElementById("header");
-var navbar = document.getElementById("navbar");
-var titleBar = document.getElementById("titlebar");
-var contactBox = document.getElementById("contact");
-var title = document.getElementById("title");
+var header = $("#header");
+var navbar = $("#navbar");
+var titleBar = $("#titlebar");
+var links = $("#header-links");
+var title = $("#title");
 
-var navbarY = titleBar.offsetHeight;
-
+var navbarY = titleBar.get(0).offsetHeight;
+var h = navbar.get(0).offsetHeight;
 // spacer for making sure navbar is cleared when at top of page
-var spacer = document.createElement("div");
-spacer.style.height = navbar.offsetHeight + "px";
+var spacer = $("<div></div>").height(navbar.get(0).offsetHeight + "px");
+
+var atTop = false;
 function nav() {
     if (window.pageYOffset >= navbarY) {
-        navbar.classList.add("at-top");
-        if (spacer.parentElement !== header)
-            header.appendChild(spacer);
+        if (!atTop) {
+            navbar.addClass("at-top");
+            header.append(spacer);
+            atTop = true;
+        }
     } else {
-        navbar.classList.remove("at-top");
-        if (spacer.parentElement === header)
-            header.removeChild(spacer);
+        if (atTop) {
+            navbar.removeClass("at-top");
+            spacer.remove();
+            atTop = false;
+        }
     }
 }
 window.addEventListener("scroll", nav);
 
-function shiftContactInfo() {
-    titleBar.style.flexFlow = "row";
-    contactBox.style.textAlign = "right";
-    if (contactBox.offsetTop > title.offsetTop) {
-        titleBar.style.flexFlow = "column";
-        contactBox.style.textAlign = "center";
+/*function shiftContactInfo() {
+    titleBar.css("flex-flow", "row");
+    contactBox.css("text-align", "right");
+    if (contactBox.offset().top > title.offset().top) {
+        titleBar.css("flex-flow", "column");
+        contactBox.css("text-align", "center");
     } else {
-        titleBar.style.flexFlow = "row";
-        contactBox.style.textAlign = "right";
+        titleBar.css("flex-flow", "row");
+        contactBox.css("text-align", "right");
     }
 
-    navbarY = titleBar.offsetHeight;
+    navbarY = titleBar.height();
 }
 shiftContactInfo();
-window.addEventListener("resize", shiftContactInfo);
+window.addEventListener("resize", shiftContactInfo);*/

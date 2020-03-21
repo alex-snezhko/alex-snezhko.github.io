@@ -104,7 +104,8 @@ const DESCRIPTION = "Hover over an icon to view details" +
 var info = $("#skill-info");
 var infoImg = $("#info-image");
 var infoName = $("#info-name");
-var infoProf = $("#info-proficiency");
+// language proficiency or extra description
+var infoExtra = $("#info-extra");
 const profColor = {
     "Proficient": "rgb(33, 204, 50)",
     "Intermediate": "rgb(56, 168, 127)",
@@ -119,12 +120,17 @@ elements.on("mouseenter", function() {
     var img = $(this).children().first();
     infoName.html(img.attr("alt"));
 
-    // check if this element has valid 'prof' data; if it does not, it is a fundamentals element
-    var prof = img.data("prof");
-    if (prof) {
+    // check if this element has valid 'desc' data; if it does not, it is a fundamentals element
+    var desc = img.data("desc");
+    if (desc) {
         infoImg.attr("src", img.attr("src"));
-        infoProf.html(prof);
-        infoProf.css("color", profColor[prof]);
+        infoExtra.html(desc);
+        // check if this is a language proficiency description; if so, color it
+        if (profColor[desc]) {
+            infoExtra.css("color", profColor[desc]);
+        } else {
+            infoExtra.css("color", "gray");
+        }
     } else {
         // will only work if info list immediately follows img in html
         infoList.html($(this).next().html());
@@ -137,7 +143,7 @@ elements.on("mouseenter", function() {
 // fade in hover description
 function noneSelected() {
     infoImg.attr("src", "");
-    infoProf.html("");
+    infoExtra.html("");
     infoName.html(DESCRIPTION);
     infoList.html("");
 

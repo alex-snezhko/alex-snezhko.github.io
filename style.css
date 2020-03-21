@@ -5,6 +5,15 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    background-color: rgb(233, 233, 233);
+}
+
+main {
+    width: 950px;
+    border-color: rgb(202, 202, 202);
+    border-style: solid;
+    border-width: 0 2px;
+    margin: auto;
 }
 
 a {
@@ -18,7 +27,11 @@ a {
 
 .section {
     padding: 50px;
-    text-align: center;
+    text-align: left;
+}
+
+.section p {
+    font-size: 20px;
 }
 
 .section > h2 {
@@ -31,18 +44,45 @@ a {
     font-size: 30px;
 }
 
-#intro {
+#about {
     background-color: lightgray;
 }
 
-#intro a {
+#about::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#about a {
     color: red;
 }
 
-.section p {
-    font-size: 20px;
+#education {
+    display: flex;
+    align-items: top;
 }
 
-#education {
-    background-color: lightcoral;
+#education > img {
+    margin-right: 25px;
+    height: 220px;
+}
+
+#education-desc > p {
+    margin: 0;
+}
+
+#education-desc > ul {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#contact a {
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+#contact img {
+    height: 20px;
 }

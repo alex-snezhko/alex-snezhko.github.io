@@ -8,7 +8,9 @@
     position: relative;
     border-radius: 50%;
     margin: auto;
+    text-align: center;
     visibility: hidden; /* temporary; while js is running */
+    margin-top: -50px;
 }
 
 /* Actually an enclosing div around skill picture */

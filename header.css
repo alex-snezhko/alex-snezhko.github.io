@@ -2,8 +2,12 @@
  * CSS relevant to header section
  */
 
+#header {
+    background-color: white;
+}
+
 #titlebar {
-    padding: 20px;
+    padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,19 +20,20 @@
     margin: 0;
 }
 
-#contact {
+#header-links {
+    text-align: right;
     font-size: 20px;
     justify-self: flex-end;
     width: 150px;
 }
 
-.contact-link {
+.header-link {
     display: block;
     margin: 10px;
     color: black;
 }
 
-.contact-link img {
+.header-link img {
     height: 30px;
     display: inline-block;
     vertical-align: middle;
@@ -59,7 +64,7 @@
 .at-top {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 950px;
     z-index: 1;
 }
 
