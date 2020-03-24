@@ -1,0 +1,55 @@
+/*
+ * Revelant to Projects (and Contact) sections of webpage
+ */
+
+#projects {
+    background-color: aquamarine;
+}
+
+#projects-table {
+    width: 100%;
+    text-align: center;
+}
+
+#projects-table td {
+    padding: 0 15px;
+    vertical-align: top;
+}
+
+.project-image-container {
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    background-color: rgb(103, 226, 185);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    transition: 0.5s;
+}
+
+.project-image {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+.project-image-container:hover {
+    background-color: rgb(84, 194, 157);
+}
+
+.project-image-container:hover .project-image {
+    max-width: 85%;
+    max-height: 85%;
+}
+
+.project-lang {
+    font-weight: 700;
+    color: rgb(24, 112, 83);
+}

@@ -1,0 +1,37 @@
+/*
+ * Relevant to About section of webpage
+ */
+
+#about {
+    background-color: lightgray;
+}
+
+#about::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#about a {
+    color: red;
+}
+
+#education {
+    display: flex;
+    align-items: top;
+}
+
+#education > img {
+    margin-right: 25px;
+    height: 220px;
+}
+
+#education-desc > p {
+    margin: 0;
+}
+
+#education-desc > ul {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}

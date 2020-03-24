@@ -5,184 +5,235 @@
     <title>Alex Snezhko</title>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
-    <link href="header.css" rel="stylesheet">
-    <link href="skills.css" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-    <div id="header">
-        <div id="titlebar">
-            <h1 id="title">Alex Snezhko</h1>
-            <div id="header-links" class="at-right">
-                <a class="header-link" href="https://github.com/alexsnezhko3">
-                    GitHub
-                    <img src="resources/github.png" alt="Github">
-                </a>
-                <a class="header-link" href="https://www.linkedin.com/in/alex-snezhko-17277b189/">
-                    Resume
-                    <img src="resources/resume.png" alt="Resume">
-                </a>
+    <!-- Center column containing all content -->
+    <div id="content">
+        <header>
+            <div id="titlebar">
+                <h1 id="title">Alex Snezhko</h1>
+                <table>
+                    <tr>
+                        <td class="header-link">
+                            <a href="mailto:alexsnezhko89@gmail.com">
+                                Email
+                                <img src="resources/email.png" alt="Email">
+                            </a>
+                        </td>
+                        <td class="header-link">
+                            <a href="https://github.com/alexsnezhko3">
+                                GitHub
+                                <img src="resources/github.png" alt="Github">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header-link">
+                            <a href="https://www.linkedin.com/in/alex-snezhko-17277b189/">
+                                LinkedIn
+                                <img src="resources/linkedin.png" alt="LinkedIn">
+                            </a>
+                        </td>
+                        <td class="header-link">
+                            <a href="https://www.linkedin.com/in/alex-snezhko-17277b189/">
+                                Resume
+                                <img src="resources/resume.png" alt="Resume">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        
-        <div id="navbar">
-            <a id="thispage" href="about.html">About</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-        </div>
-    </div>
-    <script src="header.js"></script>
-
-    <div id="about" class="section">
-        <h2>About Me</h2>
-
-        <p>
-            I am a passionate software developer who has had a deep love for programming ever since
-            I wrote my first line of code over 4 years ago. I enjoy learning new programming concepts
-            and tinkering with personal software projects.
-        </p>
-
-        <div id="education">
-            <img id="ncsu-logo" src="resources/ncsu.png" alt="North Carolina State University">
-            <div id="education-desc">
-                <p>
-                    I'm a junior at <a href="https://ncsu.edu">North Carolina State University</a> studying
-                    Computer Science with a minor in Mathematics. Some notable classes I have taken / am
-                    currently taking include:
-                </p>
-                <ul>
-                    <li>CSC 226: Discrete Mathematics</li>
-                    <li>CSC 230: C/Software Tools</li>
-                    <li>CSC 316: Data Structures and Algorithms</li>
-                    <li>CSC 236: Computer Organization and Assembly Language</li>
-                    <li>CSC 246: Concepts and Facilities of Operating Systems</li>
-                    <li>MA 305: Linear Algebra</li>
-                </ul>
-            </div>
-        </div>
-
-        <p style="clear: left;">
-            Outside of programming, I enjoy gaming, playing guitar, snorkeling, skiing, and listening to
-            music (mostly classic rock and metal &#x1F918)
-        </p>
-    </div>
-
-    <div id="skills" class="section" style="background-color: rgb(179, 235, 241);">
-        <h2>Skills</h2>
-
-        <div id="skills-circle">
-            <svg xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="radgrad" r="100%" cy="1px">
-                        <stop offset="0%" stop-color="white" />
-                        <stop offset="100%" stop-color="rgb(94, 228, 208)" />
-                    </radialGradient>
-                </defs>
-                <path fill="none" /><!-- style="stroke: rgb(94, 228, 208);" -->
-                <path fill="none" />
-                <path fill="none" />
-                <path fill="none" />
-            </svg>
-
-            <!-- Fundamentals -->
-            <img src="resources/sdlc.png" alt="Software Development">
-            <ul style="display: none;">
-                <li>Test-driven development</li>
-                <hr>
-                <li>Design patterns, such as Model-View-Controller</li>
-                <hr>
-                <li>Software development life cycle</li>
-                <hr>
-                <li>Software design methodologies; Scrum, waterfall</li>
-            </ul>
-            <img src="resources/dsa.png" alt="Data Structures/Algorithms">
-            <ul style="display: none;">
-                <li>Linear, branching, and hashing data structures; graphs</li>
-                <hr>
-                <li>Sorting, searching algorithms</li>
-                <hr>
-                <li>Asymptotic complexity analysis</li>
-            </ul>
-            <img src="resources/lowlevel.png" alt="Low level">
-            <ul style="display: none;">
-                <li>Memory management</li>
-                <hr>
-                <li>C and 8086 assembler programming</li>
-                <hr>
-                <li>Computer organization</li>
-                <hr>
-                <li>Efficiency</li>
-            </ul>
-            <img src="resources/os.png" alt="Operating Systems">
-            <ul style="display: none;">
-                <li>Linux system API</li>
-                <hr>
-                <li>Task scheduling/synchronization</li>
-                <hr>
-                <li>Memory management</li>
-                <hr>
-                <li>File Systems</li>
-            </ul>
             
-            <!-- Frameworks/Libraries -->
-            <img src="resources/dotnet.png" alt=".NET" data-desc="C# Framework">
-            <img src="resources/junit.png" alt="JUnit" data-desc="Java Unit Testing Framework">
-            <img src="resources/flask.png" alt="Flask" data-desc="Python Web Framework">
-            <img src="resources/pygame.png" alt="Pygame" data-desc="Python Graphical Library">
-            <img src="resources/unity.png" alt="Unity" data-desc="Game Engine">
-            <img src="resources/win32.png" alt="Win32 API" data-desc="Windows System Library">
-            <img src="resources/jquery.png" alt="JQuery" data-desc="JavaScript Library">
-
-            <!-- Software/Tools -->
-            <img src="resources/git.png" alt="Git" data-desc="Version Control">
-            <img src="resources/jenkins.png" alt="Jenkins" data-desc="Automation System">
-            <img src="resources/pycharm.png" alt="PyCharm" data-desc="Python IDE">
-            <img src="resources/eclipse.png" alt="Eclipse" data-desc="Java IDE">
-            <img src="resources/visualstudio.png" alt="Visual Studio" data-desc="Multi-language IDE">
-            <img src="resources/vscode.png" alt="VS Code" data-desc="Source Code Editor">
-            <img src="resources/windows.png" alt="Windows 10" data-desc="Operating System">
-            <img src="resources/linux.png" alt="Linux" data-desc="Operating System">
-
-            <!-- Languages -->
-            <img src="resources/html.png" alt="HTML" data-desc="Familiar">
-            <img src="resources/css.png" alt="CSS" data-desc="Familiar">
-            <img src="resources/python.png" alt="Python" data-desc="Intermediate">
-            <img src="resources/javascript.png" alt="JavaScript" data-desc="Intermediate">
-            <img src="resources/asm.png" alt="8086 Assembler" data-desc="Familiar">
-            <img src="resources/c.png" alt="C" data-desc="Proficient">
-            <img src="resources/cpp.png" alt="C++" data-desc="Intermediate">
-            <img src="resources/csharp.png" alt="C#" data-desc="Proficient">
-            <img src="resources/java.png" alt="Java" data-desc="Proficient">
-
-            <div id="skill-info">
-                <img id="info-image">
-                <h1 id="info-name"></h1>
-                <!-- only relevant for when displaying non-'fundamentals' item -->
-                <h3 id="info-extra"></h3>
-                <!-- only relevant for when displaying 'fundamentals' item -->
-                <ul id="info-list"></ul>
+            <div id="navbar">
+                <a id="nav-about" href="#about">About</a>
+                <a id="nav-skills" href="#skills">Skills</a>
+                <a id="nav-projects" href="#projects">Projects</a>
             </div>
+        </header>
+
+        <div id="about" class="section">
+            <h2>About Me</h2>
+
+            <p>
+                I am a passionate software developer who has had a deep love for programming ever since
+                I wrote my first line of code over 4 years ago. I enjoy learning new programming concepts
+                and tinkering with personal software projects.
+            </p>
+
+            <div id="education">
+                <img id="ncsu-logo" src="resources/ncsu.png" alt="North Carolina State University">
+                <div id="education-desc">
+                    <p>
+                        I'm a junior at <a href="https://ncsu.edu">North Carolina State University</a> studying
+                        Computer Science with a minor in Mathematics. Some notable classes I have taken / am
+                        currently taking include:
+                    </p>
+                    <ul>
+                        <li>CSC 226: Discrete Mathematics</li>
+                        <li>CSC 230: C/Software Tools</li>
+                        <li>CSC 316: Data Structures and Algorithms</li>
+                        <li>CSC 236: Computer Organization and Assembly Language</li>
+                        <li>CSC 246: Concepts and Facilities of Operating Systems</li>
+                        <li>MA 305: Linear Algebra</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="clear: left;">
+                Outside of programming, I enjoy gaming, playing guitar, snorkeling, skiing, and listening to
+                music (mostly classic rock and metal &#x1F918)
+            </p>
         </div>
 
-        <script src="skills.js"></script>
-    </div>
+        <div id="skills" class="section">
+            <h2>Skills</h2>
 
-    <div id="projects" class="section" style="background-color: aquamarine;">
-        <h2>Projects</h2>
-    </div>
+            <div id="skills-circle">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="radgrad" r="100%" cy="1px">
+                            <stop offset="0%" stop-color="white" />
+                            <stop offset="100%" stop-color="rgb(94, 228, 208)" />
+                        </radialGradient>
+                    </defs>
+                    <path fill="none" /><!-- style="stroke: rgb(94, 228, 208);" -->
+                    <path fill="none" />
+                    <path fill="none" />
+                    <path fill="none" />
+                </svg>
 
-    <div id="contact" class="section" style="background-color: white;">
-        <h2>Contact</h2>
-        <div id="contact-links">
-            <a href="mailto:alexsnezhko89@gmail.com"><img src="resources/email.png" alt="Email">Email</a>
-            <a href="https://www.linkedin.com/in/alex-snezhko-17277b189/"><img src="resources/linkedin.png" alt="LinkedIn">LinkedIn</a>
-            <span><img src="resources/phone.png" alt="Phone">848-482-9395</span>
+                <!-- Fundamentals -->
+                <img src="resources/sdlc.png" alt="Software Development">
+                <ul style="display: none;">
+                    <li>Test-driven development</li>
+                    <hr>
+                    <li>Design patterns, such as Model-View-Controller</li>
+                    <hr>
+                    <li>Software development life cycle</li>
+                    <hr>
+                    <li>Software design methodologies; Scrum, waterfall</li>
+                </ul>
+                <img src="resources/dsa.png" alt="Data Structures/Algorithms">
+                <ul style="display: none;">
+                    <li>Linear, branching, and hashing data structures; graphs</li>
+                    <hr>
+                    <li>Sorting, searching algorithms</li>
+                    <hr>
+                    <li>Asymptotic complexity analysis</li>
+                </ul>
+                <img src="resources/lowlevel.png" alt="Low level">
+                <ul style="display: none;">
+                    <li>Memory management</li>
+                    <hr>
+                    <li>C and 8086 assembler programming</li>
+                    <hr>
+                    <li>Computer organization</li>
+                    <hr>
+                    <li>Efficiency</li>
+                </ul>
+                <img src="resources/os.png" alt="Operating Systems">
+                <ul style="display: none;">
+                    <li>Linux system API</li>
+                    <hr>
+                    <li>Task scheduling/synchronization</li>
+                    <hr>
+                    <li>Memory management</li>
+                    <hr>
+                    <li>File Systems</li>
+                </ul>
+                
+                <!-- Frameworks/Libraries -->
+                <img src="resources/dotnet.png" alt=".NET" data-desc="C# Framework">
+                <img src="resources/junit.png" alt="JUnit" data-desc="Java Unit Testing Framework">
+                <img src="resources/flask.png" alt="Flask" data-desc="Python Web Framework">
+                <img src="resources/pygame.png" alt="Pygame" data-desc="Python Graphical Library">
+                <img src="resources/unity.png" alt="Unity" data-desc="Game Engine">
+                <img src="resources/win32.png" alt="Win32 API" data-desc="Windows System Library">
+                <img src="resources/jquery.png" alt="JQuery" data-desc="JavaScript Library">
+
+                <!-- Software/Tools -->
+                <img src="resources/git.png" alt="Git" data-desc="Version Control">
+                <img src="resources/jenkins.png" alt="Jenkins" data-desc="Automation System">
+                <img src="resources/pycharm.png" alt="PyCharm" data-desc="Python IDE">
+                <img src="resources/eclipse.png" alt="Eclipse" data-desc="Java IDE">
+                <img src="resources/visualstudio.png" alt="Visual Studio" data-desc="Multi-language IDE">
+                <img src="resources/vscode.png" alt="VS Code" data-desc="Source Code Editor">
+                <img src="resources/windows.png" alt="Windows 10" data-desc="Operating System">
+                <img src="resources/linux.png" alt="Linux" data-desc="Operating System">
+
+                <!-- Languages -->
+                <img src="resources/html.png" alt="HTML" data-desc="Familiar">
+                <img src="resources/css.png" alt="CSS" data-desc="Familiar">
+                <img src="resources/python.png" alt="Python" data-desc="Intermediate">
+                <img src="resources/javascript.png" alt="JavaScript" data-desc="Intermediate">
+                <img src="resources/asm.png" alt="8086 Assembler" data-desc="Familiar">
+                <img src="resources/c.png" alt="C" data-desc="Proficient">
+                <img src="resources/cpp.png" alt="C++" data-desc="Intermediate">
+                <img src="resources/csharp.png" alt="C#" data-desc="Proficient">
+                <img src="resources/java.png" alt="Java" data-desc="Proficient">
+
+                <div id="skill-info">
+                    <img id="info-image">
+                    <h1 id="info-name"></h1>
+                    <!-- only relevant for when displaying non-'fundamentals' item -->
+                    <h3 id="info-extra"></h3>
+                    <!-- only relevant for when displaying 'fundamentals' item -->
+                    <ul id="info-list"></ul>
+                </div>
+            </div>
+
+            <script src="skills.js"></script>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+
+            <!-- display projects as a 2x2 table -->
+            <table id="projects-table">
+                <tr>
+                    <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/TextScannerConsole" target="_blank">
+                            <img class="project-image" src="resources/textscanner.png" alt="OCR Text Scanner">
+                        </a>
+                        <h3>OCR Text Scanner</h3>
+                        <p>Optical character recognition application which parses printed text from images</p>
+                        <p class="project-lang">C++</p>
+                    </td>
+                    <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/PoolGame" target="_blank">
+                            <img class="project-image" src="resources/poolgame.jpg" alt="8-ball Pool Game">
+                        </a>
+                        <h3>8-ball Pool Game</h3>
+                        <p>8-ball pool simulation; physics engine built from scratch</p>
+                        <p class="project-lang">C#, .NET-Windows Forms</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/FlappyBird" target="_blank">
+                            <img class="project-image" src="resources/flappybird.jpg" alt="Flappy Bird AI">
+                        </a>
+                        <h3>Flappy Bird AI</h3>
+                        <p>Clone of the popular Flappy Bird mobile game with the extension of an automatic solving mode</p>
+                        <p class="project-lang">Python, Pygame</p>
+                    </td>
+                    <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/GuitarTabber" target="_blank">
+                            <img class="project-image" src="resources/guitartabber.JPG" alt="Guitar Tabber">
+                        </a>
+                        <h3>Guitar Tabber</h3>
+                        <p><span style="color: rgb(214, 66, 66)">*In Development*</span> Application which will automatically create guitar tablature in real time from microphone input</p>
+                        <p class="project-lang">C#, .NET-Windows Forms</p>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-    </main>
+
+    <script src="header.js"></script>
 </body>
 
 </html>

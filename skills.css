@@ -1,7 +1,11 @@
 /*
- * CSS relevant to 'skills' section
+ * Relevant to Skills section of webpage
  * Note: some css properties are modified in skills.js
  */
+
+#skills {
+    background-color: rgb(179, 235, 241);
+}
 
 /* Container for skills circle-related elements */
 #skills-circle {
