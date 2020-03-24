@@ -1,9 +1,11 @@
+var h;
+
 $(function() {
     var header = $("header");
     var navbar = $("#navbar");
 
     var navbarY = $("#titlebar")[0].offsetHeight;
-    var h = navbar[0].offsetHeight;
+    h = navbar[0].offsetHeight;
     // spacer for making sure navbar is cleared when at top of page
     var spacer = $("<div></div>").height(h + "px");
 
@@ -32,9 +34,6 @@ $(function() {
         }
 
         var sub = atTop ? h : 0;
-        if (sub === h) {
-            asdf = 3;
-        }
         if (y >= projectsY - sub) {
             navAbout.removeClass("thispage");
             navSkills.removeClass("thispage");
@@ -52,3 +51,8 @@ $(function() {
     $(window).on("scroll", nav);
     nav();
 });
+
+function scrollToElem(id) {
+    var y = $("#" + id)[0].offsetTop - h;
+    $(window).scrollTop(y);
+}

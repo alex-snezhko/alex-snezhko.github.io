@@ -35,25 +35,6 @@ header {
     vertical-align: middle;
 }
 
-/*#header-links {
-    text-align: right;
-    font-size: 20px;
-    justify-self: flex-end;
-    width: 150px;
-}
-
-.header-link {
-    display: block;
-    margin: 10px;
-    color: black;
-}
-
-.header-link img {
-    height: 30px;
-    display: inline-block;
-    vertical-align: middle;
-}*/
-
 /* -- Navigation bar -- */
 
 #navbar {
@@ -67,6 +48,7 @@ header {
 
 #navbar > a {
     display: inline-block;
+    cursor: pointer;
     padding: 10px 20px;
     font-size: 20px;
 }
