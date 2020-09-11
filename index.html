@@ -58,9 +58,18 @@
             <h2>About Me</h2>
 
             <p>
-                I am a passionate software developer who has had a deep love for programming ever since
-                I wrote my first line of code over 4 years ago. I enjoy learning new programming concepts
-                and tinkering with personal software projects.
+                Programming is my passion.
+            </p>
+            <p>
+                Tinkering with personal software projects has become a hobby of mine, not only because of the inherent
+                joy I get from the act of programming, but also because of my strive to make useful software.
+                I am fascinated by the capability of computers to improve people's lives, and a deep-rooted motivation
+                of mine is to make software that can improve the lives of others in any way possible.
+            </p>
+            <p>
+                I view the challenges that are ever-present in software development not simply as obstacles to the path of
+                success, but as opportunities to grow as a developer. I strive to reach my full potential in everything I
+                do, and programming is no exception.
             </p>
 
             <div id="education">
@@ -68,23 +77,23 @@
                 <div id="education-desc">
                     <p>
                         I'm a junior at <a href="https://ncsu.edu">North Carolina State University</a> studying
-                        Computer Science with a minor in Mathematics. Some notable classes I have taken / am
-                        currently taking include:
+                        Computer Science and Mathematics. Some notable classes I have taken / am currently taking include:
                     </p>
                     <ul>
-                        <li>CSC 226: Discrete Mathematics</li>
-                        <li>CSC 230: C/Software Tools</li>
                         <li>CSC 316: Data Structures and Algorithms</li>
                         <li>CSC 236: Computer Organization and Assembly Language</li>
                         <li>CSC 246: Concepts and Facilities of Operating Systems</li>
-                        <li>MA 305: Linear Algebra</li>
+                        <li>CSC 326: Software Engineering</li>
+                        <li>CSC 561: Principles of Computer Graphics</li>
+                        <li>MA 405: Linear Algebra</li>
+                        <li>MA 427: Introduction to Numerical Analysis</li>
                     </ul>
                 </div>
             </div>
 
             <p style="clear: left;">
-                Outside of programming, I enjoy gaming, playing guitar, snorkeling, skiing, and listening to
-                music (mostly classic rock and metal &#x1F918)
+                Outside of programming, I enjoy gaming, playing guitar, snorkeling, skiing, and
+                listening to music
             </p>
         </div>
 
@@ -93,30 +102,24 @@
 
             <div id="skills-circle">
                 <svg xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="radgrad" r="100%" cy="1px">
-                            <stop offset="0%" stop-color="white" />
-                            <stop offset="100%" stop-color="rgb(94, 228, 208)" />
-                        </radialGradient>
-                    </defs>
-                    <path fill="none" /><!-- style="stroke: rgb(94, 228, 208);" -->
+                    <path fill="none" />
                     <path fill="none" />
                     <path fill="none" />
                     <path fill="none" />
                 </svg>
 
                 <!-- Fundamentals -->
-                <img src="resources/sdlc.png" alt="Software Development">
+                <img src="resources/sdlc.png" alt="Software Development" data-fundamental="true">
                 <ul style="display: none;">
                     <li>Test-driven development</li>
                     <hr>
-                    <li>Design patterns, such as Model-View-Controller</li>
+                    <li>Object-oriented design patterns</li>
                     <hr>
                     <li>Software development life cycle</li>
                     <hr>
-                    <li>Software design methodologies; Scrum, waterfall</li>
+                    <li>Agile design</li>
                 </ul>
-                <img src="resources/dsa.png" alt="Data Structures/Algorithms">
+                <img src="resources/dsa.png" alt="Data Structures/Algorithms" data-fundamental="true">
                 <ul style="display: none;">
                     <li>Linear, branching, and hashing data structures; graphs</li>
                     <hr>
@@ -124,7 +127,7 @@
                     <hr>
                     <li>Asymptotic complexity analysis</li>
                 </ul>
-                <img src="resources/lowlevel.png" alt="Low level">
+                <img src="resources/lowlevel.png" alt="Low level" data-fundamental="true">
                 <ul style="display: none;">
                     <li>Memory management</li>
                     <hr>
@@ -134,11 +137,11 @@
                     <hr>
                     <li>Efficiency</li>
                 </ul>
-                <img src="resources/os.png" alt="Operating Systems">
+                <img src="resources/os.png" alt="Operating Systems" data-fundamental="true">
                 <ul style="display: none;">
                     <li>Linux system API</li>
                     <hr>
-                    <li>Task scheduling/synchronization</li>
+                    <li>Scheduling/concurrency</li>
                     <hr>
                     <li>Memory management</li>
                     <hr>
@@ -148,32 +151,27 @@
                 <!-- Frameworks/Libraries -->
                 <img src="resources/dotnet.png" alt=".NET" data-desc="C# Framework">
                 <img src="resources/junit.png" alt="JUnit" data-desc="Java Unit Testing Framework">
-                <img src="resources/flask.png" alt="Flask" data-desc="Python Web Framework">
                 <img src="resources/pygame.png" alt="Pygame" data-desc="Python Graphical Library">
-                <img src="resources/unity.png" alt="Unity" data-desc="Game Engine">
-                <img src="resources/win32.png" alt="Win32 API" data-desc="Windows System Library">
-                <img src="resources/jquery.png" alt="JQuery" data-desc="JavaScript Library">
+                <img src="resources/windows.png" alt="Windows API" data-desc="System Library">
+                <img src="resources/linux.png" alt="Linux API" data-desc="System Library">
+                <img src="resources/jquery.png" alt="JQuery" data-desc="JavaScript DOM Library">
 
                 <!-- Software/Tools -->
+                <img src="resources/html.png" alt="HTML" data-desc="Markup Language">
+                <img src="resources/css.png" alt="CSS" data-desc="Styling Language">
                 <img src="resources/git.png" alt="Git" data-desc="Version Control">
                 <img src="resources/jenkins.png" alt="Jenkins" data-desc="Automation System">
-                <img src="resources/pycharm.png" alt="PyCharm" data-desc="Python IDE">
-                <img src="resources/eclipse.png" alt="Eclipse" data-desc="Java IDE">
-                <img src="resources/visualstudio.png" alt="Visual Studio" data-desc="Multi-language IDE">
-                <img src="resources/vscode.png" alt="VS Code" data-desc="Source Code Editor">
-                <img src="resources/windows.png" alt="Windows 10" data-desc="Operating System">
-                <img src="resources/linux.png" alt="Linux" data-desc="Operating System">
+                <img src="resources/unity.png" alt="Unity" data-desc="Game Engine">
 
                 <!-- Languages -->
-                <img src="resources/html.png" alt="HTML" data-desc="Familiar">
-                <img src="resources/css.png" alt="CSS" data-desc="Familiar">
-                <img src="resources/python.png" alt="Python" data-desc="Intermediate">
-                <img src="resources/javascript.png" alt="JavaScript" data-desc="Intermediate">
-                <img src="resources/asm.png" alt="8086 Assembler" data-desc="Familiar">
-                <img src="resources/c.png" alt="C" data-desc="Proficient">
-                <img src="resources/cpp.png" alt="C++" data-desc="Intermediate">
-                <img src="resources/csharp.png" alt="C#" data-desc="Proficient">
-                <img src="resources/java.png" alt="Java" data-desc="Proficient">
+                <img src="resources/rust.png" alt="Rust">
+                
+                <img src="resources/python.png" alt="Python">
+                <img src="resources/javascript.png" alt="JavaScript">
+                <img src="resources/cpp.png" alt="C++">
+                <img src="resources/c.png" alt="C">
+                <img src="resources/csharp.png" alt="C#">
+                <img src="resources/java.png" alt="Java">
 
                 <div id="skill-info">
                     <img id="info-image">
@@ -195,6 +193,24 @@
             <table id="projects-table">
                 <tr>
                     <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/dirman" target="_blank">
+                            <img class="project-image" src="resources/dirman.png" alt="DirMan">
+                        </a>
+                        <h3>DirMan</h3>
+                        <p>Terminal-based file management system which provides a GUI-like interface for manipulating directory trees</p>
+                        <p class="project-lang">Rust</p>
+                    </td>
+                    <td>
+                        <a class="project-image-container" href="https://github.com/alexsnezhko3/SudohLang" target="_blank">
+                            <img class="project-image" src="resources/sudoh.png" alt="SudohLang">
+                        </a>
+                        <h3>Sudoh</h3>
+                        <p>A simple programming language inspired by common pseudo-code syntax/features. Transpiles to C++</p>
+                        <p class="project-lang">C++</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <a class="project-image-container" href="https://github.com/alexsnezhko3/TextScannerConsole" target="_blank">
                             <img class="project-image" src="resources/textscanner.png" alt="OCR Text Scanner">
                         </a>
@@ -208,7 +224,7 @@
                         </a>
                         <h3>8-ball Pool Game</h3>
                         <p>8-ball pool simulation; physics engine built from scratch</p>
-                        <p class="project-lang">C#, .NET-Windows Forms</p>
+                        <p class="project-lang">C#</p>
                     </td>
                 </tr>
                 <tr>
@@ -218,7 +234,7 @@
                         </a>
                         <h3>Flappy Bird AI</h3>
                         <p>Clone of the popular Flappy Bird mobile game with the extension of an automatic solving mode</p>
-                        <p class="project-lang">Python, Pygame</p>
+                        <p class="project-lang">Python</p>
                     </td>
                     <td>
                         <a class="project-image-container" href="https://github.com/alexsnezhko3/GuitarTabber" target="_blank">
@@ -226,7 +242,7 @@
                         </a>
                         <h3>Guitar Tabber</h3>
                         <p><span style="color: rgb(214, 66, 66)">*In Development*</span> Application which will automatically create guitar tablature in real time from microphone input</p>
-                        <p class="project-lang">C#, .NET-Windows Forms</p>
+                        <p class="project-lang">C#</p>
                     </td>
                 </tr>
             </table>

@@ -1,7 +1,7 @@
 const FUND_N = 4;
-const FRMWRKS_N = 7;
-const TOOLS_N = 8;
-const LANG_N = 9;
+const FRMWRKS_N = 6;
+const TOOLS_N = 5;
+const LANG_N = 7;
 
 const TOTAL = FUND_N + FRMWRKS_N + TOOLS_N + LANG_N;
 // angle of seperation between elements (in radians)
@@ -39,14 +39,14 @@ elements.each(function(index, e) {
 
     var angle = angleFirst + (index + add) * ANGSEP;
     $(this).css("transform", "translate(-50%, -50%)" +
-                                "rotate(" + angle + "rad)" +
-                                "translate(" + RADIUS + "px)" +
-                                "rotate(" + -angle + "rad)");
+                             "rotate(" + angle + "rad)" +
+                             "translate(" + RADIUS + "px)" +
+                             "rotate(" + -angle + "rad)");
 });
 
-/*
-    Draw arcs around element groups
-*/
+// +-------------------------------------+
+// |   Draw arcs around element groups   |
+// +-------------------------------------+
 
 var svg = $("#skills-circle").children("svg");
 svg.width(2 * RADIUS + ARC_THICKNESS);
@@ -89,9 +89,9 @@ elements.each(function(i, e) {
     $(this).css("transition", "0.5s");
 });
 
-/*
-    Display skill info on hover
-*/
+// +---------------------------------+
+// |   Display skill info on hover   |
+// +---------------------------------+
 
 // message displayed when no skill is selected
 const DESCRIPTION = "Hover over an icon to view details" +
@@ -106,11 +106,6 @@ var infoImg = $("#info-image");
 var infoName = $("#info-name");
 // language proficiency or extra description
 var infoExtra = $("#info-extra");
-const profColor = {
-    "Proficient": "rgb(33, 204, 50)",
-    "Intermediate": "rgb(56, 168, 127)",
-    "Familiar": "rgb(140, 161, 48)"
-}
 var infoList = $("#info-list");
 
 elements.on("mouseenter", function() {
@@ -120,20 +115,14 @@ elements.on("mouseenter", function() {
     var img = $(this).children().first();
     infoName.html(img.attr("alt"));
 
-    // check if this element has valid 'desc' data; if it does not, it is a fundamentals element
-    var desc = img.data("desc");
-    if (desc) {
-        infoImg.attr("src", img.attr("src"));
-        infoExtra.html(desc);
-        // check if this is a language proficiency description; if so, color it
-        if (profColor[desc]) {
-            infoExtra.css("color", profColor[desc]);
-        } else {
-            infoExtra.css("color", "gray");
-        }
-    } else {
+    // check if this element is a 'fundamentals' item
+    if (img.data("fundamental")) {
         // will only work if info list immediately follows img in html
         infoList.html($(this).next().html());
+    } else {
+        infoImg.attr("src", img.attr("src"));
+        infoExtra.html(img.data("desc"));
+        infoExtra.css("color", "gray");
     }
 
     // fade info box in

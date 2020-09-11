@@ -12,8 +12,12 @@
 }
 
 #projects-table td {
-    padding: 0 15px;
+    padding: 0 35px;
     vertical-align: top;
+}
+
+#projects-table p {
+    margin: 10px 0;
 }
 
 .project-image-container {
