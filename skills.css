@@ -18,21 +18,26 @@
     margin-top: -50px;
 }
 
+text {
+    fill: rgb(63, 101, 112);
+    font-size: 28px;
+}
+
 /* Actually an enclosing div around skill picture */
 .skill-picture {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skill-picture:hover {
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
 }
 
 /* Actual image inside enclosing div */

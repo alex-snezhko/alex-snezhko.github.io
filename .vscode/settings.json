@@ -3,5 +3,8 @@
         "stdlib.h": "c",
         "types.h": "c"
     },
-    "python.pythonPath": "C:\\Users\\alexs\\Anaconda3\\python.exe"
+    "python.pythonPath": "C:\\Users\\Alex\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.enabled": true
 }

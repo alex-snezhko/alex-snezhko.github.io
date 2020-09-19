@@ -7,7 +7,8 @@
     <link href="style.css" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+
+    <script src="https://raw.githack.com/krispo/svg-path-utils/master/build/svg-path-utils.js"></script>
 </head>
 
 <body>
@@ -102,10 +103,39 @@
 
             <div id="skills-circle">
                 <svg xmlns="http://www.w3.org/2000/svg">
-                    <path fill="none" />
-                    <path fill="none" />
-                    <path fill="none" />
-                    <path fill="none" />
+                    <path class="arc-fill" fill="none" />
+                    <path class="arc-fill" fill="none" />
+                    <path class="arc-fill" fill="none" />
+                    <path class="arc-fill" fill="none" />
+
+                    <path id="langs-curve" fill="none" />
+                    <path id="frameworks-curve" fill="none" />
+                    <path id="tools-curve" fill="none" />
+                    <path id="fundamentals-curve" fill="none" />
+
+                    <text width="500">
+                        <textPath xlink:href="#langs-curve">
+                            Programming Languages
+                        </textPath>
+                    </text>
+
+                    <text width="500">
+                        <textPath xlink:href="#frameworks-curve">
+                            Libraries/Frameworks
+                        </textPath>
+                    </text>
+
+                    <text width="500">
+                        <textPath xlink:href="#tools-curve">
+                            Tools/Environments
+                        </textPath>
+                    </text>
+
+                    <text width="500">
+                        <textPath xlink:href="#fundamentals-curve">
+                            Fundamentals
+                        </textPath>
+                    </text>
                 </svg>
 
                 <!-- Fundamentals -->
@@ -119,7 +149,7 @@
                     <hr>
                     <li>Agile design</li>
                 </ul>
-                <img src="resources/dsa.png" alt="Data Structures/Algorithms" data-fundamental="true">
+                <img src="resources/dsa.png" alt="Algorithms" data-fundamental="true">
                 <ul style="display: none;">
                     <li>Linear, branching, and hashing data structures; graphs</li>
                     <hr>
@@ -147,12 +177,12 @@
                 </ul>
                 
                 <!-- Frameworks/Libraries -->
-                <img src="resources/dotnet.png" alt=".NET" data-desc="C# Framework">
-                <img src="resources/junit.png" alt="JUnit" data-desc="Java Unit Testing Framework">
-                <img src="resources/pygame.png" alt="Pygame" data-desc="Python Graphical Library">
+                <img src="resources/dotnet.png" alt=".NET" data-desc="Windows App Framework">
+                <img src="resources/junit.png" alt="JUnit" data-desc="Unit Testing Framework">
+                <img src="resources/pygame.png" alt="Pygame" data-desc="Graphical Library">
                 <img src="resources/windows.png" alt="Windows API" data-desc="System Library">
                 <img src="resources/linux.png" alt="Linux API" data-desc="System Library">
-                <img src="resources/jquery.png" alt="JQuery" data-desc="JavaScript DOM Library">
+                <img src="resources/jquery.png" alt="JQuery" data-desc="DOM Library">
 
                 <!-- Software/Tools -->
                 <img src="resources/html.png" alt="HTML" data-desc="Markup Language">
