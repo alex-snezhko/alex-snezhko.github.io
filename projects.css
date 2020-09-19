@@ -3,7 +3,8 @@
  */
 
 #projects {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    background-color: rgb(170, 216, 255);
 }
 
 #projects-table {
@@ -26,7 +27,7 @@
     height: 200px;
     margin: auto;
     position: relative;
-    background-color: rgb(103, 226, 185);
+    background-color: rgb(147, 185, 216);/* rgb(103, 226, 185);*/
     border-radius: 10px;
     margin-bottom: 15px;
     margin-top: 25px;

@@ -9,7 +9,8 @@
 
 body {
     margin: 0;
-    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: "Montserrat", sans-serif;
     background-color: rgb(233, 233, 233);
 }
 

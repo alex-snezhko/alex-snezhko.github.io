@@ -69,10 +69,18 @@ for (var i = 0; i < 4; i++) {
 
 // colors to use for arcs
 const strokeColors = [
-    "rgb(94, 228, 208)",
-    "rgb(245, 127, 127)",
-    "rgb(248, 215, 66)",
-    "rgb(149, 223, 154)"
+    
+    
+    "rgb(0, 200, 200)",
+    "rgb(0, 220, 220)",
+    "rgb(0, 200, 200)",
+    "rgb(0, 180, 180)",
+    
+    
+    // "rgb(94, 228, 208)",  // fundamentals
+    // "rgb(180, 180, 255)",//"rgb(245, 127, 127)", // frameworks
+    // "rgb(200, 215, 200)",//"rgb(248, 215, 66)",  // tools
+    // "rgb(149, 223, 154)"  // langs
 ];
 
 svg.children("path").each(function(i, e) {
@@ -94,7 +102,7 @@ elements.each(function(i, e) {
 // +---------------------------------+
 
 // message displayed when no skill is selected
-const DESCRIPTION = "Hover over an icon to view details" +
+const DESCRIPTION = "Hover over an icon to view" +
     '<p style="color: ' + strokeColors[0] + ';">Fundamentals</p>' +
     '<p style="color: ' + strokeColors[3] + ';">Languages</p>' +
     '<p style="color: ' + strokeColors[1] + ';">Frameworks/Libraries</p>' +

@@ -3,7 +3,8 @@
  */
 
 #about {
-    background-color: lightgray;
+    /* background-color: rgb(220, 240, 255); */
+    background-color: rgb(230, 240, 255);
 }
 
 #about::after {
