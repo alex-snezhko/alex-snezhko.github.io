@@ -1,19 +1,19 @@
-const FUND_N = 4;
-const FRMWRKS_N = 7;
-const TOOLS_N = 5;
-const LANG_N = 7;
+const FUND_N = 5;
+const FRMWRKS_N = 9;
+const TOOLS_N = 6;
+const LANG_N = 8;
 
 const TOTAL = FUND_N + FRMWRKS_N + TOOLS_N + LANG_N;
 // angle of seperation between elements (in radians)
 // + 2 because each section has a half image gap and there are 4 sections
 const ANGSEP = 2 * Math.PI / (TOTAL + 2);
-const RADIUS = 325;
-var TEXT_RADIUS = RADIUS + 80;
+const RADIUS = 425;
+var TEXT_RADIUS = RADIUS + 90;
 
 // thickness of arcs that are drawn dividing element groups
-const ARC_THICKNESS = 130;
+const ARC_THICKNESS = 140;
 // total width/height of circle
-const SIZE = 850;
+const SIZE = 1050;
 
 var circle = $("#skills-circle");
 circle.width(SIZE);
@@ -78,9 +78,9 @@ for (var i = 0; i < 4; i++) {
 }
 
 var FUND_TEXT_ANGLE = 1.2;
-var LANG_TEXT_ANGLE = 2.9;
-var TOOLS_TEXT_ANGLE = 4.6;
-var FRMWRKS_TEXT_ANGLE = 6.2;
+var LANG_TEXT_ANGLE = 2.8;
+var TOOLS_TEXT_ANGLE = 4.2;
+var FRMWRKS_TEXT_ANGLE = 6;
 
 var FUND_TEXT_BEGIN = getXY(TEXT_RADIUS, FUND_TEXT_ANGLE);
 var FUND_TEXT_END = getXY(TEXT_RADIUS, FUND_TEXT_ANGLE - 2);

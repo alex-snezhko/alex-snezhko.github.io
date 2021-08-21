@@ -53,6 +53,6 @@ $(function() {
 });
 
 function scrollToElem(id) {
-    var y = $("#" + id)[0].offsetTop - h;
+    var y = $("#" + id)[0].offsetTop - h + 1;
     $(window).scrollTop(y);
 }
