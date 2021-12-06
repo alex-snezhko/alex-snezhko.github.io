@@ -1,7 +1,7 @@
 const FUND_N = 5;
-const FRMWRKS_N = 9;
+const FRMWRKS_N = 8;
 const TOOLS_N = 6;
-const LANG_N = 8;
+const LANG_N = 9;
 
 const TOTAL = FUND_N + FRMWRKS_N + TOOLS_N + LANG_N;
 // angle of seperation between elements (in radians)
