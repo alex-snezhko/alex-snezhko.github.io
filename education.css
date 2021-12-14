@@ -1,0 +1,25 @@
+#education {
+    /* background-color: rgb(230, 240, 255); */
+    /* background-color: rgb(202, 223, 246); */
+    background-color: rgb(219, 234, 251);
+}
+
+#education-content {
+    display: flex;
+    align-items: top;
+}
+
+#education-content > img {
+    margin-right: 25px;
+    height: 240px;
+}
+
+#education-desc > p {
+    margin: 0;
+}
+
+#education-desc > ul {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}

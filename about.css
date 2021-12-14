@@ -4,7 +4,7 @@
 
 #about {
     /* background-color: rgb(220, 240, 255); */
-    background-color: rgb(230, 240, 255);
+    background-color: rgb(239, 245, 255);
 }
 
 #about::after {
@@ -15,24 +15,4 @@
 
 #about a {
     font-weight: bold;
-}
-
-#education {
-    display: flex;
-    align-items: top;
-}
-
-#education > img {
-    margin-right: 25px;
-    height: 220px;
-}
-
-#education-desc > p {
-    margin: 0;
-}
-
-#education-desc > ul {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 0;
 }

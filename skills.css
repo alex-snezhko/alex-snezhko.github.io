@@ -5,7 +5,7 @@
 
 #skills {
     /*background-color: rgb(179, 235, 241);*/
-    background-color: rgb(200, 230, 255);
+    background-color: rgb(158, 201, 238);
 }
 
 /* Container for skills circle-related elements */
@@ -28,16 +28,16 @@ text {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skill-picture:hover {
-    width: 75px;
-    height: 75px;
+    width: 95px;
+    height: 95px;
 }
 
 /* Actual image inside enclosing div */
@@ -74,15 +74,4 @@ text {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-size: 25px;
     margin: 15px;
-}
-
-#info-list {
-    font-size: 25px;
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#info-list hr {
-    border: 1px solid black;
-    margin: 10px;
 }
