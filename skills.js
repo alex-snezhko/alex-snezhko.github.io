@@ -1,5 +1,5 @@
-const FRMWRKS_N = 7;
-const TOOLS_N = 8;
+const FRMWRKS_N = 5;
+const TOOLS_N = 7;
 const LANG_N = 8;
 
 const TOTAL = FRMWRKS_N + TOOLS_N + LANG_N;
@@ -71,9 +71,9 @@ for (var i = 0; i < divAngles.length; i++) {
     arcBegins[i] = getXY(RADIUS, divAngles[i]);
 }
 
-var LANG_TEXT_ANGLE = 3;
-var TOOLS_TEXT_ANGLE = 5.05;
-var FRMWRKS_TEXT_ANGLE = 7.15;
+var LANG_TEXT_ANGLE = 3.2;
+var TOOLS_TEXT_ANGLE = 5.35;
+var FRMWRKS_TEXT_ANGLE = 7.35;
 
 var LANG_TEXT_BEGIN = getXY(TEXT_RADIUS, LANG_TEXT_ANGLE);
 var LANG_TEXT_END = getXY(TEXT_RADIUS, LANG_TEXT_ANGLE - 2);

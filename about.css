@@ -16,3 +16,12 @@
 #about a {
     font-weight: bold;
 }
+
+.hobbies {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.hobbies li {
+    margin: 4px 0;
+}

@@ -3,12 +3,10 @@
     background-color: rgb(199, 223, 247);
 }
 
-#experience hr {
-    /* background-color: black; */
-    border: none;
-    background-color: rgb(146, 146, 146);
-    height: 1px;
-    margin: 40px 0;
+.experience-items {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .experience-item {
@@ -36,5 +34,23 @@
 
 .experience-info {
     flex-grow: 1;
-    margin-left: 100px;
+    margin-left: 80px;
+}
+
+.experience-tech {
+    padding-left: 20px;
+}
+
+.tech-used {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+}
+
+.tech-used li {
+    border-radius: 6px;
+    border: none;
+    padding: 6px 10px;
+    background-color: rgb(109, 208, 230);
 }

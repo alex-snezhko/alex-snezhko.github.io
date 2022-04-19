@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <script src="https://raw.githack.com/krispo/svg-path-utils/master/build/svg-path-utils.js"></script>
@@ -25,13 +27,13 @@
                             </a>
                         </td>
                         <td class="header-link">
-                            <a href="https://github.com/alexsnezhko3">
-                                <img src="resources/github.png" alt="Github">
+                            <a href="https://www.linkedin.com/in/alex-snezhko/">
+                                <img src="resources/linkedin.png" alt="LinkedIn">
                             </a>
                         </td>
                         <td class="header-link">
-                            <a href="https://www.linkedin.com/in/alex-snezhko/">
-                                <img src="resources/linkedin.png" alt="LinkedIn">
+                            <a href="https://github.com/alexsnezhko3">
+                                <img src="resources/github.png" alt="Github">
                             </a>
                         </td>
                     </tr>
@@ -51,14 +53,20 @@
             <h2>About Me</h2>
 
             <p>
-                I am an aspiring software engineer with a love for learning, solving problems, and building useful software. I love tinkering
+                I am an aspiring full-stack software engineer with a love for learning, solving problems, and building useful software. I love tinkering
                 with personal projects, and am always looking for opportunities to further expand my development skills.
             </p>
 
             <p>
-                Outside of programming, some of my hobbies include gaming 🎮, playing guitar 🎸, mechanical keyboards ⌨️, and
-                listening to music 🤘. I'm also a (wannabe) Linux nerd 🐧.
+                Some of my hobbies:
             </p>
+            <ul class="hobbies">
+                <li>🎮 Gaming</li>
+                <li>🎸 Playing electric guitar</li>
+                <li>⌨️ Building custom mechanical keyboards</li>
+                <li>🤘 Listening to music (everything from K-pop to metal)</li>
+                <li>🐧 Tinkering around with Linux; Fedora and Arch are my favorite distros!</li>
+            </ul>
         </div>
 
         <div id="education" class="section">
@@ -68,8 +76,8 @@
                 <img id="ncsu-logo" src="resources/ncsu.png" alt="North Carolina State University">
                 <div id="education-desc">
                     <p>
-                        I'm a student at <a href="https://ncsu.edu" style="color: red;">North Carolina State University</a>,
-                        on track to complete a B.S. in Computer Science degree in May 2022 and then a Master of Computer Science degree in May 2023.
+                        I'm a student at <a href="https://ncsu.edu" style="color: red;">North Carolina State University</a>. I completed my
+                        B.S. in Computer Science in May 2022 and am on track to complete my Master of Computer Science in May 2023.
                         Some notable classes I have taken so far include:
                     </p>
                     <ul>
@@ -79,7 +87,6 @@
                         <li>CSC 561: Principles of Computer Graphics</li>
                         <li>CSC 316: Data Structures and Algorithms</li>
                         <li>CSC 246: Concepts and Facilities of Operating Systems</li>
-                        <li>CSC 236: Computer Architecture and Assembly Language</li>
                     </ul>
                 </div>
             </div>
@@ -88,41 +95,40 @@
         <div id="experience" class="section">
             <h2>Experience</h2>
 
-            <div class="experience-item">
-                <div class="experience-image-container">
-                    <img src="resources/indeed.png" alt="Indeed" />
-                </div>
-                <div class="experience-info">
-                    <div class="experience-header">
-                        <h3>Indeed</h3>
-                        <span>May 2022 - Aug 2022</span>
+            <div class="experience-items">
+                <div class="experience-item">
+                    <div class="experience-image-container">
+                        <img src="resources/indeed.png" alt="Indeed" />
+                    </div>
+                    <div class="experience-info">
+                        <div class="experience-header">
+                            <h3>Indeed</h3>
+                            <span>May 2022 - Aug 2022</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <hr />
-
-            <div class="experience-item">
-                <div class="experience-image-container">
-                    <img src="resources/blackbaud.png" alt="Blackbaud" />
-                </div>
-                <div class="experience-info">
-                    <div class="experience-header">
-                        <h3>Blackbaud</h3>
-                        <span>May 2021 - Aug 2021</span>
+                <div class="experience-item">
+                    <div class="experience-image-container">
+                        <img src="resources/blackbaud.png" alt="Blackbaud" />
                     </div>
-                    
-                    <ul>
-                        <li>Collaborated in an Agile team of 6 developers working on CRM web application with a SaaS model.</li>
-                        <li>Led the development of a microservice suite providing a simple REST API for interfacing with CRM backend.</li>
-                        <li>Developed thorough mock-based unit test suite and contract tests to enhance confidence in code quality and service reliability.</li>
-                        <li>Transitioned services facilitating custom SSO authentication from on-premises SQL Server to Azure Cosmos DB; improved service APIs to enhance usability.</li>
-                    </ul>
-                    <ul class="experience-technologies">
-                        <li>C#</li>
-                        <li>ASP.NET Core</li>
-                        <li>Azure</li>
-                    </ul>
+                    <div class="experience-info">
+                        <div class="experience-header">
+                            <h3>Blackbaud</h3>
+                            <span>May 2021 - Aug 2021</span>
+                        </div>
+                        
+                        <ul>
+                            <li>Led the development of a microservice suite providing a REST API for interfacing with SOAP-based CRM web application backend.</li>
+                            <li>Transitioned services facilitating custom SSO authentication from on-premises SQL Server to Azure Cosmos DB.</li>
+                            <li>Developed thorough mock-based unit test suite and contract tests to enhance confidence in code quality and service reliability.</li>
+                        </ul>
+                        <ul class="experience-tech tech-used">
+                            <li>C#</li>
+                            <li>ASP.NET Core</li>
+                            <li>Azure</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,60 +136,91 @@
         <div id="projects" class="section">
             <h2>Projects</h2>
 
-            <!-- display projects as a 2x2 table -->
             <table id="projects-table">
                 <tr>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/KBDVisualizer" target="_blank">
-                            <img class="project-image" src="resources/kbd.png" alt="KBDVisualizer">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/KBDVisualizer" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/kbd.png" alt="KBDVisualizer">
+                            </div>
+                            <h3>KBDVisualizer</h3>
                         </a>
-                        <h3>KBDVisualizer</h3>
                         <p>A web app designed for custom mechanical keyboard enthusiasts to view interactive 3D renders of their selected build</p>
-                        <p class="project-lang">React, Express, PostgreSQL, WebGL</p>
+                        <ul class="project-tech tech-used">
+                            <li>React</li>
+                            <li>Express</li>
+                            <li>PostgreSQL</li>
+                            <li>WebGL</li>
+                            <li>TypeScript</li>
+                            <li>Sass</li>
+                            <li>webpack</li>
+                        </ul>
                     </td>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/SudohLang" target="_blank">
-                            <img class="project-image" src="resources/sudoh.png" alt="SudohLang">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/SudohLang" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/sudoh.png" alt="SudohLang">
+                            </div>
+                            <h3>Sudoh</h3>
                         </a>
-                        <h3>Sudoh</h3>
                         <p>A simple programming language inspired by common pseudo-code syntax/features. Transpiles to C++</p>
-                        <p class="project-lang">C++</p>
+                        <ul class="project-tech tech-used">
+                            <li>C++</li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/dirman" target="_blank">
-                            <img class="project-image" src="resources/dirman.png" alt="DirMan">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/dirman" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/dirman.png" alt="DirMan">
+                            </div>
+                            <h3>DirMan</h3>
                         </a>
-                        <h3>DirMan</h3>
                         <p>Terminal-based file management system which provides a GUI-like interface for manipulating directory trees</p>
-                        <p class="project-lang">Rust</p>
+                        <ul class="project-tech tech-used">
+                            <li>Rust</li>
+                        </ul>
                     </td>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/TextScannerConsole" target="_blank">
-                            <img class="project-image" src="resources/textscanner.png" alt="OCR Text Scanner">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/TextScannerConsole" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/textscanner.png" alt="OCR Text Scanner">
+                            </div>
+                            <h3>OCR Text Scanner</h3>
                         </a>
-                        <h3>OCR Text Scanner</h3>
                         <p>Optical character recognition application which parses printed text from images</p>
-                        <p class="project-lang">C++</p>
+                        <ul class="project-tech tech-used">
+                            <li>C++</li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/PoolGame" target="_blank">
-                            <img class="project-image" src="resources/pool.jpg" alt="8-ball Pool Game">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/PoolGame" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/pool.jpg" alt="8-ball Pool Game">
+                            </div>
+                            <h3>8-ball Pool Game</h3>
                         </a>
-                        <h3>8-ball Pool Game</h3>
                         <p>8-ball pool simulation; physics engine built from scratch</p>
-                        <p class="project-lang">C#, WinForms</p>
+                        <ul class="project-tech tech-used">
+                            <li>C#</li>
+                            <li>WinForms</li>
+                        </ul>
                     </td>
                     <td>
-                        <a class="project-image-container" href="https://github.com/alexsnezhko3/FlappyBird" target="_blank">
-                            <img class="project-image" src="resources/flappybirdai.jpg" alt="Flappy Bird AI">
+                        <a class="project-link" href="https://github.com/alexsnezhko3/FlappyBird" target="_blank">
+                            <div class="project-image-container">
+                                <img class="project-image" src="resources/flappybirdai.jpg" alt="Flappy Bird AI">
+                            </div>
+                            <h3>Flappy Bird AI</h3>
                         </a>
-                        <h3>Flappy Bird AI</h3>
                         <p>Clone of the popular Flappy Bird mobile game with the extension of an automatic solving mode</p>
-                        <p class="project-lang">Python, Pygame</p>
+                        <ul class="project-tech tech-used">
+                            <li>Python</li>
+                            <li>Pygame</li>
+                        </ul>
                     </td>
                 </tr>
             </table>
@@ -224,77 +261,20 @@
                             Tools/Software
                         </textPath>
                     </text>
-
-                    <!-- <text width="500">
-                        <textPath xlink:href="#fundamentals-curve">
-                            Fundamentals
-                        </textPath>
-                    </text> -->
                 </svg>
-
-                <!-- Fundamentals -->
-                <!-- <img src="resources/lowlevel.png" alt="Low-level" data-fundamental="true">
-                <ul style="display: none;">
-                    <li>Memory management and performance maximization</li>
-                    <hr>
-                    <li>x86 and ARM assembler programming</li>
-                    <hr>
-                    <li>Computer organization and hardware</li>
-                </ul>
-                <img src="resources/dsa.png" alt="Algorithms" data-fundamental="true">
-                <ul style="display: none;">
-                    <li>Data structure theory and construction</li>
-                    <hr>
-                    <li>Sorting, searching algorithms</li>
-                    <hr>
-                    <li>Asymptotic complexity analysis</li>
-                </ul>
-                <img src="resources/sdlc.png" alt="Software Engineering" data-fundamental="true">
-                <ul style="display: none;">
-                    <li>Agile development</li>
-                    <hr>
-                    <li>DevOps</li>
-                    <hr>
-                    <li>Object-oriented design patterns</li>
-                    <hr>
-                    <li>Test-driven development</li>
-                </ul>
-                <img src="resources/os.png" alt="Operating Systems" data-fundamental="true">
-                <ul style="display: none;">
-                    <li>Linux system API</li>
-                    <hr>
-                    <li>Multithreading/concurrency</li>
-                    <hr>
-                    <li>OS-level memory management</li>
-                    <hr>
-                    <li>File Systems</li>
-                </ul>
-                <img src="resources/webdev.png" alt="Web" data-fundamental="true">
-                <ul style="display: none;">
-                    <li>Backend microservices</li>
-                    <hr>
-                    <li>Cloud services</li>
-                    <hr>
-                    <li>REST APIs</li>
-                    <hr>
-                    <li>UI development</li>
-                </ul> -->
                 
                 <!-- Frameworks/Libraries -->
                 <img src="resources/react.png" alt="React" data-desc="JavaScript Library">
-                <img src="resources/angular.png" alt="AngularJS" data-desc="JavaScript Framework">
+                <img src="resources/nextjs.png" alt="Next.js" data-desc="React Framework">
                 <img src="resources/dotnet.png" alt="ASP.NET" data-desc="Web Framework">
                 <img src="resources/selenium.png" alt="Selenium" data-desc="UI Testing Framework">
-                <img src="resources/pygame.png" alt="Pygame" data-desc="Python Graphics Library">
                 <img src="resources/webgl.png" alt="WebGL" data-desc="Web Graphics Library">
-                <img src="resources/jquery.png" alt="jQuery" data-desc="JavaScript Library">
 
                 <!-- Software/Tools -->
                 <img src="resources/linux.png" alt="Linux" data-desc="Operating System Family">
                 <img src="resources/git.png" alt="Git" data-desc="Version Control">
                 <img src="resources/webpack.png" alt="webpack" data-desc="JavaScript Module Bundler">
                 <img src="resources/node.png" alt="Node.js" data-desc="JavaScript Runtime">
-                <img src="resources/jenkins.png" alt="Jenkins" data-desc="Continuous Integration">
                 <img src="resources/unity.png" alt="Unity" data-desc="Game Engine">
                 <img src="resources/psql.png" alt="PostgreSQL" data-desc="DBMS">
                 <img src="resources/azure.png" alt="Azure" data-desc="Cloud Service Suite">

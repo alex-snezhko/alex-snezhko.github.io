@@ -38,12 +38,13 @@ header {
 /* -- Navigation bar -- */
 
 #navbar {
-    color: white;
+    /* color: white; */
+    color: rgb(168, 168, 168);
     text-align: center;
     font-size: 0; /* inline-block hack */
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
     background-color: rgb(54, 54, 54);
+    margin: 0 -2px;
 }
 
 #navbar > a {
@@ -66,5 +67,7 @@ header {
 }
 
 .thispage {
-    color: rgb(189, 189, 189);
+    color: white;
+    background-color: rgb(95, 95, 95);
+    /* color: rgb(189, 189, 189); */
 }

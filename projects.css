@@ -14,18 +14,23 @@
     text-align: center;
 }
 
-#projects-table tr {
-    margin-top: 50px;
-}
-
 #projects-table td {
-    padding: 0 45px;
+    padding: 0px 45px 50px 45px;
     margin-top: 50px;
     vertical-align: top;
 }
 
 #projects-table p {
     margin: 10px 0;
+}
+
+.project-link:hover .project-image-container {
+    background-color: rgb(131, 166, 196);
+}
+
+.project-link:hover .project-image {
+    max-width: 85%;
+    max-height: 85%;
 }
 
 .project-image-container {
@@ -52,16 +57,14 @@
     transition: 0.5s;
 }
 
-.project-image-container:hover {
-    background-color: rgb(131, 166, 196);
-}
-
-.project-image-container:hover .project-image {
-    max-width: 85%;
-    max-height: 85%;
-}
-
 .project-lang {
     font-weight: 700;
     color: rgb(24, 112, 83);
+}
+
+.project-tech {
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
