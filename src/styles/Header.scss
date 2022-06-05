@@ -1,0 +1,153 @@
+/*
+ * CSS relevant to header section
+ */
+@use "shared";
+
+header {
+  // background-color: #d2dedf;
+  background-color: rgb(54, 54, 54);
+  // color: #effafb;
+  color: shared.$almostWhite;
+}
+
+#titlebar {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: shared.$mainWidth;
+}
+
+#title {
+  font-weight: 700;
+  font-size: 70px;
+  margin: 0;
+}
+
+.contact-icons a {
+  color: white;
+
+  &:hover {
+    color: shared.$themeColor2;
+  }
+}
+
+.contact-icons-titlebar {
+  font-size: 38px;
+  
+  a {
+    margin-left: 25px;
+  }
+}
+
+.header-link {
+  /*display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;*/
+  text-align: right;
+  font-size: 20px;
+  color: black;
+  padding: 5px 0 5px 20px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+}
+
+/* -- Navigation bar -- */
+#navbar {
+  padding: 6px 20px;
+  background-color: rgb(54, 54, 54);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  // text-align: center;
+
+  div:not(.navbar-links) {
+    width: 200px;
+  }
+}
+
+.navbar-initials {
+  font-family: "JetBrains Mono", monospace;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: -4px;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    color: shared.$themeColor2;
+  }
+}
+
+.navbar-to-top {
+  transition: 0.25s;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 20px;
+  color: shared.$themeColor2;
+  opacity: 0;
+}
+
+.navbar-initials:hover ~ .navbar-to-top {
+  opacity: 1;
+}
+
+#navbar:not(.at-top) {
+  justify-content: center;
+}
+
+/* used for sticky navigation bar effect */
+#navbar.at-top {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-links {
+  text-align: center;
+  // font-size: 0; /* inline-block hack */
+
+  button {
+    font-family: unset;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 0 10px;
+    font-size: 20px;
+
+    &:hover {
+      background-color: rgb(75, 75, 75);
+    }
+  }
+
+  button:not(.thispage) {
+    color: rgb(168, 168, 168);
+  }
+
+  button.thispage {
+    color: shared.$almostWhite;
+    // background-color: rgb(95, 95, 95);
+    background-color: shared.$themeColor2;
+  }
+}
+
+.contact-icons-navbar {
+  font-size: 26px;
+  margin-bottom: -4px;
+  text-align: right;
+  
+  a {
+    margin-left: 20px;
+  }
+}
+

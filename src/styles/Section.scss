@@ -1,0 +1,36 @@
+@use "shared";
+
+.section {
+  margin: 100px 0;
+  margin-bottom: 150px;
+  // padding: 50px;
+  text-align: left;
+}
+
+.section p {
+  font-size: 18px;
+}
+
+.section li {
+  font-size: 18px;
+}
+
+.section > h2 {
+  font-size: 35px;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 20px;
+  text-decoration-color: shared.$themeColor1;
+  margin-bottom: 70px;
+  margin-top: 0;
+}
+
+.section h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.scroll-target {
+  height: 1px;
+}
+

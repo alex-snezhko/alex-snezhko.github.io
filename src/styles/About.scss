@@ -1,0 +1,66 @@
+/*
+ * Relevant to About section of webpage
+ */
+
+.personal-description-container {
+  display: flex;
+  gap: 50px;
+}
+
+.personal-description {
+  flex-grow: 0;
+  flex-shrink: 99;
+}
+
+.fedora-link {
+  $color: #52a2da;
+  color: $color;
+
+  &:hover {
+    color: darken($color, 10%);
+  }
+}
+
+.neovim-link {
+  $color: #36a353;
+  color: $color;
+
+  &:hover {
+    color: darken($color, 10%);
+  }
+}
+
+.portrait {
+  border-radius: 46px;
+  box-shadow: 0 0 14px #999;
+}
+
+.ncsu-link {
+  $color: red;
+  color: $color;
+
+  &:hover {
+    color: darken($color, 10%);
+  }
+}
+
+#education-content {
+  display: flex;
+  align-items: top;
+}
+
+#education-desc {
+  margin-left: 25px;
+  flex-grow: 0;
+  flex-shrink: 99;
+}
+
+.hobbies {
+  list-style: none;
+  padding-left: 20px;
+
+  li {
+    margin: 4px 0;
+  }
+}
+

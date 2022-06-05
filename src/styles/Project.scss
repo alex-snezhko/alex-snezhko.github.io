@@ -1,0 +1,51 @@
+@use "shared";
+
+.project {
+  background-color: #d9e6eb;
+  // background-color: #d9d9d9;
+  padding: 25px;
+  border-radius: 20px;
+  height: 100%;
+  margin: auto;
+  box-shadow: 0 0 14px #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-link:hover .project-image-container {
+  background-color: #70b9bc;
+}
+
+.project-link:hover .project-image {
+  max-width: 85%;
+  max-height: 85%;
+}
+
+.project-image-container {
+  height: 200px;
+  position: relative;
+  // background-color: #90dbde;/* rgb(103, 226, 185);*/
+  background-color: #90d3d4;/* rgb(103, 226, 185);*/
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.5s;
+}
+
+.project-image {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.project-tech {
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,56 @@
+@use "shared";
+
+.experience-item {
+  display: flex;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.experience-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+
+  img {
+    max-width: 160px;
+    max-height: 160px;
+    object-fit: fill;
+  }
+}
+
+.experience-info {
+  flex-grow: 1;
+  margin-left: 80px;
+}
+
+.experience-company {
+  color: shared.$themeColor1;
+
+  &:hover {
+    color: darken(shared.$themeColor1, 10%);
+  }
+}
+
+.experience-tech {
+  padding-left: 20px;
+}
+
+.tech-used {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+
+  li {
+    border-radius: 6px;
+    border: none;
+    padding: 6px 10px;
+    background-color: shared.$themeColor1;
+  }
+}

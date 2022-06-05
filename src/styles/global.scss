@@ -1,0 +1,34 @@
+/*
+ * Relevant to the webpage as a whole
+ */
+
+@use "shared";
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: shared.$almostWhite;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: shared.$themeColor2;
+  transition: 0.25s;
+  font-weight: bold;
+
+  &:hover {
+    color: darken(shared.$themeColor2, 10%);
+  }
+}
+
+main {
+  width: shared.$mainWidth;
+  margin: auto;
+}
+
