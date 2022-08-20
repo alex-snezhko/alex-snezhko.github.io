@@ -1,4 +1,3 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import indeedLogo from "../images/indeed.png";
 import blackbaudLogo from "../images/blackbaud.png";
@@ -19,11 +18,11 @@ export default function Experience() {
           companyUrl="https://www.indeed.com/about"
           timeline="May 2022 - Aug 2022"
           descriptionItems={[
-            "Develop tools used by internal users to automate crawling and aggregation of job postings and ultimately provide useful job results for job seekers.",
-            "Develop service code extracting functionality from legacy monolithic backend to modularized microservices.",
-            "Develop user interface components for newer and more feature-rich web application for job aggregation."
+            "Developed tools used for crawling and aggregating job postings from external sources onto Indeed, ultimately helping provide useful search results and recommendations for job seekers.",
+            "Improved backend service reliability and maintainability by building microservices encompassing functionality from legacy monolithic backend.",
+            "Developed user interface components for newer and more feature-rich web application for job aggregation.",
           ]}
-          techUsed={["Java", "Spring Framework", "GraphQL", "MySQL", "React", "Redux"]}
+          techUsed={["Java", "Spring Framework", "GraphQL", "MySQL", "RabbitMQ", "React", "Redux"]}
         />
 
         <ExperienceItem
@@ -33,9 +32,8 @@ export default function Experience() {
           companyUrl="https://www.blackbaud.com/"
           timeline="May 2021 - Aug 2021"
           descriptionItems={[
-            "Led the development of a microservice suite providing a REST API for interfacing with SOAP-based CRM web application backend.",
+            "Led the development of a microservice suite providing a REST API for interfacing with SOAP-based CRM web application backend, cutting HTTP message size by up to 95% and improving client workflow efficiency.",
             "Transitioned services facilitating custom SSO authentication from on-premises SQL Server to Azure Cosmos DB.",
-            "Developed thorough mock-based unit test suite and contract tests to enhance confidence in code quality and service reliability."
           ]}
           techUsed={["C#", "ASP.NET Core", "Azure"]}
         />

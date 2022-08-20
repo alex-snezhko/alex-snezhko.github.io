@@ -51,6 +51,6 @@
     border-radius: 6px;
     border: none;
     padding: 6px 10px;
-    background-color: shared.$themeColor1;
+    background-color: lighten(shared.$themeColor1, 5%);
   }
 }

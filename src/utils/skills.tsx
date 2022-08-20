@@ -6,7 +6,6 @@ import springImg from "../images/spring.png";
 import linuxImg from "../images/linux.png";
 import gitImg from "../images/git.png";
 import nodeImg from "../images/node.png";
-import reduxImg from "../images/redux.png";
 import unityImg from "../images/unity.png";
 import psqlImg from "../images/psql.png";
 import azureImg from "../images/azure.png";
@@ -29,11 +28,10 @@ const skillNoDesc = (name: string, imgUrl: string): Skill => ({ name, imgUrl });
 
 export const FRAMEWORKS = [
   skill("React", "JavaScript Library", reactImg),
-  skill("Next.js", "React Framework", nextjsImg),
+  skill("Next.js", "React Meta-framework", nextjsImg),
   skill("ASP.NET", "Web Framework", dotnetImg),
+  skill("Spring Framework", "Web Framework", springImg),
   skill("WebGL", "Web Graphics Library", webglImg),
-  skill("Spring Framework", "Java Web Framework", springImg),
-  skill("Redux", "UI State Management Library", reduxImg)
 ];
 export const TOOLS = [
   skill("Linux", "Operating System Family", linuxImg),
@@ -41,16 +39,15 @@ export const TOOLS = [
   skill("Node.js", "JavaScript Runtime", nodeImg),
   skill("Unity", "Game Engine", unityImg),
   skill("PostgreSQL", "DBMS", psqlImg),
-  skill("Azure", "Cloud Service Suite", azureImg)
+  skill("Azure", "Cloud Service Suite", azureImg),
 ];
 export const LANGUAGES = [
   skillNoDesc("Rust", rustImg),
   skillNoDesc("Python", pythonImg),
-  skillNoDesc("JavaScript", javascriptImg),
-  skillNoDesc("TypeScript", typescriptImg),
+  skillNoDesc("TypeScript/JS", typescriptImg),
   skillNoDesc("C/C++", cppImg),
   skillNoDesc("C#", csharpImg),
-  skillNoDesc("Java", javaImg)
+  skillNoDesc("Java", javaImg),
 ];
 
 export const ALL_SKILLS = [...FRAMEWORKS, ...TOOLS, ...LANGUAGES];

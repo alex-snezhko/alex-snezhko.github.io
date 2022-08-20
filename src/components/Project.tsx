@@ -6,11 +6,11 @@ interface Props {
   projectName: string;
   projectUrl: string;
   imgSrc: string;
-  description: string;
+  body: string | React.ReactNode;
   techUsed: string[];
 }
 
-const Project = ({ projectName, projectUrl, imgSrc, description, techUsed }: Props) => (
+const Project = ({ projectName, projectUrl, imgSrc, body, techUsed }: Props) => (
   <div className="project">
     <div>
       <a className="project-link" href={projectUrl} target="_blank">
@@ -19,7 +19,7 @@ const Project = ({ projectName, projectUrl, imgSrc, description, techUsed }: Pro
         </div>
         <h3>{projectName}</h3>
       </a>
-      <p>{description}</p>
+      <p>{body}</p>
     </div>
     <div>
       <ul className="project-tech tech-used">

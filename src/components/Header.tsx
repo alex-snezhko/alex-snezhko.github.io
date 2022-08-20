@@ -19,7 +19,7 @@ const ContactIcons = ({ className }: ContactIconsProps) => (
     <a href="https://www.linkedin.com/in/alex-snezhko/">
       <FaLinkedin />
     </a>
-    <a href="https://github.com/alexsnezhko3">
+    <a href="https://github.com/alex-snezhko">
       <FaGithub />
     </a>
   </div>
