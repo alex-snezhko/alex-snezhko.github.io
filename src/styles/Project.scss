@@ -1,15 +1,14 @@
 @use "shared";
 
 .project {
-  // background-color: #d9e6eb;
-  // background-color: hsl(190, 46%, 92%);
-  background-color: hsl(186, 46%, 94%);
-  // background-color: #d9d9d9;
   padding: 25px;
   border-radius: 20px;
   height: 100%;
   margin: auto;
-  box-shadow: 0 0 10px hsl(182, 10%, 73%);
+  background-color: hsl(210, 15%, 96%);
+  // background-color: hsl(210, 15%, 95%);
+  // box-shadow: 0 0 10px hsl(182, 10%, 73%);
+  box-shadow: 0 0 6px hsl(182, 10%, 73%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,8 +26,9 @@
 .project-image-container {
   height: 200px;
   position: relative;
-  // background-color: hsl(182, 44%, 73%);
-  background-color: hsl(182, 46%, 78%);
+  // background-color: hsl(182, 50%, 85%);
+  // background-color: hsl(182, 49%, 75%);
+  background-color: hsl(184, 50%, 84%);
   border-radius: 10px;
   margin-bottom: 15px;
   transition: 0.5s;
@@ -46,8 +46,13 @@
 }
 
 .project-tech {
-  text-align: center;
+  background-color: hsl(210, 15%, 94%);
+  border-top: 1px solid hsl(182, 10%, 73%);
+  margin: -25px;
+  margin-top: 0;
+  padding: 20px;
+  align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

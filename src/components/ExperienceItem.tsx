@@ -8,7 +8,7 @@ interface Props {
   companyUrl: string;
   timeline: string;
   descriptionItems: string[];
-  techUsed: string[];
+  techUsed: React.ReactNode[];
 }
 
 const ExperienceItem = ({ imageUrl, position, company, companyUrl, timeline, descriptionItems, techUsed }: Props) => (
@@ -29,7 +29,7 @@ const ExperienceItem = ({ imageUrl, position, company, companyUrl, timeline, des
       </ul>
 
       <ul className="experience-tech tech-used">
-        {techUsed.map(tech => <li>{tech}</li>)}
+        {techUsed}
       </ul>
     </div>
   </div>

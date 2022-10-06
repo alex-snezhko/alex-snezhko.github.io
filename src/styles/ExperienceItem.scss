@@ -46,11 +46,4 @@
   flex-wrap: wrap;
   display: flex;
   gap: 10px;
-
-  li {
-    border-radius: 6px;
-    border: none;
-    padding: 6px 10px;
-    background-color: lighten(shared.$themeColor1, 5%);
-  }
 }

@@ -4,6 +4,7 @@ import blackbaudLogo from "../images/blackbaud.png";
 
 import "../styles/Experience.scss";
 import ExperienceItem from "./ExperienceItem";
+import { aspnetTag, azureTag, csTag, graphqlTag, javaTag, mysqlTag, reactTag, rmqTag, springTag } from "../utils/skills";
 
 export default function Experience() {
   return (
@@ -22,7 +23,8 @@ export default function Experience() {
             "Improved backend service reliability and maintainability by building microservices encompassing functionality from legacy monolithic backend.",
             "Developed user interface components for newer and more feature-rich web application for job aggregation.",
           ]}
-          techUsed={["Java", "Spring Framework", "GraphQL", "MySQL", "RabbitMQ", "React", "Redux"]}
+          // techUsed={["Java", "Spring Framework", "GraphQL", "MySQL", "RabbitMQ", "React"]}
+          techUsed={[javaTag, springTag, graphqlTag, mysqlTag, rmqTag, reactTag]}
         />
 
         <ExperienceItem
@@ -35,7 +37,8 @@ export default function Experience() {
             "Led the development of a microservice suite providing a REST API for interfacing with SOAP-based CRM web application backend, cutting HTTP message size by up to 95% and improving client workflow efficiency.",
             "Transitioned services facilitating custom SSO authentication from on-premises SQL Server to Azure Cosmos DB.",
           ]}
-          techUsed={["C#", "ASP.NET Core", "Azure"]}
+          // techUsed={["C#", "ASP.NET Core", "Azure"]}
+          techUsed={[csTag, aspnetTag, azureTag]}
         />
       </div>
     </div>

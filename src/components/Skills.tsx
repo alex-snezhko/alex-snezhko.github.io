@@ -46,9 +46,9 @@ const getTextInfo = (textAngle: number, upsideDown: boolean) => ({
 })
 
 const CURVES: CurveInfo[] = [
-  { fullName: "Programming Languages", shortName: "langs", upsideDown: false, textAngleInfo: getTextInfo(3.05, false) },
-  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textAngleInfo: getTextInfo(7.1, false) },
-  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textAngleInfo: getTextInfo(6.7, true) }
+  { fullName: "Programming Languages", shortName: "langs", upsideDown: false, textAngleInfo: getTextInfo(3.1, false) },
+  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textAngleInfo: getTextInfo(7.2, false) },
+  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textAngleInfo: getTextInfo(6.9, true) }
 ];
 
 export default function Skills() {

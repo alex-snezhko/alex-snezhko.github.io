@@ -14,7 +14,7 @@ export default function About() {
             Hi, I'm Alex! I'm a software engineer with a love for learning, solving problems, and building useful software.
           </p>
           <p>
-            Aside from a career path, I consider programming and technology more broadly as hobbies of mine. I love learning new tech, building software projects for fun, and tinkering with Linux distributions and other software (my current weapons of choice are <a className="fedora-link" href="https://docs.fedoraproject.org/en-US/project/">Fedora Linux</a> and <a className="neovim-link" href="https://neovim.io/">Neovim</a>).
+            Aside from a career path, I consider programming and technology to be hobbies of mine. I love learning new tech and working on software projects in my free time; my current weapons of choice for development are <a className="fedora-link" href="https://docs.fedoraproject.org/en-US/project/">Fedora Linux</a> and <a className="neovim-link" href="https://neovim.io/">Neovim</a>.
           </p>
           <p>
             I take pride in the code I write, and am always looking for new opportunities to improve my craft.
@@ -32,9 +32,9 @@ export default function About() {
           </p>
           <ul>
             <li>CSC 510: Software Engineering</li>
-            <li>CSC 540: Database Management Concepts and Systems</li>
+            <li>CSC 512: Compiler Construction</li>
             <li>CSC 520: Introduction to Artificial Intelligence</li>
-            <li>CSC 561: Principles of Computer Graphics</li>
+            <li>CSC 540: Database Management Concepts and Systems</li>
           </ul>
         </div>
       </div>
