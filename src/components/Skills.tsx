@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { ALL_SKILLS, FRAMEWORKS, Skill, TOOLS } from "../utils/skills";
 import "../styles/Skills.scss";
 
@@ -70,8 +70,8 @@ export default function Skills() {
   // workaround solution for getting mouse enter on new element while old is still fading fading-out
   // to cause the new one's fade to start from opacity 0 rather than the old one's current opacity.
   // if this variable is true, then the "transition" css property will be removed for one render
-  const restartFade = !!selectedSkill && (shownSkill?.name !== selectedSkill.name);
-  const fadeIn = (!shownSkill && !selectedSkill) || (!restartFade && selectedSkill);
+  const restartFade = useMemo(() => !!selectedSkill && (shownSkill?.name !== selectedSkill.name), [selectedSkill, shownSkill]);
+  const fadeIn = useMemo(() => (!shownSkill && !selectedSkill) || (!restartFade && selectedSkill), [selectedSkill, shownSkill]);
 
   return (
     <div className="section">
@@ -80,7 +80,7 @@ export default function Skills() {
       <div id="skills-circle" style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE }}>
         <svg xmlns="http://www.w3.org/2000/svg" style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE }} width={CIRCLE_SIZE} height={CIRCLE_SIZE}>
           {CURVES.map((curve, i) => (
-            <>
+            <React.Fragment key={i}>
               <path
                 className={`arc-fill-${curve.shortName}`}
                 fill="none"
@@ -99,7 +99,7 @@ export default function Skills() {
                   {curve.fullName}
                 </textPath>
               </text>
-            </>
+            </React.Fragment>
           ))}
         </svg>
 

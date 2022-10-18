@@ -1,0 +1,89 @@
+---
+import type { TagInfo } from "../utils/skills";
+import Tag from "./Tag.astro";
+
+interface Props {
+  imageUrl: string;
+  position: string;
+  company: string;
+  companyUrl: string;
+  timeline: string;
+  descriptionItems: string[];
+  techUsed: TagInfo[];
+}
+
+const { imageUrl, position, company, companyUrl, timeline, descriptionItems, techUsed } = Astro.props;
+---
+<style lang="scss">
+  @use "../styles/shared";
+
+  .experience-item {
+    display: flex;
+  }
+
+  .experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .experience-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+
+    img {
+      max-width: 160px;
+      max-height: 160px;
+      object-fit: fill;
+    }
+  }
+
+  .experience-info {
+    flex-grow: 1;
+    margin-left: 80px;
+  }
+
+  .experience-company {
+    color: shared.$themeColor1;
+
+    &:hover {
+      color: darken(shared.$themeColor1, 10%);
+    }
+  }
+
+  .experience-tech {
+    padding-left: 20px;
+  }
+
+  .tech-used {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+  }
+</style>
+
+<div class="experience-item">
+  <div class="experience-image-container">
+    <img src={imageUrl} alt={company} />
+  </div>
+  <div class="experience-info">
+    <div class="experience-header">
+      <h3>{position} <span style={{ fontWeight: "normal" }}>—</span> <a href={companyUrl} class="experience-company">{company}</a></h3>
+      <span>{timeline}</span>
+    </div>
+
+    <ul>
+      {descriptionItems.map(item => (
+        <li>{item}</li>
+      ))}
+    </ul>
+
+    <ul class="experience-tech tech-used">
+      {techUsed.map(tech => <Tag {...tech} />)}
+    </ul>
+  </div>
+</div>

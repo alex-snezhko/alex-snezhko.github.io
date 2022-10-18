@@ -1,0 +1,52 @@
+---
+import "../styles/global.scss";
+
+import Header from "../components/Header";
+import Section from "../components/Section.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      property="og:description"
+      content="Alex Snezhko's portfolio website"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Alex Snezhko</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <style lang="scss">
+      @use "../styles/shared";
+
+      main {
+        width: shared.$mainWidth;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header client:load />
+    <main class="wrapper">
+      <Section name="about"><About /></Section>
+      <Section name="experience"><Experience /></Section>
+      <Section name="projects"><Projects /></Section>
+      <Section name="skills"><Skills client:visible /></Section>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,19 +1,19 @@
-/*
- * Relevant to the webpage as a whole
- */
-
 @use "shared";
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'system-ui', sans-serif;
+  background-color: shared.$almostWhite;
+  line-height: 1.4;
+}
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background-color: shared.$almostWhite;
-  line-height: 1.4;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -27,8 +27,6 @@ a {
   }
 }
 
-main {
-  width: shared.$mainWidth;
-  margin: auto;
+p, li {
+  font-size: 18px;
 }
-

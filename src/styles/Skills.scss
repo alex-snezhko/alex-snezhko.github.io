@@ -18,7 +18,9 @@ text {
   font-size: 28px;
 }
 
-$lightestColor: hsl(184, 50%, 80%);
+// $lightestColor: hsl(184, 50%, 80%);
+// $lightestColor: hsl(184, 45%, 83%);
+$lightestColor: hsl(184, 45%, 87%);
 
 .arc-fill-langs {
   stroke: $lightestColor;

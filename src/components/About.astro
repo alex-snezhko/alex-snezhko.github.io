@@ -1,0 +1,118 @@
+---
+---
+<style lang="scss">
+  .personal-description-container {
+    display: flex;
+    gap: 50px;
+  }
+
+  .personal-description {
+    flex-grow: 0;
+    flex-shrink: 99;
+  }
+
+  .fedora-link {
+    $color: #52a2da;
+    color: $color;
+
+    &:hover {
+      color: darken($color, 10%);
+    }
+  }
+
+  .neovim-link {
+    $color: #36a353;
+    color: $color;
+
+    &:hover {
+      color: darken($color, 10%);
+    }
+  }
+
+  .portrait {
+    border-radius: 46px;
+    box-shadow: 0 0 14px #999;
+  }
+
+  .ncsu-link {
+    $color: red;
+    color: $color;
+
+    &:hover {
+      color: darken($color, 10%);
+    }
+  }
+
+  #education-content {
+    display: flex;
+    align-items: top;
+  }
+
+  #education-desc {
+    margin-left: 25px;
+    flex-grow: 0;
+    flex-shrink: 99;
+  }
+
+  .hobbies {
+    list-style: none;
+    padding-left: 20px;
+
+    li {
+      margin: 4px 0;
+    }
+  }
+</style>
+
+<div class="section">
+  <h2>About Me</h2>
+
+  <div class="personal-description-container">
+    <div class="personal-description">
+      <p>
+        Hi, I'm Alex! I'm a software engineer with a love for learning, solving
+        problems, and building useful software.
+      </p>
+      <p>
+        Aside from a career path, I consider programming and technology to be
+        hobbies of mine. I love learning new tech and working on software
+        projects in my free time; my current weapons of choice for development
+        are <a class="fedora-link" href="https://docs.fedoraproject.org/en-US/project/">Fedora Linux</a>
+        and <a class="neovim-link" href="https://neovim.io/">Neovim</a>.
+      </p>
+      <p>
+        I take pride in the code I write, and am always looking for new opportunities to improve my craft.
+      </p>
+    </div>
+
+    <img src="/assets/me.jpg" alt="Alex Snezhko" width="290" class="portrait" />
+  </div>
+
+  <div id="education-content">
+    <img src="/assets/ncsu.png" alt="North Carolina State University" width="180" />
+    <div id="education-desc">
+      <p>
+        Right now, I'm a student at <a href="https://ncsu.edu" class="ncsu-link">North Carolina State University</a>.
+        I completed my B.S. in Computer Science in May 2022 and am on track to
+        complete my Master of Computer Science degree in May 2023. Some
+        noteworthy classes I have taken so far include:
+      </p>
+      <ul>
+        <li>CSC 510: Software Engineering</li>
+        <li>CSC 512: Compiler Construction</li>
+        <li>CSC 520: Introduction to Artificial Intelligence</li>
+        <li>CSC 540: Database Management Concepts and Systems</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    Outside of tech, some of my hobbies include:
+  </p>
+  <ul class="hobbies">
+    <li>🎮 Gaming</li>
+    <li>🎸 Playing guitar</li>
+    <li>⌨️ Building custom mechanical keyboards</li>
+    <li>🎵 Listening to music (a little of everything, but mostly rock and heavy metal)</li>
+  </ul>
+</div>

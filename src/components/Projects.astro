@@ -1,0 +1,109 @@
+---
+import Project from "./Project.astro";
+import {
+  cppTag,
+  csTag,
+  expressTag,
+  grainTag,
+  ocamlTag,
+  psqlTag,
+  reactTag,
+  // reasonTag,
+  wasmTag,
+  webglTag,
+  winformsTag,
+} from "../utils/skills";
+---
+
+<style lang="scss">
+  .projects-table {
+    width: 100%;
+    height: 100%;
+    margin: 0 -15px;
+    text-align: center;
+
+    td {
+      height: 100%;
+      padding: 15px;
+      margin-top: 50px;
+      vertical-align: top;
+      width: 33%;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+  }
+</style>
+
+<div class="section">
+  <h2>Projects</h2>
+
+  <table class="projects-table">
+    <tr>
+      <td>
+        <Project
+          projectName="KBDVisualizer"
+          projectUrl="https://github.com/alex-snezhko/KBDVisualizer"
+          imgSrc="/assets/kbd.png"
+          body="Web app for custom mechanical keyboard enthusiasts to select parts for a build and view an interactive 3D render of it."
+          techUsed={[reactTag, psqlTag, expressTag, webglTag]}
+        />
+      </td>
+      <td>
+        <Project
+          projectName="Grain"
+          projectUrl="https://github.com/grain-lang/grain"
+          imgSrc="/assets/grain.png"
+          body="Modern functional-first programming language targeting WebAssembly. Open-source contributor and library author."
+          techUsed={[grainTag, wasmTag]}
+          techHeight={"125px"}
+        />
+      </td>
+      <td>
+        <Project
+          projectName="Sudoh"
+          projectUrl="https://github.com/alex-snezhko/SudohLang"
+          imgSrc="/assets/sudoh.png"
+          body="Simple programming language inspired by common pseudo-code syntax and features. Transpiles to C++ source code."
+          techUsed={[cppTag]}
+          techHeight={"125px"}
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <Project
+          projectName="Omen"
+          projectUrl="https://github.com/alex-snezhko/omen"
+          imgSrc="/assets/omen.png"
+          body="Easy-to-use Terminal User Interface file management system for Unix-based systems."
+          techUsed={[ocamlTag]}
+        />
+      </td>
+      <td>
+        <Project
+          projectName="OCR Text Scanner"
+          projectUrl="https://github.com/alex-snezhko/TextScannerConsole"
+          imgSrc="/assets/textscanner.png"
+          body="Optical Character Recognition application that can parse printed text from images."
+          techUsed={[cppTag]}
+        />
+      </td>
+      <td>
+        <Project
+          projectName="8-Ball Pool"
+          projectUrl="https://github.com/alex-snezhko/PoolGame"
+          imgSrc="/assets/pool.png"
+          body="8-ball pool simulation game with a custom-built physics engine."
+          techUsed={[csTag, winformsTag]}
+        />
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    The source code for all of these projects, this webpage, and more can be
+    found on my <a href="http://github.com/alex-snezhko">GitHub</a> page
+  </p>
+</div>

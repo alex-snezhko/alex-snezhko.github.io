@@ -1,8 +1,13 @@
-import { FaGithub, FaEnvelope, FaLinkedin, FaStackOverflow, FaArrowUp } from "react-icons/fa";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faStackOverflow, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import { SectionName, allSections } from "../utils/shared";
 import "../styles/Header.scss";
+
+type SectionName = "about" | "experience" | "projects" | "skills";
+const allSections: SectionName[] = ["about", "experience", "projects", "skills"];
 
 interface ContactIconsProps {
   className: string;
@@ -11,16 +16,16 @@ interface ContactIconsProps {
 const ContactIcons = ({ className }: ContactIconsProps) => (
   <div className={`${className} contact-icons`}>
     <a href="mailto:alexsnezhko89@gmail.com">
-      <FaEnvelope />
+      <FontAwesomeIcon icon={faEnvelope} fixedWidth className="fa-icon" />
     </a>
     <a href="https://stackoverflow.com/users/12573825/apollo">
-      <FaStackOverflow />
+      <FontAwesomeIcon icon={faStackOverflow} fixedWidth className="fa-icon" />
     </a>
     <a href="https://www.linkedin.com/in/alex-snezhko/">
-      <FaLinkedin />
+      <FontAwesomeIcon icon={faLinkedin} fixedWidth className="fa-icon" />
     </a>
     <a href="https://github.com/alex-snezhko">
-      <FaGithub />
+      <FontAwesomeIcon icon={faGithub} fixedWidth className="fa-icon" />
     </a>
   </div>
 );
@@ -53,9 +58,8 @@ export default function Header() {
       if (atTop !== putNavbarToTop) {
         setAtTop(putNavbarToTop);
       }
-      const scrolledSection = sectionTops.find(({ elementTop }) => y >= elementTop - 5)?.sectionName!;
+      const scrolledSection = sectionTops.find(({ elementTop }) => y >= elementTop - 5)?.sectionName || "about";
       if (scrolledSection !== currentSection) {
-        console.log(scrolledSection);
         setCurrentSection(scrolledSection);
       }
     }
@@ -77,7 +81,7 @@ export default function Header() {
         {atTop && (
           <div onClick={() => scrollToSection("top")}>
             <span className="navbar-initials">avs</span>
-            <span className="navbar-to-top"><FaArrowUp /></span>
+            <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
           </div>
         )}
 

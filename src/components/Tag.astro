@@ -1,0 +1,34 @@
+---
+interface Props {
+  imgUrl: string;
+  name: string;
+  color: string;
+}
+
+const { imgUrl, name, color } = Astro.props;
+---
+<style lang="scss">
+  .tag {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    padding: 6px 10px;
+
+    img {
+      max-width: 22px;
+      max-height: 22px;
+    }
+
+    span {
+      margin-left: 8px;
+    }
+  }
+</style>
+
+  <li class="tag" style={{ backgroundColor: color }}>
+    <img src={imgUrl} alt={name} />
+    <span>
+      {name}
+    </span>
+  </li>
