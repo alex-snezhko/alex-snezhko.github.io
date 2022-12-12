@@ -1,3 +1,7 @@
 import { atom } from "nanostores";
 
-export const isDarkMode = atom(false);
+let val = false;
+if (typeof window !== "undefined" && document.documentElement.classList.contains("dark-mode")) {
+  val = true;
+}
+export const isDarkMode = atom(val);

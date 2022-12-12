@@ -9,13 +9,12 @@ const skill = (name: string, description: string, imgName: string): Skill => ({ 
 export const FRAMEWORKS = [
   skill("React", "JavaScript UI Library", "react.png"),
   skill("Next.js", "React Web Framework", "nextjs.png"),
-  skill("ASP.NET", "Web Framework", "dotnet.png"),
-  skill("Spring Framework", "Web Framework", "spring.png"),
+  skill("ASP.NET", ".NET Web Framework", "dotnet.png"),
+  skill("Spring Framework", "Java Web Framework", "spring.png"),
   skill("WebGL", "Web Graphics Library", "webgl.png"),
 ];
 export const TOOLS = [
   skill("Linux", "Operating System Family", "linux.png"),
-  skill("Git", "Version Control System", "git.png"),
   skill("Node.js", "JavaScript Runtime", "node.png"),
   skill("Unity", "Game Engine", "unity.png"),
   skill("PostgreSQL", "Database Management System", "psql.png"),
@@ -23,7 +22,7 @@ export const TOOLS = [
 ];
 export const LANGUAGES = [
   skill("Rust", "Systems Programming Language", "rust.png"),
-  skill("OCaml", "Functional Programming Language", "ocaml.png"),
+  skill("OCaml/Reason", "Functional Programming Languages", "ocaml.png"),
   skill("Python", "Scripting Language", "python.png"),
   skill("TypeScript/JS", "Web Scripting Languages", "typescript.png"),
   skill("C/C++", "Systems Programming Languages", "cpp.png"),

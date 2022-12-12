@@ -4,10 +4,18 @@
 @use "shared";
 
 header {
-  // background-color: #d2dedf;
   background-color: rgb(54, 54, 54);
-  // color: #effafb;
   color: shared.$almostWhite;
+}
+
+:root.dark-mode header {
+  color: var(--text-color);
+}
+
+$darkNavbarColor: #1a1b1b;
+
+:root.dark-mode header {
+  background-color: $darkNavbarColor;
 }
 
 #titlebar {
@@ -46,7 +54,7 @@ header {
 }
 
 .darkmode-sun {
-  color: #c2af46;
+  color: #d4ae4f;
   margin-left: -1px;
 }
 
@@ -57,7 +65,7 @@ header {
 .darkmode-switch {
   display: flex;
   align-items: center;
-  background-color: rgb(70, 124, 151);
+  background-color: shared.$themeColor2;
   width: 3.5em;
   margin: 0 0.25em;
   height: 1.75em;
@@ -71,18 +79,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: shared.$almostWhite;
   border-radius: 2em;
   width: 1.5em;
   height: 1.5em;
 }
 
 .contact-icons a {
-  color: white;
+  color: shared.$almostWhite;
 
   &:hover {
     color: shared.$themeColor2;
   }
+}
+
+:root.dark-mode .contact-icons a {
+  color: var(--text-color);
 }
 
 .contact-icons-titlebar a {
@@ -111,9 +123,13 @@ header {
   display: flex;
   align-items: center;
 
-  div:not(.navbar-links) {
-    // width: 500px;
+  & > div:not(.navbar-links) {
+    width: 220px;
   }
+}
+
+:root.dark-mode #navbar {
+  background-color: $darkNavbarColor;
 }
 
 .navbar-initials {

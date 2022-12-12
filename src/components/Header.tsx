@@ -18,16 +18,17 @@ interface RightSectionProps {
 function DarkModeSwitch({ where }: RightSectionProps) {
   const enabled = useStore(isDarkMode);
 
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   return (
     <span className={`darkmode-${where} darkmode-switch-container`}>
-      {/* <FontAwesomeIcon icon={faSun} fixedWidth className="darkmode-icon darkmode-sun" /> */}
       <span
         style={{ justifyContent: enabled ? "flex-end" : "flex-start" }}
         onClick={() => isDarkMode.set(!enabled)}
         className="darkmode-switch"
       >
-        {/* <div className="darkmode-switch-circle">⬤</div> */}
-        {/* <FontAwesomeIcon icon={faCircle} fixedWidth className="darkmode-switch-circle" /> */}
         <div className="darkmode-switch-circle">
           {enabled
             ? <FontAwesomeIcon icon={faMoon} fixedWidth className="darkmode-moon" />
@@ -35,13 +36,12 @@ function DarkModeSwitch({ where }: RightSectionProps) {
           }
         </div>
       </span>
-      {/* <FontAwesomeIcon icon={faMoon} fixedWidth className="darkmode-icon darkmode-moon" /> */}
     </span>
   );
 }
 
 const ContactIcons = ({ where }: RightSectionProps) => (
-  <div style={{ display: "flex"}}>
+  <div style={{ display: "flex", justifyContent: "right" }}>
     <DarkModeSwitch where={where} />
     <span className={`contact-icons-${where} contact-icons`}>
       <a href="mailto:alexsnezhko89@gmail.com">
@@ -91,6 +91,7 @@ export default function Header() {
       }
     }
     window.addEventListener("scroll", nav);
+    nav();
 
     return () => window.removeEventListener("scroll", nav);
   })

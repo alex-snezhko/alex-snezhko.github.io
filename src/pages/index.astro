@@ -39,16 +39,26 @@ import Footer from "../components/Footer.astro";
     </style>
   </head>
 
+  <script is:inline>
+    const initialTheme =
+      window.localStorage.getItem("color-scheme") ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
+
   <script>
     import { isDarkMode } from "../store";
-    const mainElem = document.documentElement;
-    isDarkMode.subscribe(darkMode => {
+    isDarkMode.subscribe((darkMode) => {
       if (darkMode) {
-        mainElem.classList.add("dark-mode");
+        document.documentElement.classList.add("dark-mode");
+        window.localStorage.setItem("color-scheme", "dark");
       } else {
-        mainElem.classList.remove("dark-mode");
+        document.documentElement.classList.remove("dark-mode");
+        window.localStorage.setItem("color-scheme", "light");
       }
-    })
+    });
   </script>
 
   <body>

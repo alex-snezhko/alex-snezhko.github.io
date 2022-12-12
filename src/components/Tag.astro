@@ -31,12 +31,11 @@ const { imgUrl, name, color } = Astro.props;
 
   :root.dark-mode .tag {
     background-color: #3b6b79;
+    color: white;
     box-shadow: 0 0 3px hsl(180, 6%, 34%);
   }
 </style>
 
-<!-- <li class="tag" style={{ backgroundColor: color }}> -->
-<!-- <li class="tag" style={{ backgroundColor: "#dbedce", color: "black" }}> -->
 <li class="tag">
   <img src={imgUrl} alt={name} />
   <span>
