@@ -39,9 +39,21 @@ import Footer from "../components/Footer.astro";
     </style>
   </head>
 
+  <script>
+    import { isDarkMode } from "../store";
+    const mainElem = document.documentElement;
+    isDarkMode.subscribe(darkMode => {
+      if (darkMode) {
+        mainElem.classList.add("dark-mode");
+      } else {
+        mainElem.classList.remove("dark-mode");
+      }
+    })
+  </script>
+
   <body>
     <Header client:load />
-    <main class="wrapper">
+    <main id="main">
       <Section name="about"><About /></Section>
       <Section name="experience"><Experience /></Section>
       <Section name="projects"><Projects /></Section>

@@ -11,9 +11,13 @@ const { imgUrl, name, color } = Astro.props;
   .tag {
     display: flex;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
-    padding: 6px 10px;
+    padding: 6px 9px;
+    font-size: 1em;
+    // background-color: #cce2eb;
+    background-color: #c6e7f0;
+    box-shadow: 0 0 3px hsl(182, 10%, 73%);
 
     img {
       max-width: 22px;
@@ -24,11 +28,18 @@ const { imgUrl, name, color } = Astro.props;
       margin-left: 8px;
     }
   }
+
+  :root.dark-mode .tag {
+    background-color: #3b6b79;
+    box-shadow: 0 0 3px hsl(180, 6%, 34%);
+  }
 </style>
 
-  <li class="tag" style={{ backgroundColor: color }}>
-    <img src={imgUrl} alt={name} />
-    <span>
-      {name}
-    </span>
-  </li>
+<!-- <li class="tag" style={{ backgroundColor: color }}> -->
+<!-- <li class="tag" style={{ backgroundColor: "#dbedce", color: "black" }}> -->
+<li class="tag">
+  <img src={imgUrl} alt={name} />
+  <span>
+    {name}
+  </span>
+</li>

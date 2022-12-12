@@ -3,7 +3,8 @@
 body {
   margin: 0;
   font-family: 'Inter', 'system-ui', sans-serif;
-  background-color: shared.$almostWhite;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.4;
 }
 
@@ -29,4 +30,14 @@ a {
 
 p, li {
   font-size: 18px;
+}
+
+:root {
+  --background-color: shared.$almostWhite;
+  --text-color: black;
+}
+
+:root.dark-mode {
+  --background-color: #262727;
+  --text-color: #d1d1d1;
 }

@@ -18,8 +18,10 @@ text {
   font-size: 28px;
 }
 
-// $lightestColor: hsl(184, 50%, 80%);
-// $lightestColor: hsl(184, 45%, 83%);
+:root.dark-mode text {
+  fill: rgb(151, 179, 187);
+}
+
 $lightestColor: hsl(184, 45%, 87%);
 
 .arc-fill-langs {
@@ -32,6 +34,21 @@ $lightestColor: hsl(184, 45%, 87%);
 
 .arc-fill-tools {
   stroke: darken($lightestColor, 10%);
+}
+
+// $darkestColor: hsl(183, 12%, 28%);
+$darkestColor: hsl(189, 29%, 31%);
+
+:root.dark-mode .arc-fill-langs {
+  stroke: lighten($darkestColor, 6%);
+}
+
+:root.dark-mode .arc-fill-frameworks {
+  stroke: lighten($darkestColor, 3%);
+}
+
+:root.dark-mode .arc-fill-tools {
+  stroke: $darkestColor;
 }
 
 /* Actually an enclosing div around skill picture */

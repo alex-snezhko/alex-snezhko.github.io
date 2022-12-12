@@ -73,6 +73,33 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
     display: flex;
     gap: 10px;
   }
+
+  :root.dark-mode .project-image-container {
+    // background-color: hsl(183, 24%, 31%);
+    background-color: hsl(188, 27%, 34%);
+  }
+
+  :root.dark-mode .project-link:hover .project-image-container {
+    background-color: hsl(185, 15%, 32%);
+  }
+
+  :root.dark-mode .project-tech {
+    background-color: hsl(210, 1%, 27%);
+    border-top: 1px solid hsl(180, 2%, 35%);
+  }
+
+  :root.dark-mode .project {
+    background-color: hsl(240, 1%, 23%);
+    box-shadow: 0 0 6px hsl(180, 2%, 30%);
+  }
+
+  :root.dark-mode .project-name {
+    color: #46b4b8;
+  }
+
+  :root.dark-mode .project-link:hover .project-name {
+    color: #64bfc2;
+  }
 </style>
 
 <div class="project">
@@ -81,7 +108,7 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
       <div class="project-image-container">
         <img class="project-image" src={imgSrc} alt={projectName} />
       </div>
-      <h3>{projectName}</h3>
+      <h3 class="project-name">{projectName}</h3>
     </a>
     <p>{body}</p>
   </div>

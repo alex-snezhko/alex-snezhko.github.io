@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+import { useStore } from "@nanostores/react";
+import { isDarkMode } from "../store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faStackOverflow, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUp, faEnvelope, faMoon, faSun, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import "../styles/Header.scss";
@@ -9,24 +11,49 @@ import "../styles/Header.scss";
 type SectionName = "about" | "experience" | "projects" | "skills";
 const allSections: SectionName[] = ["about", "experience", "projects", "skills"];
 
-interface ContactIconsProps {
-  className: string;
+interface RightSectionProps {
+  where: string;
 }
 
-const ContactIcons = ({ className }: ContactIconsProps) => (
-  <div className={`${className} contact-icons`}>
-    <a href="mailto:alexsnezhko89@gmail.com">
-      <FontAwesomeIcon icon={faEnvelope} fixedWidth className="fa-icon" />
-    </a>
-    <a href="https://stackoverflow.com/users/12573825/apollo">
-      <FontAwesomeIcon icon={faStackOverflow} fixedWidth className="fa-icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/alex-snezhko/">
-      <FontAwesomeIcon icon={faLinkedin} fixedWidth className="fa-icon" />
-    </a>
-    <a href="https://github.com/alex-snezhko">
-      <FontAwesomeIcon icon={faGithub} fixedWidth className="fa-icon" />
-    </a>
+function DarkModeSwitch({ where }: RightSectionProps) {
+  const enabled = useStore(isDarkMode);
+
+  return (
+    <span className={`darkmode-${where} darkmode-switch-container`}>
+      {/* <FontAwesomeIcon icon={faSun} fixedWidth className="darkmode-icon darkmode-sun" /> */}
+      <span
+        style={{ justifyContent: enabled ? "flex-end" : "flex-start" }}
+        onClick={() => isDarkMode.set(!enabled)}
+        className="darkmode-switch"
+      >
+        {/* <div className="darkmode-switch-circle">⬤</div> */}
+        {/* <FontAwesomeIcon icon={faCircle} fixedWidth className="darkmode-switch-circle" /> */}
+        <div className="darkmode-switch-circle">
+          {enabled
+            ? <FontAwesomeIcon icon={faMoon} fixedWidth className="darkmode-moon" />
+            : <FontAwesomeIcon icon={faSun} fixedWidth className="darkmode-sun" />
+          }
+        </div>
+      </span>
+      {/* <FontAwesomeIcon icon={faMoon} fixedWidth className="darkmode-icon darkmode-moon" /> */}
+    </span>
+  );
+}
+
+const ContactIcons = ({ where }: RightSectionProps) => (
+  <div style={{ display: "flex"}}>
+    <DarkModeSwitch where={where} />
+    <span className={`contact-icons-${where} contact-icons`}>
+      <a href="mailto:alexsnezhko89@gmail.com">
+        <FontAwesomeIcon icon={faEnvelope} fixedWidth />
+      </a>
+      <a href="https://www.linkedin.com/in/alex-snezhko/">
+        <FontAwesomeIcon icon={faLinkedin} fixedWidth />
+      </a>
+      <a href="https://github.com/alex-snezhko">
+        <FontAwesomeIcon icon={faGithub} fixedWidth />
+      </a>
+    </span>
   </div>
 );
 
@@ -74,7 +101,7 @@ export default function Header() {
 
       <div ref={titlebarRef} id="titlebar">
         <h1 id="title">Alex Snezhko</h1>
-        <ContactIcons className="contact-icons-titlebar" />
+        <ContactIcons where="titlebar" />
       </div>
 
       <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
@@ -97,7 +124,7 @@ export default function Header() {
           ))}
         </div>
 
-        {atTop && <ContactIcons className="contact-icons-navbar" />}
+        {atTop && <ContactIcons where="navbar" />}
       </div>
 
     </header>
