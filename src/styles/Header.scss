@@ -29,7 +29,7 @@ $darkNavbarColor: #1a1b1b;
 
 #title {
   font-weight: 700;
-  font-size: 70px;
+  font-size: 4rem;
   margin: 0;
 }
 
@@ -41,12 +41,7 @@ $darkNavbarColor: #1a1b1b;
 
 .darkmode-titlebar {
   font-size: 1.25em;
-  margin-right: 20px;
-}
-
-.darkmode-navbar {
-  font-size: 0.85em;
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
 .darkmode-icon {
@@ -97,34 +92,26 @@ $darkNavbarColor: #1a1b1b;
   color: var(--text-color);
 }
 
-.contact-icons-titlebar a {
-  font-size: 38px;
-  margin-left: 20px;
+.contact-icons-container {
+  display: flex;
+  justify-content: right;
 }
 
-.header-link {
-  text-align: right;
-  font-size: 20px;
-  color: black;
-  padding: 5px 0 5px 20px;
-
-  img {
-    width: 40px;
-    height: 40px;
-    vertical-align: middle;
-  }
+.contact-icons-titlebar a {
+  font-size: 2.5rem;
+  margin-left: 20px;
 }
 
 /* -- Navigation bar -- */
 #navbar {
-  padding: 6px 20px;
+  padding: 6px 1rem;
   background-color: rgb(54, 54, 54);
   width: 100%;
   display: flex;
   align-items: center;
 
   & > div:not(.navbar-links) {
-    width: 220px;
+    width: 250px;
   }
 }
 
@@ -136,7 +123,7 @@ $darkNavbarColor: #1a1b1b;
   font-family: "JetBrains Mono", monospace;
   display: inline-block;
   vertical-align: middle;
-  font-size: 24px;
+  font-size: 1.75rem;
   margin-top: -4px;
   transition: 0.25s;
 
@@ -151,7 +138,7 @@ $darkNavbarColor: #1a1b1b;
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 1.5rem;
   color: shared.$themeColor2;
   opacity: 0;
 }
@@ -183,8 +170,8 @@ $darkNavbarColor: #1a1b1b;
     display: inline-block;
     cursor: pointer;
     padding: 8px 16px;
-    margin: 0 10px;
-    font-size: 20px;
+    margin: 0 6px;
+    font-size: 1.25rem;
 
     &:hover {
       background-color: rgb(75, 75, 75);
@@ -203,10 +190,46 @@ $darkNavbarColor: #1a1b1b;
 }
 
 .contact-icons-navbar {
-  font-size: 26px;
+  font-size: 2rem;
   text-align: right;
   
   a {
     margin-left: 15px;
+  }
+}
+
+@media (max-width: shared.$mainWidth) {
+  .navbar-links {
+    display: none;
+  }
+
+  #titlebar {
+    width: initial;
+    margin: 0 1rem;
+  }
+
+
+  #title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: shared.$smallScreen) {
+  #titlebar {
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  #title {
+    margin-bottom: 15px;
+  }
+
+  .contact-icons-container {
+    justify-content: center;
+  }
+
+  #navbar > div:not(.navbar-links) {
+    width: unset;
   }
 }

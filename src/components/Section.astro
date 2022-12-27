@@ -3,9 +3,10 @@ import type { SectionName } from "../types"
 
 interface Props {
   name: SectionName;
+  longName: string;
 }
 
-const name = Astro.props.name;
+const { name, longName } = Astro.props;
 ---
 <style lang="scss">
   @use "../styles/shared";
@@ -16,8 +17,8 @@ const name = Astro.props.name;
     // padding: 50px;
     text-align: left;
 
-    :global(h2) {
-      font-size: 35px;
+    h1 {
+      font-size: 2.25rem;
       text-decoration: underline;
       text-decoration-thickness: 5px;
       text-underline-offset: 20px;
@@ -25,19 +26,21 @@ const name = Astro.props.name;
       margin-bottom: 70px;
       margin-top: 0;
     }
-
-    :global(h3) {
-      margin: 0;
-      font-size: 30px;
-    }
   }
 
   .scroll-target {
     height: 1px;
   }
+
+  @media (max-width: shared.$mainWidth) {
+    .section {
+      margin: 40px 0;
+    }
+  }
 </style>
 
 <div id={`${name}-scroll-target`} class="scroll-target" />
-<div class="section">
+<section class="section">
+  <h1>{longName}</h1>
   <slot />
-</div>
+</section>

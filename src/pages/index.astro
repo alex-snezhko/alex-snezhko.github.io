@@ -6,7 +6,7 @@ import Section from "../components/Section.astro";
 import About from "../components/About.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
-import Skills from "../components/Skills";
+import Skills from "../components/Skills.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -36,6 +36,13 @@ import Footer from "../components/Footer.astro";
         width: shared.$mainWidth;
         margin: auto;
       }
+      
+      @media (max-width: shared.$mainWidth) {
+        main {
+          width: initial;
+          margin: 1rem;
+        }
+      }
     </style>
   </head>
 
@@ -64,10 +71,10 @@ import Footer from "../components/Footer.astro";
   <body>
     <Header client:load />
     <main id="main">
-      <Section name="about"><About /></Section>
-      <Section name="experience"><Experience /></Section>
-      <Section name="projects"><Projects /></Section>
-      <Section name="skills"><Skills client:visible /></Section>
+      <Section longName="About Me" name="about"><About /></Section>
+      <Section longName="Experience" name="experience"><Experience /></Section>
+      <Section longName="Projects" name="projects"><Projects /></Section>
+      <Section longName="Skills" name="skills"><Skills /></Section>
     </main>
     <Footer />
   </body>

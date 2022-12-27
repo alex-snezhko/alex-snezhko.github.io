@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  description?: string;
+  description: string;
   imgUrl: string;
 }
 
@@ -22,9 +22,9 @@ export const TOOLS = [
 ];
 export const LANGUAGES = [
   skill("Rust", "Systems Programming Language", "rust.png"),
-  skill("OCaml/Reason", "Functional Programming Languages", "ocaml.png"),
+  skill("OCaml", "Functional Programming Language", "ocaml.png"),
   skill("Python", "Scripting Language", "python.png"),
-  skill("TypeScript/JS", "Web Scripting Languages", "typescript.png"),
+  skill("TypeScript", "Web Scripting Language", "typescript.png"),
   skill("C/C++", "Systems Programming Languages", "cpp.png"),
   skill("C#", ".NET Programming Language", "csharp.png"),
   skill("Java", "Enterprise™ Programming Language", "java.png"),

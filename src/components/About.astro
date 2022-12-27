@@ -1,6 +1,8 @@
 ---
 ---
 <style lang="scss">
+  @use "../styles/shared";
+
   .personal-description-container {
     display: flex;
     gap: 50px;
@@ -52,8 +54,11 @@
     align-items: top;
   }
 
+  #ncsu-img {
+    margin-right: 25px;
+  }
+
   #education-desc {
-    margin-left: 25px;
     flex-grow: 0;
     flex-shrink: 99;
   }
@@ -66,11 +71,15 @@
       margin: 4px 0;
     }
   }
+
+  @media (max-width: shared.$mainWidth) {
+    img {
+      display: none;
+    }
+  }
 </style>
 
-<div class="section">
-  <h2>About Me</h2>
-
+<div>
   <div class="personal-description-container">
     <div class="personal-description">
       <p>
@@ -93,7 +102,7 @@
   </div>
 
   <div id="education-content">
-    <img src="/assets/ncsu.png" alt="North Carolina State University" width="180" />
+    <img id="ncsu-img" src="/assets/ncsu.png" alt="North Carolina State University" width="180" />
     <div id="education-desc">
       <p>
         Right now, I'm a student at <a href="https://ncsu.edu" class="ncsu-link">North Carolina State University</a>.

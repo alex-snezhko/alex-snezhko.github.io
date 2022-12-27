@@ -41,7 +41,7 @@ function DarkModeSwitch({ where }: RightSectionProps) {
 }
 
 const ContactIcons = ({ where }: RightSectionProps) => (
-  <div style={{ display: "flex", justifyContent: "right" }}>
+  <div className="contact-icons-container">
     <DarkModeSwitch where={where} />
     <span className={`contact-icons-${where} contact-icons`}>
       <a href="mailto:alexsnezhko89@gmail.com">
