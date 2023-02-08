@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useStore } from "@nanostores/react";
 import { isDarkMode } from "../store";
+import type { SectionName } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faEnvelope, faMoon, faSun, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -8,8 +9,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import "../styles/Header.scss";
 
-type SectionName = "about" | "experience" | "projects" | "skills";
-const allSections: SectionName[] = ["about", "experience", "projects", "skills"];
+const allSections = ["about", "experience", "projects", "skills"] as const;
 
 interface RightSectionProps {
   where: string;
@@ -106,26 +106,28 @@ export default function Header() {
       </div>
 
       <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
-        {atTop && (
-          <div onClick={() => scrollToSection("top")}>
-            <span className="navbar-initials">avs</span>
-            <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+        <div className="navbar-contents">
+          {atTop && (
+            <div onClick={() => scrollToSection("top")}>
+              <span className="navbar-initials">avs</span>
+              <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+            </div>
+          )}
+
+          <div className="navbar-links">
+            {allSections.map(sectionName => (
+              <button
+                key={sectionName}
+                className={sectionName === currentSection ? "thispage" : ""}
+                onClick={() => scrollToSection(sectionName)}
+              >
+                {sectionName[0].toUpperCase() + sectionName.slice(1)}
+              </button>
+            ))}
           </div>
-        )}
 
-        <div className="navbar-links">
-          {allSections.map(sectionName => (
-            <button
-              key={sectionName}
-              className={sectionName === currentSection ? "thispage" : ""}
-              onClick={() => scrollToSection(sectionName)}
-            >
-              {sectionName[0].toUpperCase() + sectionName.slice(1)}
-            </button>
-          ))}
+          {atTop && <ContactIcons where="navbar" />}
         </div>
-
-        {atTop && <ContactIcons where="navbar" />}
       </div>
 
     </header>

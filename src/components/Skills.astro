@@ -3,10 +3,10 @@ import { ALL_SKILLS, LANGUAGES, FRAMEWORKS, TOOLS } from "../utils/skills";
 import type { Skill } from "../utils/skills";
 
 // make sure to keep same as $mainWidth scss variable
-const CIRCLE_SIZE = 1100;
+const CIRCLE_SIZE = 1000;
 const TEXT_RADIUS = (CIRCLE_SIZE - 80) / 2;
-const ARC_THICKNESS = 170;
-const CIRCLE_RADIUS = TEXT_RADIUS - (ARC_THICKNESS / 2) - 20;
+const ARC_THICKNESS = 150;
+const CIRCLE_RADIUS = TEXT_RADIUS - (ARC_THICKNESS / 2) - 24;
 
 // angle of seperation between elements (in radians)
 // + 1.5 because each section has a half image gap and there are 3 sections
@@ -119,16 +119,16 @@ const SKILLS_INFO: [string, Skill[]][] = [
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 95px;
-    height: 95px;
+    width: 85px;
+    height: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
 
     &:hover {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
     }
 
     img {
@@ -161,14 +161,19 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #info-image {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 220px;
+    max-height: 220px;
     object-fit: contain;
   }
 
   #info-name {
     font-size: 2.75rem;
     margin: 15px;
+  }
+
+  #info-extra {
+    color: gray;
+    font-size: 1.5rem;
   }
 
   // for alternate display when screen too small
@@ -311,7 +316,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
     <div id="skill-info">
       <img id="info-image" src="" alt="" />
       <h1 id="info-name"></h1>
-      <h2 id="info-extra" style={{ color: "gray" }}></h2>
+      <h2 id="info-extra"></h2>
     </div>
   </div>
 

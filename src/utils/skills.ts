@@ -21,13 +21,13 @@ export const TOOLS = [
   skill("Azure", "Cloud Service Suite", "azure.png"),
 ];
 export const LANGUAGES = [
-  skill("Rust", "Systems Programming Language", "rust.png"),
-  skill("OCaml", "Functional Programming Language", "ocaml.png"),
-  skill("Python", "Scripting Language", "python.png"),
-  skill("TypeScript", "Web Scripting Language", "typescript.png"),
-  skill("C/C++", "Systems Programming Languages", "cpp.png"),
-  skill("C#", ".NET Programming Language", "csharp.png"),
-  skill("Java", "Enterprise™ Programming Language", "java.png"),
+  skill("Rust", "Systems Programming", "rust.png"),
+  skill("OCaml", "Functional Programming", "ocaml.png"),
+  skill("Python", "Scripting", "python.png"),
+  skill("TypeScript", "Web/Scripting", "typescript.png"),
+  skill("C/C++", "Systems Programming", "cpp.png"),
+  skill("C#", ".NET Programming", "csharp.png"),
+  skill("Java", "Object-Oriented Programming", "java.png"),
 ];
 
 export const ALL_SKILLS = [...FRAMEWORKS, ...TOOLS, ...LANGUAGES];

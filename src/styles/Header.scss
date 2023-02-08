@@ -44,6 +44,10 @@ $darkNavbarColor: #1a1b1b;
   margin-right: 1em;
 }
 
+.darkmode-navbar {
+  font-size: 0.85em;
+}
+
 .darkmode-icon {
   font-size: 1.25em;
 }
@@ -104,11 +108,17 @@ $darkNavbarColor: #1a1b1b;
 
 /* -- Navigation bar -- */
 #navbar {
-  padding: 6px 1rem;
+  padding: 6px;
   background-color: rgb(54, 54, 54);
   width: 100%;
+}
+
+.navbar-contents {
+  margin: auto;
+  width: shared.$mainWidth;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   & > div:not(.navbar-links) {
     width: 250px;
@@ -161,6 +171,7 @@ $darkNavbarColor: #1a1b1b;
 
 .navbar-links {
   text-align: center;
+  margin: auto;
 
   button {
     font-family: unset;
@@ -169,9 +180,9 @@ $darkNavbarColor: #1a1b1b;
     border-radius: 8px;
     display: inline-block;
     cursor: pointer;
-    padding: 8px 16px;
-    margin: 0 6px;
-    font-size: 1.25rem;
+    padding: 7px 14px;
+    margin: 0 3px;
+    font-size: 1rem;
 
     &:hover {
       background-color: rgb(75, 75, 75);
@@ -190,11 +201,11 @@ $darkNavbarColor: #1a1b1b;
 }
 
 .contact-icons-navbar {
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: right;
   
   a {
-    margin-left: 15px;
+    margin-left: 12px;
   }
 }
 
