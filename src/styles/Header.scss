@@ -115,7 +115,6 @@ $darkNavbarColor: #1a1b1b;
 
 .navbar-contents {
   margin: auto;
-  width: shared.$mainWidth;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -208,9 +207,19 @@ $darkNavbarColor: #1a1b1b;
     margin-left: 12px;
   }
 }
+  
+@media (min-width: shared.$mainWidth) {
+  .navbar-contents {
+    width: shared.$mainWidth;
+  }
+}
 
 @media (max-width: shared.$mainWidth) {
   .navbar-links {
+    display: none;
+  }
+
+  #navbar:not(.at-top) {
     display: none;
   }
 
@@ -240,7 +249,12 @@ $darkNavbarColor: #1a1b1b;
     justify-content: center;
   }
 
-  #navbar > div:not(.navbar-links) {
+  .contact-icons-titlebar a {
+    font-size: 2.25rem;
+    margin-left: 12px;
+  }
+
+  .navbar-contents > div:not(.navbar-links) {
     width: unset;
   }
 }

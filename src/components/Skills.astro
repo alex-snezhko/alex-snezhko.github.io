@@ -61,7 +61,7 @@ function getTrans(i: number) {
 }
 
 const SKILLS_INFO: [string, Skill[]][] = [
-  ["Programming Languages", LANGUAGES],
+  ["Programming Languages", LANGUAGES.reverse()], // quick hack to get correct order
   ["Libraries/Frameworks", FRAMEWORKS],
   ["Tools/Software", TOOLS],
 ];
