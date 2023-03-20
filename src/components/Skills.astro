@@ -3,9 +3,9 @@ import { ALL_SKILLS, LANGUAGES, FRAMEWORKS, TOOLS } from "../utils/skills";
 import type { Skill } from "../utils/skills";
 
 // make sure to keep same as $mainWidth scss variable
-const CIRCLE_SIZE = 1000;
+const CIRCLE_SIZE = 900;
 const TEXT_RADIUS = (CIRCLE_SIZE - 80) / 2;
-const ARC_THICKNESS = 150;
+const ARC_THICKNESS = 130;
 const CIRCLE_RADIUS = TEXT_RADIUS - (ARC_THICKNESS / 2) - 24;
 
 // angle of seperation between elements (in radians)
@@ -119,16 +119,16 @@ const SKILLS_INFO: [string, Skill[]][] = [
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
 
     &:hover {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
     }
 
     img {
@@ -149,7 +149,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #skill-info-placeholder {
-    font-size: 3em;
+    font-size: 2.5em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -167,13 +167,13 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #info-name {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     margin: 15px;
   }
 
   #info-extra {
     color: gray;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   // for alternate display when screen too small

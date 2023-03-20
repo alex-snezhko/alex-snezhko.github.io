@@ -15,7 +15,6 @@ export const FRAMEWORKS = [
 ];
 export const TOOLS = [
   skill("Linux", "Operating System Family", "linux.png"),
-  skill("Node.js", "JavaScript Runtime", "node.png"),
   skill("Unity", "Game Engine", "unity.png"),
   skill("PostgreSQL", "Database Management System", "psql.png"),
   skill("Azure", "Cloud Service Suite", "azure.png"),

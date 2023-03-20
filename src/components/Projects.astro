@@ -15,8 +15,8 @@ import { projects } from "../utils/projects";
     text-align: center;
 
     div {
-      width: 33.33%;
-      padding: 15px;
+      width: 50%;
+      padding: 25px;
     }
   }
 
@@ -35,21 +35,23 @@ import { projects } from "../utils/projects";
 
 <div>
   <div class="projects">
-    {projects.map(p => (
-      <div>
-        <Project
-          projectName={p.projectName}
-          projectUrl={p.projectUrl}
-          imgSrc={p.imgSrc}
-          body={p.body}
-          techUsed={p.techUsed}
-        />
-      </div>
-    ))}
+    {
+      projects.map((p) => (
+        <div>
+          <Project
+            projectName={p.projectName}
+            projectUrl={p.projectUrl}
+            imgSrc={p.imgSrc}
+            body={p.body}
+            techUsed={p.techUsed}
+          />
+        </div>
+      ))
+    }
   </div>
 
   <p>
-    The source code for all of these projects, this webpage, and more can be
-    found on my <a href="http://github.com/alex-snezhko">GitHub</a> page
+    The source code for these projects, this webpage, and more can be found on
+    my <a href="http://github.com/alex-snezhko">GitHub</a> page
   </p>
 </div>

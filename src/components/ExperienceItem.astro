@@ -51,10 +51,6 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
     flex-grow: 1;
   }
 
-  .job-title::after {
-    content: " — ";
-  }
-
   .experience-company {
     color: shared.$themeColor1;
 
@@ -81,10 +77,6 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
 
     .job-title {
       display: block;
-
-      &::after {
-        content: none;
-      }
     }
 
     .job-company {
@@ -120,13 +112,13 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
   <div class="experience-info">
     <div class="experience-header">
       <h2>
-        <span class="job-title">{position}</span>
-        <span class="job-company">
+        <div class="job-title">{position}</div>
+        <div class="job-company">
           <div class="small-experience-image-container">
             <img src={imageUrl} alt={company} />
           </div>
           <a href={companyUrl} class="experience-company">{company}</a>
-        </span>
+        </div>
       </h2>
       <div>{timeline}</div>
     </div>
