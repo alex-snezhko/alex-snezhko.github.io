@@ -16,7 +16,7 @@ const ANGLE_SEP = 2 * Math.PI / (ALL_SKILLS.length + 1.5);
 const ANGLE_FIRST = -(Math.PI / 2) + (3 / 4) * ANGLE_SEP;
 
 // find angles on circle at which sections seperate
-const DIV_ANGLES = [];
+const DIV_ANGLES: number[] = [];
 DIV_ANGLES[0] = Math.PI / 2;
 DIV_ANGLES[1] = DIV_ANGLES[0] - (FRAMEWORKS.length + 0.5) * ANGLE_SEP;
 DIV_ANGLES[2] = DIV_ANGLES[1] - (TOOLS.length + 0.5) * ANGLE_SEP;
@@ -28,6 +28,7 @@ const getXY = (radius: number, angle: number) => ({
 
 // find x and y coordinates on svg for beginning of arc segments
 const ARC_BEGINS = DIV_ANGLES.map(angle => getXY(CIRCLE_RADIUS, angle));
+const ARC_ENDS = DIV_ANGLES.map((_, i) => getXY(CIRCLE_RADIUS, DIV_ANGLES[(i + 1) % 3]));
 
 const svgPathD = (begin: { x: number, y: number }, end: { x: number, y: number }, radius: number, upsideDown: boolean) => upsideDown
   ? `M ${end.x} ${end.y} A ${radius + 20} ${radius + 20} 0 0 0 ${begin.x} ${begin.y}`
@@ -88,6 +89,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   $lightestColor: hsl(184, 45%, 87%);
+  // $lightestColor: darken(hsl(184, 45%, 87%), 0%);
 
   .arc-fill-langs {
     stroke: $lightestColor;
@@ -95,10 +97,12 @@ const SKILLS_INFO: [string, Skill[]][] = [
 
   .arc-fill-frameworks {
     stroke: darken($lightestColor, 4%);
+    // stroke: $lightestColor;
   }
 
   .arc-fill-tools {
     stroke: darken($lightestColor, 8%);
+    // stroke: $lightestColor;
   }
 
   $darkestColor: hsl(189, 29%, 31%);
@@ -199,7 +203,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
 
   .skill-alternate {
     background-color: hsl(210, 15%, 96%);
-    box-shadow: 0 0 4px hsl(182, 10%, 73%);
+    // box-shadow: 0 0 4px hsl(182, 10%, 73%);
     text-align: center;
     width: 105px;
     padding: 15px 0;
@@ -229,7 +233,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
   :root.dark-mode .skill-alternate {
     background-color: hsl(210, 1%, 27%);
     // background-color: hsl(240, 1%, 23%);
-    box-shadow: 0 0 6px hsl(180, 2%, 25%);
+    // box-shadow: 0 0 6px hsl(180, 2%, 25%);
   }
 
   @media (max-width: shared.$mainWidth) {
@@ -288,7 +292,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
             class={`arc-fill-${curve.shortName}`}
             fill="none"
             stroke-width={ARC_THICKNESS}
-            d={svgPathD(ARC_BEGINS[i], ARC_BEGINS[(i + 1) % 3], CIRCLE_RADIUS, false)}
+            d={svgPathD(ARC_BEGINS[i], ARC_ENDS[i], CIRCLE_RADIUS, false)}
           />
 
           <path

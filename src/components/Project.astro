@@ -15,38 +15,31 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
 ---
 <style lang="scss">
   .project {
-    padding: 25px;
+    padding: 35px;
     border-radius: 20px;
     height: 100%;
     margin: auto;
-    background-color: hsl(210, 15%, 96%);
-    box-shadow: 0 0 6px hsl(182, 10%, 73%);
+    background-color: hsl(210, 15%, 98%);
+    border: 1px solid hsl(180, 7%, 80%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .project-link:hover .project-image-container {
-    background-color: hsl(182, 36%, 73%);
-  }
-
   .project-link:hover .project-image {
-    max-width: 85%;
-    max-height: 85%;
+    height: 90%;
   }
 
   .project-image-container {
     height: 200px;
     position: relative;
-    background-color: hsl(182, 40%, 84%);
     border-radius: 10px;
     margin-bottom: 15px;
     transition: 0.5s;
   }
 
   .project-image {
-    max-width: 70%;
-    max-height: 70%;
+    height: 80%;
     object-fit: contain;
     position: absolute;
     top: 50%;
@@ -56,11 +49,11 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
   }
 
   .project-tech {
-    background-color: hsl(210, 15%, 94%);
+    background-color: hsl(210, 15%, 95%);
     border-top: 1px solid hsl(182, 10%, 73%);
-    margin: -25px;
+    margin: -35px;
     margin-top: 0;
-    padding: 20px;
+    padding: 20px 35px;
     align-items: center;
     justify-content: center;
     border-bottom-left-radius: 20px;
@@ -73,14 +66,18 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
     display: flex;
     gap: 10px;
   }
+  
+  :root.dark-mode .project {
+    border: 1px solid hsl(180, 2%, 35%);
+  }
 
   :root.dark-mode .project-image-container {
     // background-color: hsl(183, 24%, 31%);
-    background-color: hsl(188, 27%, 34%);
+    // background-color: hsl(188, 27%, 34%);
   }
 
   :root.dark-mode .project-link:hover .project-image-container {
-    background-color: hsl(190, 24%, 39%);
+    // background-color: hsl(190, 24%, 39%);
   }
 
   :root.dark-mode .project-tech {
@@ -90,7 +87,7 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
 
   :root.dark-mode .project {
     background-color: hsl(240, 1%, 23%);
-    box-shadow: 0 0 6px hsl(180, 2%, 30%);
+    // box-shadow: 0 0 6px hsl(180, 2%, 30%);
   }
 
   :root.dark-mode .project-name {
