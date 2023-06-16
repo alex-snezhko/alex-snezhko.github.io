@@ -1,0 +1,218 @@
+<!-- ---
+import { faArrowUp, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faStackOverflow, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import ContactIcons from "./ContactIcons.astro";
+
+const allSections = ["about", "experience", "projects", "skills"];
+---
+<style lang="scss">
+  @use "../styles/shared";
+
+  header {
+    // background-color: #d2dedf;
+    background-color: rgb(54, 54, 54);
+    // color: #effafb;
+    color: shared.$almostWhite;
+  }
+
+  #titlebar {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: shared.$mainWidth;
+  }
+
+  #title {
+    font-weight: 700;
+    font-size: 70px;
+    margin: 0;
+  }
+
+  .contact-icons a {
+    color: white;
+
+    &:hover {
+      color: shared.$themeColor2;
+    }
+  }
+
+  .contact-icons-titlebar a {
+    font-size: 38px;
+    margin-left: 20px;
+  }
+
+  .header-link {
+    text-align: right;
+    font-size: 20px;
+    color: black;
+    padding: 5px 0 5px 20px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+    }
+  }
+
+  /* -- Navigation bar -- */
+  #navbar {
+    padding: 6px 20px;
+    background-color: rgb(54, 54, 54);
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    div:not(.navbar-links) {
+      width: 200px;
+    }
+  }
+
+  .navbar-initials {
+    font-family: "JetBrains Mono", monospace;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+    margin-top: -4px;
+    transition: 0.25s;
+
+    &:hover {
+      cursor: pointer;
+      color: shared.$themeColor2;
+    }
+  }
+
+  .navbar-to-top {
+    transition: 0.25s;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 20px;
+    color: shared.$themeColor2;
+    opacity: 0;
+  }
+
+  .navbar-initials:hover ~ .navbar-to-top {
+    opacity: 1;
+  }
+
+  #navbar:not(.at-top) {
+    justify-content: center;
+  }
+
+  /* used for sticky navigation bar effect */
+  #navbar.at-top {
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  .navbar-links {
+    text-align: center;
+
+    button {
+      font-family: unset;
+      background: none;
+      border: none;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 8px 16px;
+      margin: 0 10px;
+      font-size: 20px;
+
+      &:hover {
+        background-color: rgb(75, 75, 75);
+      }
+    }
+
+    button:not(.thispage) {
+      color: rgb(168, 168, 168);
+    }
+
+    button.thispage {
+      color: shared.$almostWhite;
+      // background-color: rgb(95, 95, 95);
+      background-color: shared.$themeColor2;
+    }
+  }
+
+  .contact-icons-navbar {
+    font-size: 26px;
+    text-align: right;
+    
+    a {
+      margin-left: 15px;
+    }
+  }
+
+</style>
+
+<script>
+  type SectionName = "about" | "experience" | "projects" | "skills";
+  const allSections: SectionName[] = ["about", "experience", "projects", "skills"];
+
+  let atTop = false;
+  let currentSection = "about";
+  const titlebar = document.getElementById("titlebar")!;
+  const navbar = document.getElementById("navbar")!;
+
+  function scrollToSection(id: SectionName | "top") {
+    const elem = id === "top"
+      ? document.getElementById("header")!
+      : document.getElementById(`${id}-scroll-target`)!;
+
+    elem.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const sectionTops: { elementTop: number, sectionName: SectionName }[] = [];
+  for (const sectionName of allSections.slice().reverse()) {
+    const elementTop = document.getElementById(`${sectionName}-scroll-target`)!.offsetTop;
+    sectionTops.push({ elementTop, sectionName });
+  }
+
+  function nav() {
+    const y = window.scrollY;
+    const putNavbarToTop = y >= titlebar.offsetHeight;
+    atTop = putNavbarToTop;
+    const scrolledSection = sectionTops.find(({ elementTop }) => y >= elementTop - 5)?.sectionName || "about";
+    currentSection = scrolledSection;
+  }
+  window.addEventListener("scroll", nav);
+</script>
+
+<header id="header">
+  {atTop && <div style={{ height: navbarRef.current?.offsetHeight }} />}
+
+  <div id="titlebar">
+    <h1 id="title">Alex Snezhko</h1>
+    <ContactIcons className="contact-icons-titlebar" />
+  </div>
+
+  <div id="navbar" class={atTop ? "at-top" : ""}>
+    {atTop && (
+      <div onclick={() => scrollToSection("top")}>
+        <span className="navbar-initials">avs</span>
+        <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+      </div>
+    )}
+
+    <div class="navbar-links">
+      {allSections.map(sectionName => (
+        <button
+          class={sectionName === currentSection ? "thispage" : ""}
+          onClick={() => scrollToSection(sectionName)}
+        >
+          {sectionName[0].toUpperCase() + sectionName.slice(1)}
+        </button>
+      ))}
+    </div>
+
+    {atTop && <ContactIcons className="contact-icons-navbar" />}
+  </div>
+
+</header>
+ -->

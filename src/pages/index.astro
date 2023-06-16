@@ -25,9 +25,10 @@ import Footer from "../components/Footer.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&family=Alegreya+Sans+SC:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
     <style lang="scss">
       @use "../styles/shared";
@@ -71,7 +72,7 @@ import Footer from "../components/Footer.astro";
   <body>
     <Header client:load />
     <main id="main">
-      <Section longName="About Me" name="about"><About /></Section>
+      <Section name="about"><About /></Section>
       <Section longName="Experience" name="experience"><Experience /></Section>
       <Section longName="Projects" name="projects"><Projects /></Section>
       <Section longName="Skills" name="skills"><Skills /></Section>

@@ -1,4 +1,34 @@
 ---
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCamera)
+
+const camera = icon({ prefix: 'fas', iconName: 'camera' }).html;
+
+interface ContactItem {
+  name: string;
+  href: string;
+  icon: string;
+}
+
+const contactItems = [
+  {
+    name: "Email",
+    href: "mailto:alexsnezhko89@gmail.com",
+    icon: "envelope"
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/alex-snezhko/",
+    icon: "linkedin"
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/alex-snezhko",
+    icon: "github"
+  },
+]
 ---
 <style>
   footer {
@@ -6,6 +36,18 @@
     color: rgb(141, 153, 153);
     padding-bottom: 40px;
   }
+
+  svg {
+    width: 100px;
+    height: 100px;
+  }
 </style>
 
+<!-- <Fragment set:html={camera} /> -->
+<i class="fa-solid fa-camera" />
+<!-- {contactItems.map(item => (
+  <div>
+    <
+  </div>
+))} -->
 <footer>🚀 Built with Astro</footer>

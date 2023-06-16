@@ -2,10 +2,32 @@
 import { ALL_SKILLS, LANGUAGES, FRAMEWORKS, TOOLS } from "../utils/skills";
 import type { Skill } from "../utils/skills";
 
+interface Point {
+  x: number,
+  y: number,
+}
+
+interface Path {
+  begin: Point,
+  end: Point,
+}
+
+interface ArcPaths {
+  near: Path,
+  far: Path,
+}
+
+interface CurveInfo {
+  fullName: string,
+  shortName: string,
+  upsideDown: boolean,
+  textPath: Path,
+}
+
 // make sure to keep same as $mainWidth scss variable
-const CIRCLE_SIZE = 900;
+const CIRCLE_SIZE = 800;
 const TEXT_RADIUS = (CIRCLE_SIZE - 80) / 2;
-const ARC_THICKNESS = 130;
+const ARC_THICKNESS = 120;
 const CIRCLE_RADIUS = TEXT_RADIUS - (ARC_THICKNESS / 2) - 24;
 
 // angle of seperation between elements (in radians)
@@ -24,21 +46,43 @@ DIV_ANGLES[2] = DIV_ANGLES[1] - (TOOLS.length + 0.5) * ANGLE_SEP;
 const getXY = (radius: number, angle: number) => ({
   x: CIRCLE_SIZE / 2 + radius * Math.cos(angle),
   y: CIRCLE_SIZE / 2 - radius * Math.sin(angle)
-});
+} as Point);
 
 // find x and y coordinates on svg for beginning of arc segments
-const ARC_BEGINS = DIV_ANGLES.map(angle => getXY(CIRCLE_RADIUS, angle));
-const ARC_ENDS = DIV_ANGLES.map((_, i) => getXY(CIRCLE_RADIUS, DIV_ANGLES[(i + 1) % 3]));
+const ARCS = DIV_ANGLES.map((angle, i) => ({
+  near: {
+    begin: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, angle),
+    end: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
+  },
+  far: {
+    begin: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, angle),
+    end: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
+  }
+} as ArcPaths));
 
-const svgPathD = (begin: { x: number, y: number }, end: { x: number, y: number }, radius: number, upsideDown: boolean) => upsideDown
-  ? `M ${end.x} ${end.y} A ${radius + 20} ${radius + 20} 0 0 0 ${begin.x} ${begin.y}`
-  : `M ${begin.x} ${begin.y} A ${radius} ${radius} 0 0 1 ${end.x} ${end.y}`;
+// const ARC_BEGINS = DIV_ANGLES.map(angle => ({
+//   near: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, angle),
+//   far: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, angle)
+// }));
+// const ARC_ENDS = DIV_ANGLES.map((_, i) => ({
+//   near: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
+//   far: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
+// }));
 
-interface CurveInfo {
-  fullName: string;
-  shortName: string;
-  upsideDown: boolean;
-  textAngleInfo: { begin: { x: number, y: number }, end: { x: number, y: number }}
+const textPathD = (path: Path, upsideDown: boolean) => upsideDown
+  ? `M ${path.end.x} ${path.end.y} A ${TEXT_RADIUS + 20} ${TEXT_RADIUS + 20} 0 0 0 ${path.begin.x} ${path.begin.y}`
+  : `M ${path.begin.x} ${path.begin.y} A ${TEXT_RADIUS} ${TEXT_RADIUS} 0 0 1 ${path.end.x} ${path.end.y}`;
+
+const arcPathD = (arc: ArcPaths) => {
+  const nearRadius = CIRCLE_RADIUS - ARC_THICKNESS / 2;
+  const farRadius = CIRCLE_RADIUS + ARC_THICKNESS / 2;
+  return `
+    M ${arc.near.begin.x} ${arc.near.begin.y}
+    A ${nearRadius} ${nearRadius} 0 0 1 ${arc.near.end.x} ${arc.near.end.y}
+    L ${arc.far.end.x} ${arc.far.end.y}
+    A ${farRadius} ${farRadius} 0 0 0 ${arc.far.begin.x} ${arc.far.begin.y}
+    Z
+  `;
 }
 
 const getTextInfo = (textAngle: number, upsideDown: boolean) => ({
@@ -47,12 +91,12 @@ const getTextInfo = (textAngle: number, upsideDown: boolean) => ({
 })
 
 const CURVES: CurveInfo[] = [
-  { fullName: "Programming Languages", shortName: "langs", upsideDown: false, textAngleInfo: getTextInfo(3.1, false) },
-  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textAngleInfo: getTextInfo(7.2, false) },
-  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textAngleInfo: getTextInfo(6.9, true) }
+  { fullName: "Programming Languages", shortName: "langs", upsideDown: false, textPath: getTextInfo(3.1, false) },
+  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textPath: getTextInfo(7.2, false) },
+  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textPath: getTextInfo(6.9, true) }
 ];
       
-function getTrans(i: number) {
+function getTransform(i: number) {
   // additional offset to make seperate sections not touch
   const add = (i < FRAMEWORKS.length) ? 0 : (i < FRAMEWORKS.length + TOOLS.length) ? 0.5 : 1;
 
@@ -80,65 +124,80 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   text {
-    fill: rgb(63, 101, 112);
+    fill: var(--text-color);
     font-size: 1.75rem;
   }
 
-  :root.dark-mode text {
-    fill: rgb(151, 179, 187);
+  .arc-fill {
+    fill: var(--container-color);
+    stroke: var(--container-border-color);
   }
 
-  $lightestColor: hsl(184, 45%, 87%);
+  // $lightestColor: hsl(184, 45%, 87%);
+  // $lightestColor: hsl(210deg,15%,98%);
   // $lightestColor: darken(hsl(184, 45%, 87%), 0%);
 
-  .arc-fill-langs {
-    stroke: $lightestColor;
-  }
+  // .arc-fill-langs {
+  //   stroke: $lightestColor;
+  // }
 
-  .arc-fill-frameworks {
-    stroke: darken($lightestColor, 4%);
-    // stroke: $lightestColor;
-  }
+  // .arc-fill-frameworks {
+  //   // stroke: darken($lightestColor, 4%);
+  //   stroke: $lightestColor;
+  // }
 
-  .arc-fill-tools {
-    stroke: darken($lightestColor, 8%);
-    // stroke: $lightestColor;
-  }
+  // .arc-fill-tools {
+  //   // stroke: darken($lightestColor, 8%);
+  //   stroke: $lightestColor;
+  // }
 
-  $darkestColor: hsl(189, 29%, 31%);
+  // $darkestColor: hsl(189, 29%, 31%);
 
-  :root.dark-mode .arc-fill-langs {
-    stroke: lighten($darkestColor, 6%);
-  }
+  // :root.dark-mode .arc-fill-langs {
+  //   // stroke: lighten($darkestColor, 6%);
+  //   stroke: $darkestColor;
+  // }
 
-  :root.dark-mode .arc-fill-frameworks {
-    stroke: lighten($darkestColor, 3%);
-  }
+  // :root.dark-mode .arc-fill-frameworks {
+  //   // stroke: lighten($darkestColor, 3%);
+  //   stroke: $darkestColor;
+  // }
 
-  :root.dark-mode .arc-fill-tools {
-    stroke: $darkestColor;
-  }
+  // :root.dark-mode .arc-fill-tools {
+  //   stroke: $darkestColor;
+  // }
 
   .skill-picture {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.5s;
 
-    &:hover {
-      width: 90px;
-      height: 90px;
+    // &:hover {
+    //   width: 85px;
+    //   height: 85px;
+    // }
+
+    // img {
+    //   max-width: 100%;
+    //   max-height: 100%;
+    //   object-fit: contain;
+    // }
+
+    i {
+      // color: rgb(54, 54, 54);
+      color: var(--text-color);
+      font-size: 4rem;
+      transition: 0.25s;
     }
 
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+    &:hover i {
+      // font-size: 4.5rem;
+      color: darken(shared.$themeColor1, 10%);
     }
   }
 
@@ -153,7 +212,7 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #skill-info-placeholder {
-    font-size: 2.5em;
+    font-size: 1.75em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -171,16 +230,15 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #info-name {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     margin: 15px;
   }
 
   #info-extra {
     color: gray;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
-  // for alternate display when screen too small
   #skills-normal {
     display: none;
   }
@@ -261,16 +319,17 @@ const SKILLS_INFO: [string, Skill[]][] = [
     const skill = skills[i];
     skill.addEventListener("mouseenter", () => {
       clearTimeout(fadeTimeout);
-      const img = skill.firstElementChild!;
+      // const img = skill.firstElementChild!;
+      const icon = skill.firstElementChild!;
 
       skillInfoPlaceholder.style.visibility = "hidden";
       skillInfoPlaceholder.style.opacity = "0";
       skillInfo.style.visibility = "visible";
       skillInfo.style.opacity = "1";
 
-      infoImg.setAttribute("src", img.getAttribute("src")!);
-      infoName.innerHTML = img.getAttribute("alt")!;
-      infoExtra.innerHTML = img.getAttribute("data-desc")!;
+      infoImg.setAttribute("src", icon.getAttribute("data-img-url")!);
+      infoName.innerHTML = icon.getAttribute("data-name")!;
+      infoExtra.innerHTML = icon.getAttribute("data-desc")!;
     });
     skill.addEventListener("mouseleave", () => {
       fadeTimeout = setTimeout(() => {
@@ -289,16 +348,14 @@ const SKILLS_INFO: [string, Skill[]][] = [
       {CURVES.map((curve, i) => (
         <>
           <path
-            class={`arc-fill-${curve.shortName}`}
-            fill="none"
-            stroke-width={ARC_THICKNESS}
-            d={svgPathD(ARC_BEGINS[i], ARC_ENDS[i], CIRCLE_RADIUS, false)}
+            class={`arc-fill arc-fill-${curve.shortName}`}
+            d={arcPathD(ARCS[i])}
           />
 
           <path
             fill="none"
             id={`${curve.shortName}-curve`}
-            d={svgPathD(curve.textAngleInfo.begin, curve.textAngleInfo.end, TEXT_RADIUS, curve.upsideDown)}
+            d={textPathD(curve.textPath, curve.upsideDown)}
           />
 
           <text width="500">
@@ -311,8 +368,9 @@ const SKILLS_INFO: [string, Skill[]][] = [
     </svg>
 
     {ALL_SKILLS.map((item, i) => (
-      <div class="skill-picture" style={{ transform: getTrans(i) }}>
-        <img src={item.imgUrl} alt={item.name} data-desc={item.description} />
+      <div class="skill-picture" style={{ transform: getTransform(i) }}>
+        <i class={`devicon-${item.deviconId}`} data-name={item.name} data-desc={item.description} data-img-url={item.imgUrl}></i>
+        {/**<img src={item.imgUrl} alt={item.name} data-desc={item.description} />*/}
       </div>
     ))}
 

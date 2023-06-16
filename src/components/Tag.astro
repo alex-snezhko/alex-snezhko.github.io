@@ -1,11 +1,10 @@
 ---
 interface Props {
-  imgUrl: string;
   name: string;
-  color: string;
+  data: { type: "devicon", deviconId: string } | { type: "img", src: string };
 }
 
-const { imgUrl, name, color } = Astro.props;
+const { name, data } = Astro.props;
 ---
 <style lang="scss">
   .tag {
@@ -15,13 +14,18 @@ const { imgUrl, name, color } = Astro.props;
     border: none;
     padding: 6px 9px;
     font-size: 1em;
-    // background-color: #cce2eb;
-    background-color: #c6e7f0;
+    background-color: #cce2eb;
+    // background-color: #c6e7f0;
+    // background-color: hsl(210, 15%, 95%);
     box-shadow: 0 0 3px hsl(182, 10%, 73%);
 
     img {
-      max-width: 1.375rem;
-      max-height: 1.375rem;
+      max-width: 1.25rem;
+      max-height: 1.25rem;
+    }
+
+    i {
+      font-size: 1.25rem;
     }
 
     span {
@@ -37,7 +41,8 @@ const { imgUrl, name, color } = Astro.props;
 </style>
 
 <li class="tag">
-  <img src={imgUrl} alt={name} />
+  <!-- <img src={imgUrl} alt={name} /> -->
+  {data.type === "devicon" ? <i class={`devicon-${data.deviconId}`} /> : <img src={data.src} alt={name} />}
   <span>
     {name}
   </span>

@@ -6,6 +6,7 @@
   .personal-description-container {
     display: flex;
     gap: 50px;
+    align-items: flex-start;
   }
 
   .personal-description {
@@ -63,15 +64,6 @@
     flex-shrink: 99;
   }
 
-  .hobbies {
-    list-style: none;
-    padding-left: 20px;
-
-    li {
-      margin: 4px 0;
-    }
-  }
-
   @media (max-width: shared.$mainWidth) {
     img {
       display: none;
@@ -85,50 +77,21 @@
 
 <div>
   <div class="personal-description-container">
+    <img src="/assets/me.jpg" alt="Alex Snezhko" width="200" height="200" class="portrait" />
+
     <div class="personal-description">
       <p>
-        Hi, I'm Alex! I'm a software engineer with a love for learning, solving
-        problems, and building useful software.
+        Hi, I'm Alex! I'm a software engineer with a love for learning and solving problems.
       </p>
       <p>
         Aside from a career path, I consider programming and technology to be
-        hobbies of mine. I have recently taken an interest to programming language and
-        compiler design, and love working on open-source software projects in
-        my free time.
+        hobbies of mine. I am particularly interested in web development and compilers,
+        and love working on open-source software projects in my free time.
       </p>
       <p>
-        I take pride in the code I write, and am always looking for new opportunities to improve my craft.
+        Outside of tech, I enjoy gaming, building custom mechanical keyboards, and heavy metal music.
       </p>
-    </div>
-
-    <img src="/assets/me.jpg" alt="Alex Snezhko" width="260" class="portrait" />
-  </div>
-
-  <div id="education-content">
-    <img id="ncsu-img" src="/assets/ncsu.png" alt="North Carolina State University" width="180" />
-    <div id="education-desc">
-      <p>
-        Right now, I'm a student at <a href="https://ncsu.edu" class="ncsu-link">North Carolina State University</a>.
-        I completed my B.S. in Computer Science in May 2022 and am on track to
-        complete my Master of Computer Science degree in May 2023. Some
-        noteworthy classes I have taken so far include:
-      </p>
-      <ul>
-        <li>CSC 510: Software Engineering</li>
-        <li>CSC 512: Compiler Construction</li>
-        <li>CSC 520: Introduction to Artificial Intelligence</li>
-        <li>CSC 540: Database Management Concepts and Systems</li>
-      </ul>
     </div>
   </div>
 
-  <p>
-    Outside of tech, some of my hobbies include:
-  </p>
-  <ul class="hobbies">
-    <li>🎮 Gaming</li>
-    <li>🎸 Playing guitar</li>
-    <li>⌨️ Building custom mechanical keyboards</li>
-    <li>🎵 Listening to music (a little of everything, but mostly rock and heavy metal)</li>
-  </ul>
 </div>

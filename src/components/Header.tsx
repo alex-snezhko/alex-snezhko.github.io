@@ -105,30 +105,31 @@ export default function Header() {
         <ContactIcons where="titlebar" />
       </div>
 
-      <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
+      {atTop && <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
         <div className="navbar-contents">
           {atTop && (
-            <div onClick={() => scrollToSection("top")}>
-              <span className="navbar-initials">avs</span>
-              <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+            <div>
+              <span onClick={() => scrollToSection("top")}>
+                <span className="navbar-initials">avs</span>
+                <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+              </span>
+              <span className="navbar-links">
+                {allSections.map(sectionName => (
+                  <button
+                    key={sectionName}
+                    className={sectionName === currentSection ? "thispage" : ""}
+                    onClick={() => scrollToSection(sectionName)}
+                  >
+                    {sectionName[0].toUpperCase() + sectionName.slice(1)}
+                  </button>
+                ))}
+              </span>
             </div>
           )}
 
-          <div className="navbar-links">
-            {allSections.map(sectionName => (
-              <button
-                key={sectionName}
-                className={sectionName === currentSection ? "thispage" : ""}
-                onClick={() => scrollToSection(sectionName)}
-              >
-                {sectionName[0].toUpperCase() + sectionName.slice(1)}
-              </button>
-            ))}
-          </div>
-
           {atTop && <ContactIcons where="navbar" />}
         </div>
-      </div>
+      </div>}
 
     </header>
   );

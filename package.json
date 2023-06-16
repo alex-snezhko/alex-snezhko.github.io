@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@nanostores/react": "^0.4.0",
-    "astro": "^1.5.0",
+    "astro": "^2.6.3",
     "nanostores": "^0.7.1"
   },
   "devDependencies": {

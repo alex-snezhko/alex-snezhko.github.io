@@ -4,18 +4,7 @@
 @use "shared";
 
 header {
-  background-color: rgb(54, 54, 54);
-  color: shared.$almostWhite;
-}
-
-:root.dark-mode header {
   color: var(--text-color);
-}
-
-$darkNavbarColor: #1a1b1b;
-
-:root.dark-mode header {
-  background-color: $darkNavbarColor;
 }
 
 #titlebar {
@@ -28,9 +17,14 @@ $darkNavbarColor: #1a1b1b;
 }
 
 #title {
+  font-family: "Alegreya Sans SC";
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 6px;
+  text-underline-offset: 26px;
+  text-decoration-color: shared.$themeColor1;
 }
 
 .darkmode-switch-container {
@@ -64,11 +58,11 @@ $darkNavbarColor: #1a1b1b;
 .darkmode-switch {
   display: flex;
   align-items: center;
-  background-color: shared.$themeColor2;
-  width: 3.5em;
+  // background-color: shared.$themeColor2;
+  // width: 3.5em;
   margin: 0 0.25em;
   height: 1.75em;
-  padding: 0 0.15em;
+  // padding: 0 0.15em;
   border-radius: 2em;
   display: flex;
   cursor: pointer;
@@ -85,7 +79,8 @@ $darkNavbarColor: #1a1b1b;
 }
 
 .contact-icons a {
-  color: shared.$almostWhite;
+  // color: shared.$almostWhite;
+  color: var(--text-color);
 
   &:hover {
     color: shared.$themeColor2;
@@ -109,8 +104,13 @@ $darkNavbarColor: #1a1b1b;
 /* -- Navigation bar -- */
 #navbar {
   padding: 6px;
-  background-color: rgb(54, 54, 54);
+  // background-color: rgb(54, 54, 54);
+  // background-color: shared.$almostWhite;
+      
+  // background-color: hsl(210, 15%, 98%);
+  background-color: var(--container-color);
   width: 100%;
+  border-bottom: 1px solid var(--container-border-color);
 }
 
 .navbar-contents {
@@ -118,14 +118,6 @@ $darkNavbarColor: #1a1b1b;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  & > div:not(.navbar-links) {
-    width: 250px;
-  }
-}
-
-:root.dark-mode #navbar {
-  background-color: $darkNavbarColor;
 }
 
 .navbar-initials {
