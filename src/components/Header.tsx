@@ -40,23 +40,6 @@ function DarkModeSwitch({ where }: RightSectionProps) {
   );
 }
 
-const ContactIcons = ({ where }: RightSectionProps) => (
-  <div className="contact-icons-container">
-    <DarkModeSwitch where={where} />
-    <span className={`contact-icons-${where} contact-icons`}>
-      <a href="mailto:alexsnezhko89@gmail.com">
-        <FontAwesomeIcon icon={faEnvelope} fixedWidth />
-      </a>
-      <a href="https://www.linkedin.com/in/alex-snezhko/">
-        <FontAwesomeIcon icon={faLinkedin} fixedWidth />
-      </a>
-      <a href="https://github.com/alex-snezhko">
-        <FontAwesomeIcon icon={faGithub} fixedWidth />
-      </a>
-    </span>
-  </div>
-);
-
 export default function Header() {
   const [atTop, setAtTop] = useState(false);
   const [currentSection, setCurrentSection] = useState("about");
@@ -102,7 +85,20 @@ export default function Header() {
 
       <div ref={titlebarRef} id="titlebar">
         <h1 id="title">Alex Snezhko</h1>
-        <ContactIcons where="titlebar" />
+        <div className="contact-icons-container">
+          <span className="navbar-links">
+            {allSections.map(sectionName => (
+              <button
+                key={sectionName}
+                className={sectionName === currentSection ? "thispage" : ""}
+                onClick={() => scrollToSection(sectionName)}
+              >
+                {sectionName[0].toUpperCase() + sectionName.slice(1)}
+              </button>
+            ))}
+          </span>
+          <DarkModeSwitch where="navbar" />
+        </div>
       </div>
 
       {atTop && <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
@@ -110,9 +106,14 @@ export default function Header() {
           {atTop && (
             <div>
               <span onClick={() => scrollToSection("top")}>
-                <span className="navbar-initials">avs</span>
+                <span className="navbar-initials">Alex Snezhko</span>
                 <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
               </span>
+            </div>
+          )}
+
+          {atTop && (
+            <div className="contact-icons-container">
               <span className="navbar-links">
                 {allSections.map(sectionName => (
                   <button
@@ -124,10 +125,9 @@ export default function Header() {
                   </button>
                 ))}
               </span>
+              <DarkModeSwitch where="navbar" />
             </div>
           )}
-
-          {atTop && <ContactIcons where="navbar" />}
         </div>
       </div>}
 

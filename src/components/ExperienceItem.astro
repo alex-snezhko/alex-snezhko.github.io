@@ -51,6 +51,10 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
     flex-grow: 1;
   }
 
+  .experience-title-company {
+    font-size: 1.5rem;
+  }
+
   .experience-company {
     color: shared.$themeColor1;
 
@@ -61,9 +65,7 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
 
   .experience-tech {
     padding-left: 0;
-  }
-
-  .tech-used {
+    padding-top: 10px;
     list-style: none;
     flex-wrap: wrap;
     display: flex;
@@ -111,14 +113,14 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
   </div>
   <div class="experience-info">
     <div class="experience-header">
-      <h2>
-        <div class="job-title">{position}</div>
+      <h2 class="experience-title-company">
         <div class="job-company">
           <div class="small-experience-image-container">
             <img src={imageUrl} alt={company} />
           </div>
           <a href={companyUrl} class="experience-company">{company}</a>
         </div>
+        <div class="job-title">{position}</div>
       </h2>
       <div>{timeline}</div>
     </div>
@@ -129,7 +131,7 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
       ))}
     </ul>
 
-    <ul class="experience-tech tech-used">
+    <ul class="experience-tech">
       {techUsed.map(tech => <Tag {...tech} />)}
     </ul>
   </div>

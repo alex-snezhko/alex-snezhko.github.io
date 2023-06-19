@@ -171,34 +171,35 @@ const SKILLS_INFO: [string, Skill[]][] = [
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 
-    // &:hover {
-    //   width: 85px;
-    //   height: 85px;
-    // }
-
-    // img {
-    //   max-width: 100%;
-    //   max-height: 100%;
-    //   object-fit: contain;
-    // }
-
-    i {
-      // color: rgb(54, 54, 54);
-      color: var(--text-color);
-      font-size: 4rem;
-      transition: 0.25s;
+    &:hover {
+      width: 75px;
+      height: 75px;
     }
 
-    &:hover i {
-      // font-size: 4.5rem;
-      color: darken(shared.$themeColor1, 10%);
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
+
+    // i {
+    //   // color: rgb(54, 54, 54);
+    //   color: var(--text-color);
+    //   font-size: 4rem;
+    //   transition: 0.25s;
+    // }
+
+    // &:hover i {
+    //   // font-size: 4.5rem;
+    //   color: darken(shared.$themeColor1, 10%);
+    // }
   }
 
   #skill-info {
@@ -224,8 +225,8 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   #info-image {
-    max-width: 220px;
-    max-height: 220px;
+    max-width: 180px;
+    max-height: 180px;
     object-fit: contain;
   }
 
@@ -260,7 +261,9 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   .skill-alternate {
-    background-color: hsl(210, 15%, 96%);
+    // background-color: hsl(210, 15%, 96%);
+    background-color: var(--container-color);
+    border: 1px solid var(--container-border-color);
     // box-shadow: 0 0 4px hsl(182, 10%, 73%);
     text-align: center;
     width: 105px;
@@ -288,12 +291,6 @@ const SKILLS_INFO: [string, Skill[]][] = [
     }
   }
 
-  :root.dark-mode .skill-alternate {
-    background-color: hsl(210, 1%, 27%);
-    // background-color: hsl(240, 1%, 23%);
-    // box-shadow: 0 0 6px hsl(180, 2%, 25%);
-  }
-
   @media (max-width: shared.$mainWidth) {
     #skills-circle {
       display: none;
@@ -319,17 +316,16 @@ const SKILLS_INFO: [string, Skill[]][] = [
     const skill = skills[i];
     skill.addEventListener("mouseenter", () => {
       clearTimeout(fadeTimeout);
-      // const img = skill.firstElementChild!;
-      const icon = skill.firstElementChild!;
+      const img = skill.firstElementChild!;
 
       skillInfoPlaceholder.style.visibility = "hidden";
       skillInfoPlaceholder.style.opacity = "0";
       skillInfo.style.visibility = "visible";
       skillInfo.style.opacity = "1";
 
-      infoImg.setAttribute("src", icon.getAttribute("data-img-url")!);
-      infoName.innerHTML = icon.getAttribute("data-name")!;
-      infoExtra.innerHTML = icon.getAttribute("data-desc")!;
+      infoImg.setAttribute("src", img.getAttribute("src")!);
+      infoName.innerHTML = img.getAttribute("alt")!;
+      infoExtra.innerHTML = img.getAttribute("data-desc")!;
     });
     skill.addEventListener("mouseleave", () => {
       fadeTimeout = setTimeout(() => {
@@ -369,8 +365,8 @@ const SKILLS_INFO: [string, Skill[]][] = [
 
     {ALL_SKILLS.map((item, i) => (
       <div class="skill-picture" style={{ transform: getTransform(i) }}>
-        <i class={`devicon-${item.deviconId}`} data-name={item.name} data-desc={item.description} data-img-url={item.imgUrl}></i>
-        {/**<img src={item.imgUrl} alt={item.name} data-desc={item.description} />*/}
+        {/**<i class={`devicon-${item.deviconId}`} data-name={item.name} data-desc={item.description} data-img-url={item.imgUrl}></i>*/}
+        <img src={item.imgUrl} alt={item.name} data-desc={item.description} />
       </div>
     ))}
 

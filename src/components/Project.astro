@@ -31,7 +31,7 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
   }
 
   .project-image-container {
-    height: 200px;
+    height: 160px;
     position: relative;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -46,6 +46,10 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.5s;
+  }
+
+  .project-name {
+    font-size: 1.5rem;
   }
 
   .project-tech {
@@ -75,12 +79,14 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
     // background-color: hsl(210, 1%, 27%);
   }
 
+  $darkProjectColor: #46b4b8;
   :root.dark-mode .project-name {
-    color: #46b4b8;
+    color: $darkProjectColor;
+    transition: 0.5s;
   }
 
   :root.dark-mode .project-link:hover .project-name {
-    color: #64bfc2;
+    color: darken($darkProjectColor, 10%);
   }
 </style>
 

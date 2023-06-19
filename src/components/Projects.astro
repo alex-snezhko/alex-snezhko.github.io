@@ -7,22 +7,26 @@ import { projects } from "../utils/projects";
   @use "../styles/shared";
 
   .projects {
-    margin: 0 -25px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     // align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    gap: 50px;
 
     div {
-      width: 50%;
-      padding: 25px;
+      width: calc(50% - 25px);
+      // padding: 25px;
     }
   }
 
   @media (max-width: shared.$mainWidth) {
-    .projects div {
-      width: 50%;
+    .projects {
+      gap: 20px;
+      div {
+        width: calc(50% - 10px);
+      }
     }
   }
 
@@ -51,7 +55,6 @@ import { projects } from "../utils/projects";
   </div>
 
   <p>
-    The source code for these projects, this webpage, and more can be found on
-    my <a href="http://github.com/alex-snezhko">GitHub</a> page
+    <a href="http://github.com/alex-snezhko">More projects on GitHub</a>
   </p>
 </div>

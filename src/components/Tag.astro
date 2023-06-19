@@ -1,10 +1,11 @@
 ---
 interface Props {
   name: string;
-  data: { type: "devicon", deviconId: string } | { type: "img", src: string };
+  imgUrl: string;
+  // data: { type: "devicon", deviconId: string } | { type: "img", src: string };
 }
 
-const { name, data } = Astro.props;
+const { name, imgUrl } = Astro.props;
 ---
 <style lang="scss">
   .tag {
@@ -24,6 +25,15 @@ const { name, data } = Astro.props;
       max-height: 1.25rem;
     }
 
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      // .color-main {
+      //   fill: orange;
+      // }
+    }
+
     i {
       font-size: 1.25rem;
     }
@@ -41,8 +51,9 @@ const { name, data } = Astro.props;
 </style>
 
 <li class="tag">
-  <!-- <img src={imgUrl} alt={name} /> -->
-  {data.type === "devicon" ? <i class={`devicon-${data.deviconId}`} /> : <img src={data.src} alt={name} />}
+  <img src={imgUrl} alt={name} />
+  <!-- {data.type === "devicon" ? <i class={`devicon-${data.deviconId}`} /> : <img src={data.src} alt={name} />} -->
+  <!-- {data.type === "devicon" ? <i class={`devicon-${data.deviconId}`} /> : (name === "Reason" || name == "WebAssembly" || name == "RabbitMQ" ? <svg set:html={data.src}/> : <div></div>)} -->
   <span>
     {name}
   </span>

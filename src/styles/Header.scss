@@ -17,9 +17,10 @@ header {
 }
 
 #title {
-  font-family: "Alegreya Sans SC";
-  font-weight: 700;
-  font-size: 3rem;
+  font-family: "Geologica";
+  font-weight: 500;
+  font-weight: bold;
+  font-size: 2.75rem;
   margin: 0;
   text-decoration: underline;
   text-decoration-thickness: 6px;
@@ -47,8 +48,8 @@ header {
 }
 
 .darkmode-sun {
-  color: #d4ae4f;
-  margin-left: -1px;
+  // color: #d4ae4f;
+  color: #f0d183;
 }
 
 .darkmode-moon {
@@ -60,11 +61,10 @@ header {
   align-items: center;
   // background-color: shared.$themeColor2;
   // width: 3.5em;
-  margin: 0 0.25em;
-  height: 1.75em;
+  margin-left: 1em;
+  height: 2em;
   // padding: 0 0.15em;
   border-radius: 2em;
-  display: flex;
   cursor: pointer;
 }
 
@@ -72,10 +72,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: shared.$almostWhite;
-  border-radius: 2em;
-  width: 1.5em;
-  height: 1.5em;
+  // background-color: shared.$almostWhite;
+  // background-color: var(--text-color);
+  // background-color: #888;
+  // background-color: var(--container-color);
+  border: 1px solid var(--container-border-color);
+  border-radius: 0.5em;
+  width: 2em;
+  height: 2em;
+  font-size: 1.125em;
 }
 
 .contact-icons a {
@@ -114,6 +119,7 @@ header {
 }
 
 .navbar-contents {
+  width: shared.$mainWidth;
   margin: auto;
   display: flex;
   align-items: center;
@@ -121,11 +127,13 @@ header {
 }
 
 .navbar-initials {
-  font-family: "JetBrains Mono", monospace;
+  // font-family: "JetBrains Mono", monospace;
+  font-family: "Geologica";
+  font-weight: 500;
   display: inline-block;
   vertical-align: middle;
   font-size: 1.75rem;
-  margin-top: -4px;
+  // margin-top: -4px;
   transition: 0.25s;
 
   &:hover {
@@ -176,12 +184,13 @@ header {
     font-size: 1rem;
 
     &:hover {
-      background-color: rgb(75, 75, 75);
+      background-color: var(--container-border-color);
     }
   }
 
   button:not(.thispage) {
-    color: rgb(168, 168, 168);
+    // color: rgb(168, 168, 168);
+    color: var(--font-color);
   }
 
   button.thispage {
@@ -199,54 +208,23 @@ header {
     margin-left: 12px;
   }
 }
-  
-@media (min-width: shared.$mainWidth) {
-  .navbar-contents {
-    width: shared.$mainWidth;
-  }
-}
 
 @media (max-width: shared.$mainWidth) {
-  .navbar-links {
-    display: none;
-  }
-
-  #navbar:not(.at-top) {
-    display: none;
-  }
-
-  #titlebar {
-    width: initial;
-    margin: 0 1rem;
-  }
-
-
-  #title {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: shared.$smallScreen) {
   #titlebar {
     display: block;
     text-align: center;
     padding: 1rem 0;
   }
 
-  #title {
-    margin-bottom: 15px;
-  }
-
   .contact-icons-container {
-    justify-content: center;
+    display: none;
   }
 
-  .contact-icons-titlebar a {
-    font-size: 2.25rem;
-    margin-left: 12px;
+  #navbar {
+    display: none;
   }
 
-  .navbar-contents > div:not(.navbar-links) {
-    width: unset;
+  #titlebar {
+    width: initial;
   }
 }

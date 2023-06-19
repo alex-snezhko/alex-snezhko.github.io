@@ -1,10 +1,12 @@
 ---
 import { library, icon } from '@fortawesome/fontawesome-svg-core'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
+import { Icon } from 'astro-icon'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-library.add(faCamera)
+// library.add(faCamera)
 
-const camera = icon({ prefix: 'fas', iconName: 'camera' }).html;
+// const camera = icon({ prefix: 'fas', iconName: 'camera' }).html;
 
 interface ContactItem {
   name: string;
@@ -30,24 +32,47 @@ const contactItems = [
   },
 ]
 ---
-<style>
+<style lang="scss">
   footer {
     text-align: center;
     color: rgb(141, 153, 153);
     padding-bottom: 40px;
   }
 
-  svg {
-    width: 100px;
-    height: 100px;
+  .contact-items {
+    display: flex;
+    margin: 80px 0 40px 0;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    // width: 160px;
+    // padding: 12px 16px;
+    // border-radius: 10px;
+    color: var(--font-color);
+    // background-color: var(--container-color);
+    // border: 1px solid var(--container-border-color);
+  }
+
+  [astro-icon] {
+    // width: 20px;
+    width: 30px;
+    margin-right: 12px;
   }
 </style>
 
-<!-- <Fragment set:html={camera} /> -->
-<i class="fa-solid fa-camera" />
-<!-- {contactItems.map(item => (
-  <div>
-    <
-  </div>
-))} -->
+<div class="contact-items">
+  {contactItems.map(item => (
+    <a class="contact-item" href={item.href} target="_blank">
+      <Icon pack="fa" name={item.icon} />
+    </a>
+    // <a class="contact-item" href={item.href} target="_blank">
+    //   <Icon pack="fa" name={item.icon} />
+    //   <span>{item.name}</span>
+    // </a>
+  ))}
+</div>
 <footer>🚀 Built with Astro</footer>
