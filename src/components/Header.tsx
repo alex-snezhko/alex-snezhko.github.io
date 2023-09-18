@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useStore } from "@nanostores/react";
 import { isDarkMode } from "../store";
 import type { SectionName } from "../types";

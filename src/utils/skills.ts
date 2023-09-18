@@ -10,7 +10,7 @@ const skill = (name: string, description: string, imgUrl: string, deviconId: str
 export const FRAMEWORKS = [
   skill("React", "JavaScript UI Library", "react.png", "react-original"),
   skill("Next.js", "React Web Framework", "nextjs.png", "nextjs-original"),
-  skill("ASP.NET", ".NET Web Framework", "dotnet.png", "dot-net-plain"),
+  skill("ASP.NET Core", "Web Framework", "dotnet.png", "dot-net-plain"),
   skill("Spring Framework", "Java Web Framework", "spring.png", "spring-plain"),
   skill("WebGL", "Web Graphics Library", "webgl.png", "opengl-plain"),
 ];
@@ -120,4 +120,6 @@ export const cppTag = tag("C++", "cpp.png", "#c6d7f7");
 export const ocamlTag = tag("OCaml", "ocaml.png", "#f5d7ba");
 export const winformsTag = tag("WinForms", "dotnet.png", "#cbe4f2");
 export const wasmTag = tag("WebAssembly", "webassembly.png", "#ded0f5");
+export const kafkaTag = tag("Kafka", "kafka.png", "#000000");
+export const angularTag = tag("Angular", "angular.png", "#000000");
 

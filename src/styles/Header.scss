@@ -83,19 +83,6 @@ header {
   font-size: 1.125em;
 }
 
-.contact-icons a {
-  // color: shared.$almostWhite;
-  color: var(--text-color);
-
-  &:hover {
-    color: shared.$themeColor2;
-  }
-}
-
-:root.dark-mode .contact-icons a {
-  color: var(--text-color);
-}
-
 .contact-icons-container {
   display: flex;
   justify-content: right;
