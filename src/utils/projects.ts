@@ -25,7 +25,7 @@ export const projects: ProjectType[] = [
   {
     projectName: "Grain",
     projectUrl: "https://github.com/grain-lang/grain",
-    imgSrc: "/assets/grain.png",
+    imgSrc: "/assets/grain-alt.svg",
     body: "Modern functional-first programming language targeting WebAssembly. Core development team member and library author.",
     techUsed: [grainTag, reasonTag, wasmTag]
   },

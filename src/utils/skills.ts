@@ -16,7 +16,8 @@ export const FRAMEWORKS = [
 ];
 export const TOOLS = [
   skill("Linux", "Operating System Family", "linux.png", "linux-plain"),
-  skill("Unity", "Game Engine", "unity.png", "unity-original"),
+  skill("Kubernetes", "Container Orchestration", "kubernetes.png", "kubernetes-plain"),
+  skill("Kafka", "Distributed Event Store", "kafka.png", "kafka-plain"),
   skill("PostgreSQL", "Database Management System", "psql.png", "postgresql-plain"),
   skill("Azure", "Cloud Service Suite", "azure.png", "azure-plain"),
 ];
@@ -114,12 +115,13 @@ export const aspnetTag = tag("ASP.NET Core", "dotnet.png", "#cbe4f2");
 export const webglTag = tag("WebGL", "webgl.png", "#f2cece");
 export const expressTag = tag("Express", "express.png", "#d9d9d9");
 export const psqlTag = tag("PostgreSQL", "psql.png", "#c9dcf5");
-export const grainTag = tag("Grain", "grainsmall.png", "#f0dabb");
+export const grainTag = tag("Grain", "grain-alt.svg", "#f0dabb");
 export const reasonTag = tag("Reason", "reason.png", "#edcec0");
 export const cppTag = tag("C++", "cpp.png", "#c6d7f7");
 export const ocamlTag = tag("OCaml", "ocaml.png", "#f5d7ba");
 export const winformsTag = tag("WinForms", "dotnet.png", "#cbe4f2");
 export const wasmTag = tag("WebAssembly", "webassembly.png", "#ded0f5");
 export const kafkaTag = tag("Kafka", "kafka.png", "#000000");
+export const kubernetesTag = tag("Kubernetes", "kubernetes.png", "#000000");
 export const angularTag = tag("Angular", "angular.png", "#000000");
 

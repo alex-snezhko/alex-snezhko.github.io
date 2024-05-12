@@ -11,14 +11,14 @@ const { name, imgUrl } = Astro.props;
   .tag {
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 6px;
     border: none;
     padding: 6px 9px;
     font-size: 1em;
-    background-color: #cce2eb;
+    background-color: #eaeaea;
     // background-color: #c6e7f0;
     // background-color: hsl(210, 15%, 95%);
-    box-shadow: 0 0 3px hsl(182, 10%, 73%);
+    box-shadow: 0 0 3px hsl(182, 10%, 83%);
 
     img {
       max-width: 1.25rem;
@@ -44,9 +44,10 @@ const { name, imgUrl } = Astro.props;
   }
 
   :root.dark-mode .tag {
-    background-color: #3b6b79;
+    // background-color: #3b6b79;
+    background-color: #3a3a3a;
     color: white;
-    box-shadow: 0 0 3px hsl(180, 6%, 34%);
+    box-shadow: 0 0 3px hsl(180, 6%, 24%);
   }
 </style>
 
