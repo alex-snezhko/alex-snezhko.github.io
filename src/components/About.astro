@@ -2,6 +2,7 @@
 ---
 <style lang="scss">
   @use "../styles/shared";
+  @use "sass:color";
 
   .personal-description-container {
     display: flex;
@@ -19,7 +20,7 @@
     color: $color;
 
     &:hover {
-      color: darken($color, 10%);
+      color: color.adjust($color, $lightness: -10%);
     }
   }
 
@@ -28,17 +29,12 @@
     color: $color;
 
     &:hover {
-      color: darken($color, 10%);
+      color: color.adjust($color, $lightness: -10%);
     }
   }
 
   .portrait {
     border-radius: 46px;
-    // box-shadow: 0 0 14px #999;
-  }
-
-  :root.dark-mode .portrait {
-    // box-shadow: 0 0 14px rgb(94, 94, 94);
   }
 
   .ncsu-link {
@@ -46,7 +42,7 @@
     color: $color;
 
     &:hover {
-      color: darken($color, 10%);
+      color: color.adjust($color, $lightness: -10%);
     }
   }
 
@@ -89,7 +85,7 @@
         and contributing to open-source in my free time.
       </p>
       <p>
-        Outside of tech, I enjoy gaming, building custom mechanical keyboards, and heavy metal music.
+        Outside of tech, I enjoy gaming, building custom mechanical keyboards, heavy metal, and bass music.
       </p>
     </div>
   </div>

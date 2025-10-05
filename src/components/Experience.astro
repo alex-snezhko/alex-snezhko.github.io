@@ -6,7 +6,6 @@ import { angularTag, aspnetTag, azureTag, csTag, graphqlTag, javaTag, kafkaTag, 
   .experience-items {
     display: flex;
     flex-direction: column;
-    gap: 70px;
   }
 </style>
 
@@ -23,6 +22,7 @@ import { angularTag, aspnetTag, azureTag, csTag, graphqlTag, javaTag, kafkaTag, 
         "Interact directly with stakeholders to understand business requirements and plan projects.",
       ]}
       techUsed={[csTag, aspnetTag, psqlTag, kafkaTag, kubernetesTag, angularTag]}
+      isFirst
     />
 
     <ExperienceItem
@@ -50,6 +50,7 @@ import { angularTag, aspnetTag, azureTag, csTag, graphqlTag, javaTag, kafkaTag, 
         "Transitioned services facilitating custom SSO authentication from on-premises SQL Server to Azure Cosmos DB.",
       ]}
       techUsed={[csTag, aspnetTag, azureTag]}
+      isLast
     />
   </div>
 </div>

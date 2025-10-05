@@ -10,28 +10,36 @@ interface Props {
   timeline: string;
   descriptionItems: string[];
   techUsed: TagInfo[];
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
-const { imageUrl, position, company, companyUrl, timeline, descriptionItems, techUsed } = Astro.props;
+const { imageUrl, position, company, companyUrl, timeline, descriptionItems, techUsed, isFirst, isLast } = Astro.props;
 ---
 <style lang="scss">
   @use "../styles/shared";
+  @use "sass:color";
 
   .experience-item {
     display: flex;
+
+    &:not(:last-child) .experience-info {
+      padding-bottom: 70px;
+    }
   }
 
   .experience-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 20px;
   }
 
   .experience-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 70px;
+    // margin-right: 70px;
     $size: 120px;
     width: $size;
     height: $size;
@@ -60,7 +68,7 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
     color: shared.$themeColor1;
 
     &:hover {
-      color: darken(shared.$themeColor1, 10%);
+      color: color.adjust(shared.$themeColor1, $lightness: -10%);
     }
   }
 
@@ -73,9 +81,23 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
     gap: 10px;
   }
 
+  .timeline-bar {
+    width: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    svg {
+      height: 100%;
+    }
+  }
+
   @media (max-width: shared.$mainWidth) {
     .experience-header {
       display: initial;
+    }
+
+    .timeline-bar {
+      display: none;
     }
 
     .job-title {
@@ -111,6 +133,13 @@ const { imageUrl, position, company, companyUrl, timeline, descriptionItems, tec
 <div class="experience-item">
   <div class="experience-image-container">
     <img src={imageUrl} alt={company} />
+  </div>
+  <div class="timeline-bar">
+    <svg width="100" style="height: 100%;">
+      {!isFirst && <line x1="50" y1="0" x2="50" y2="48" stroke="#ccc" stroke-width="2" />}
+      <circle cx="50" cy="60" r="7" fill="#484848" />
+      {!isLast && <line x1="50" y1="72" x2="50" y2="2000" stroke="#ccc" stroke-width="2" />}
+    </svg>
   </div>
   <div class="experience-info">
     <div class="experience-header">

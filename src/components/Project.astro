@@ -14,6 +14,8 @@ interface Props {
 const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.props;
 ---
 <style lang="scss">
+  @use "sass:color";
+
   .project {
     padding: 35px;
     border-radius: 20px;
@@ -86,7 +88,7 @@ const { projectName, projectUrl, imgSrc, body, techUsed, techHeight } = Astro.pr
   }
 
   :root.dark-mode .project-link:hover .project-name {
-    color: darken($darkProjectColor, 10%);
+    color: color.adjust($darkProjectColor, $lightness: -10%);
   }
 </style>
 

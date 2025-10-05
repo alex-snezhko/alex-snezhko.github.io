@@ -25,7 +25,7 @@ interface CurveInfo {
 }
 
 // make sure to keep same as $mainWidth scss variable
-const CIRCLE_SIZE = 800;
+const CIRCLE_SIZE = 880;
 const TEXT_RADIUS = (CIRCLE_SIZE - 80) / 2;
 const ARC_THICKNESS = 120;
 const CIRCLE_RADIUS = TEXT_RADIUS - (ARC_THICKNESS / 2) - 24;
@@ -60,15 +60,6 @@ const ARCS = DIV_ANGLES.map((angle, i) => ({
   }
 } as ArcPaths));
 
-// const ARC_BEGINS = DIV_ANGLES.map(angle => ({
-//   near: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, angle),
-//   far: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, angle)
-// }));
-// const ARC_ENDS = DIV_ANGLES.map((_, i) => ({
-//   near: getXY(CIRCLE_RADIUS - ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
-//   far: getXY(CIRCLE_RADIUS + ARC_THICKNESS / 2, DIV_ANGLES[(i + 1) % 3]),
-// }));
-
 const textPathD = (path: Path, upsideDown: boolean) => upsideDown
   ? `M ${path.end.x} ${path.end.y} A ${TEXT_RADIUS + 20} ${TEXT_RADIUS + 20} 0 0 0 ${path.begin.x} ${path.begin.y}`
   : `M ${path.begin.x} ${path.begin.y} A ${TEXT_RADIUS} ${TEXT_RADIUS} 0 0 1 ${path.end.x} ${path.end.y}`;
@@ -92,8 +83,8 @@ const getTextInfo = (textAngle: number, upsideDown: boolean) => ({
 
 const CURVES: CurveInfo[] = [
   { fullName: "Programming Languages", shortName: "langs", upsideDown: false, textPath: getTextInfo(3.1, false) },
-  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textPath: getTextInfo(7.2, false) },
-  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textPath: getTextInfo(6.9, true) }
+  { fullName: "Libraries/Frameworks", shortName: "frameworks", upsideDown: false, textPath: getTextInfo(7.1, false) },
+  { fullName: "Tools/Software", shortName: "tools", upsideDown: true, textPath: getTextInfo(6.48, true) }
 ];
       
 function getTransform(i: number) {
@@ -133,54 +124,20 @@ const SKILLS_INFO: [string, Skill[]][] = [
     stroke: var(--container-border-color);
   }
 
-  // $lightestColor: hsl(184, 45%, 87%);
-  // $lightestColor: hsl(210deg,15%,98%);
-  // $lightestColor: darken(hsl(184, 45%, 87%), 0%);
-
-  // .arc-fill-langs {
-  //   stroke: $lightestColor;
-  // }
-
-  // .arc-fill-frameworks {
-  //   // stroke: darken($lightestColor, 4%);
-  //   stroke: $lightestColor;
-  // }
-
-  // .arc-fill-tools {
-  //   // stroke: darken($lightestColor, 8%);
-  //   stroke: $lightestColor;
-  // }
-
-  // $darkestColor: hsl(189, 29%, 31%);
-
-  // :root.dark-mode .arc-fill-langs {
-  //   // stroke: lighten($darkestColor, 6%);
-  //   stroke: $darkestColor;
-  // }
-
-  // :root.dark-mode .arc-fill-frameworks {
-  //   // stroke: lighten($darkestColor, 3%);
-  //   stroke: $darkestColor;
-  // }
-
-  // :root.dark-mode .arc-fill-tools {
-  //   stroke: $darkestColor;
-  // }
-
   .skill-picture {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 65px;
-    height: 65px;
+    width: 68px;
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
 
     &:hover {
-      width: 75px;
-      height: 75px;
+      width: 78px;
+      height: 78px;
     }
 
     img {
@@ -188,21 +145,9 @@ const SKILLS_INFO: [string, Skill[]][] = [
       max-height: 100%;
       object-fit: contain;
     }
-
-    // i {
-    //   // color: rgb(54, 54, 54);
-    //   color: var(--text-color);
-    //   font-size: 4rem;
-    //   transition: 0.25s;
-    // }
-
-    // &:hover i {
-    //   // font-size: 4.5rem;
-    //   color: darken(shared.$themeColor1, 10%);
-    // }
   }
 
-  #skill-info {
+  .skill-info {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -224,20 +169,66 @@ const SKILLS_INFO: [string, Skill[]][] = [
     margin: 0;
   }
 
-  #info-image {
-    max-width: 180px;
-    max-height: 180px;
+  .info-image {
+    max-width: 140px;
+    max-height: 140px;
     object-fit: contain;
   }
 
-  #info-name {
+  .info-name {
     font-size: 1.75rem;
-    margin: 15px;
+    margin: 6px;
   }
 
-  #info-extra {
-    color: gray;
+  .info-extra {
+    color: #777;
     font-size: 1rem;
+  }
+
+  .experience-via-divider {
+    position: relative;
+    margin: 14px auto;
+    width: 60%;
+    height: 30px;
+
+    div {
+      z-index: 1;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      background-color: #ccc;
+    }
+
+    p {
+      z-index: 4;
+      white-space: nowrap;
+      padding: 0 12px;
+      background-color: white;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #888;
+    }
+  }
+
+  .experience-via {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding-bottom: 4px;
+
+      img, span {
+        vertical-align: middle;
+      }
+
+      span {
+        margin-left: 4px;
+      }
+    }
   }
 
   #skills-normal {
@@ -245,15 +236,11 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   .skills-section {
-    // background-color: #eee;
-    // border-radius: 16px;
-    // padding: 10px;
     margin-bottom: 50px;
   }
 
   .skill-container {
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -261,10 +248,8 @@ const SKILLS_INFO: [string, Skill[]][] = [
   }
 
   .skill-alternate {
-    // background-color: hsl(210, 15%, 96%);
     background-color: var(--container-color);
     border: 1px solid var(--container-border-color);
-    // box-shadow: 0 0 4px hsl(182, 10%, 73%);
     text-align: center;
     width: 105px;
     padding: 15px 0;
@@ -305,35 +290,36 @@ const SKILLS_INFO: [string, Skill[]][] = [
 
 <script>
   const skills = document.getElementsByClassName("skill-picture");
-  const skillInfo = document.getElementById("skill-info")!;
   const skillInfoPlaceholder = document.getElementById("skill-info-placeholder")!;
-  const infoImg = document.getElementById("info-image")!;
-  const infoName = document.getElementById("info-name")!;
-  const infoExtra = document.getElementById("info-extra")!;
-  let fadeTimeout: number | undefined;
+  const skillInfosByName = Object.fromEntries([...document.getElementsByClassName('skill-info')].map(x => [x.getAttribute('data-name') as string, x as HTMLElement] as const))
+  let fadeTimeout: NodeJS.Timeout | undefined;
+
+  let selected: HTMLElement | undefined
 
   for (let i = 0; i < skills.length; i++) {
     const skill = skills[i];
     skill.addEventListener("mouseenter", () => {
       clearTimeout(fadeTimeout);
-      const img = skill.firstElementChild!;
 
       skillInfoPlaceholder.style.visibility = "hidden";
       skillInfoPlaceholder.style.opacity = "0";
+
+      const skillInfo = skillInfosByName[skill.getAttribute('data-name') as string]
+      selected = skillInfo
       skillInfo.style.visibility = "visible";
       skillInfo.style.opacity = "1";
-
-      infoImg.setAttribute("src", img.getAttribute("src")!);
-      infoName.innerHTML = img.getAttribute("alt")!;
-      infoExtra.innerHTML = img.getAttribute("data-desc")!;
     });
     skill.addEventListener("mouseleave", () => {
       fadeTimeout = setTimeout(() => {
-        skillInfo.style.visibility = "hidden";
+        if (selected) {
+          selected.style.visibility = 'hidden'
+        }
         skillInfoPlaceholder.style.opacity = "1";
         skillInfoPlaceholder.style.visibility = "visible"
       }, 500);
-      skillInfo.style.opacity = "0";
+      if (selected) {
+        selected.style.opacity = "0";
+      }
     });
   }
 </script>
@@ -364,18 +350,30 @@ const SKILLS_INFO: [string, Skill[]][] = [
     </svg>
 
     {ALL_SKILLS.map((item, i) => (
-      <div class="skill-picture" style={{ transform: getTransform(i) }}>
-        {/**<i class={`devicon-${item.deviconId}`} data-name={item.name} data-desc={item.description} data-img-url={item.imgUrl}></i>*/}
+      <div class="skill-picture" style={{ transform: getTransform(i) }} data-name={item.name}>
         <img src={item.imgUrl} alt={item.name} data-desc={item.description} />
       </div>
     ))}
 
     <h1 id="skill-info-placeholder">Hover over an icon to view details</h1>
-    <div id="skill-info">
-      <img id="info-image" src="" alt="" />
-      <h1 id="info-name"></h1>
-      <h2 id="info-extra"></h2>
-    </div>
+    {ALL_SKILLS.map(item => (
+      <div class="skill-info" data-name={item.name}>
+        <img class="info-image" src={item.imgUrl} alt={item.name} />
+        <h1 class="info-name">{item.name}</h1>
+        <h2 class="info-extra">{item.description}</h2>
+        <div class="experience-via-divider">
+          <div></div>
+          <p>Experience Via</p>
+        </div>
+        <ul class="experience-via">
+          {item.via.map(via => (
+            <li>
+              {via.imgUrl && <img src={via.imgUrl} alt={via.name} width="18" height="18" />} <span>{via.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 
   <div id="skills-normal">

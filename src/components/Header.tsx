@@ -3,8 +3,7 @@ import { useStore } from "@nanostores/react";
 import { isDarkMode } from "../store";
 import type { SectionName } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faEnvelope, faMoon, faSun, faCircle } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUp, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import "../styles/Header.scss";
@@ -101,33 +100,29 @@ export default function Header() {
         </div>
       </div>
 
-      {atTop && <div ref={navbarRef} id="navbar" className={atTop ? "at-top" : ""}>
+      {atTop && <div ref={navbarRef} id="navbar" className="at-top">
         <div className="navbar-contents">
-          {atTop && (
-            <div>
-              <span onClick={() => scrollToSection("top")}>
-                <span className="navbar-initials">Alex Snezhko</span>
-                <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
-              </span>
-            </div>
-          )}
+          <div>
+            <span onClick={() => scrollToSection("top")}>
+              <span className="navbar-initials">Alex Snezhko</span>
+              <span className="navbar-to-top"><FontAwesomeIcon icon={faArrowUp} /></span>
+            </span>
+          </div>
 
-          {atTop && (
-            <div className="contact-icons-container">
-              <span className="navbar-links">
-                {allSections.map(sectionName => (
-                  <button
-                    key={sectionName}
-                    className={sectionName === currentSection ? "thispage" : ""}
-                    onClick={() => scrollToSection(sectionName)}
-                  >
-                    {sectionName[0].toUpperCase() + sectionName.slice(1)}
-                  </button>
-                ))}
-              </span>
-              <DarkModeSwitch where="navbar" />
-            </div>
-          )}
+          <div className="contact-icons-container">
+            <span className="navbar-links">
+              {allSections.map(sectionName => (
+                <button
+                  key={sectionName}
+                  className={sectionName === currentSection ? "thispage" : ""}
+                  onClick={() => scrollToSection(sectionName)}
+                >
+                  {sectionName[0].toUpperCase() + sectionName.slice(1)}
+                </button>
+              ))}
+            </span>
+            <DarkModeSwitch where="navbar" />
+          </div>
         </div>
       </div>}
 
